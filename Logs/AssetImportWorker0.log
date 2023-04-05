@@ -229,3 +229,43 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1688.829366 seconds.
+  path: Assets/2D Space Kit/Asteroids/Asteroid 1.png
+  artifactKey: Guid(ee8261317c1ff734daa9da91d24312b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Asteroids/Asteroid 1.png using Guid(ee8261317c1ff734daa9da91d24312b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8adae016f4ed1da9fdbe39ff05812cc') in 0.083154 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.531918 seconds.
+  path: Assets/2D Space Kit/Asteroids/Asteroid 5.png
+  artifactKey: Guid(06ebc3b6f7d199745ac6895e9d0f2e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Asteroids/Asteroid 5.png using Guid(06ebc3b6f7d199745ac6895e9d0f2e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9e3f09c15582241e6ea7be31f284636') in 0.024198 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/2D Space Kit/Asteroids/Asteroid 6.png
+  artifactKey: Guid(9a04f6cfae75c064997fb1ddf1827c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Asteroids/Asteroid 6.png using Guid(9a04f6cfae75c064997fb1ddf1827c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '118520f901d7fe6a3ac883723a755378') in 0.022665 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.548402 seconds.
+  path: Assets/2D Space Kit/Backgrounds/2.png
+  artifactKey: Guid(fea3b9b57e5d390449c6ed94f04da701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Backgrounds/2.png using Guid(fea3b9b57e5d390449c6ed94f04da701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeee1130e53eb5bcc19e6b164b402453') in 1.727072 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.494703 seconds.
+  path: Assets/2D Space Kit/Missiles/Missile (3).png
+  artifactKey: Guid(9c7df7a295e42674eb093a49346a77db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Missiles/Missile (3).png using Guid(9c7df7a295e42674eb093a49346a77db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4ba07bf640b894d2d78aa55c68d40f2') in 0.014712 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/2D Space Kit/Missiles/Missile (5).png
+  artifactKey: Guid(cc2721dc8706a474b97273837abcf0b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Missiles/Missile (5).png using Guid(cc2721dc8706a474b97273837abcf0b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7f8a6d96c4a94914f77ee781b71548c') in 0.015350 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
