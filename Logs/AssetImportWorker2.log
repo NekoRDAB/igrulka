@@ -223,3 +223,61 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 519.657918 seconds.
+  path: Assets/2D Space Kit/Ships and Stations/Alien 1.png
+  artifactKey: Guid(f7eb00cb3ec9bab45b85d561558c4250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Ships and Stations/Alien 1.png using Guid(f7eb00cb3ec9bab45b85d561558c4250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1fded8c1113110368cfd51513123ca3') in 0.061429 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.098892 seconds.
+  path: Assets/2D Space Kit/Ships and Stations/Alien 4.png
+  artifactKey: Guid(83f530308b93c554f91af6d5a8ce5607) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Ships and Stations/Alien 4.png using Guid(83f530308b93c554f91af6d5a8ce5607) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71cb71c1a83b2796aa6cf18ac1bcf0d9') in 0.021898 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/2D Space Kit/Ships and Stations/Station 2.png
+  artifactKey: Guid(e8c31d2fa3f34be4c81690a90d57718e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Ships and Stations/Station 2.png using Guid(e8c31d2fa3f34be4c81690a90d57718e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7a242c14ccb4407fa57cf2b3634bfec') in 0.043146 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/2D Space Kit/Ships and Stations/Huge 1.png
+  artifactKey: Guid(19ea3c87eb07d7f429b7164c647f167f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Ships and Stations/Huge 1.png using Guid(19ea3c87eb07d7f429b7164c647f167f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97ca4d57412d5620c5a38d6c632689e8') in 0.024621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/2D Space Kit/Ships and Stations/Turret Platform.png
+  artifactKey: Guid(76b0aac3cf1d96c4dbe96461a16846a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Ships and Stations/Turret Platform.png using Guid(76b0aac3cf1d96c4dbe96461a16846a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36df6469313f154e434b035cb0c4aae3') in 0.016560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/2D Space Kit/Ships and Stations/Cruiser 3.png
+  artifactKey: Guid(c4f8a01fad80ab74f8e250b688d74a55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Ships and Stations/Cruiser 3.png using Guid(c4f8a01fad80ab74f8e250b688d74a55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '518b112ba301754e594654f99aa368d7') in 0.023258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/2D Space Kit/Ships and Stations/Fighter 2.png
+  artifactKey: Guid(394b5b0edcab9644e883ef25893924dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Ships and Stations/Fighter 2.png using Guid(394b5b0edcab9644e883ef25893924dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7133d85070f558c31d576459d0506d13') in 0.013689 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/2D Space Kit/Ships and Stations/Carrier 1.png
+  artifactKey: Guid(9c85acf95f904fd479f36a25bc647fd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Ships and Stations/Carrier 1.png using Guid(9c85acf95f904fd479f36a25bc647fd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7431adc37823c55a783d99ee624f15a4') in 0.022053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/2D Space Kit/Ships and Stations/Frigate 1.png
+  artifactKey: Guid(e72b5607b24dd3247a7168ad745086fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Space Kit/Ships and Stations/Frigate 1.png using Guid(e72b5607b24dd3247a7168ad745086fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff89fc2d7b9b85b00c01156446074981') in 0.019429 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
