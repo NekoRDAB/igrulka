@@ -4,46 +4,33 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Vector2 moveVector;
-    public float speed = 2f;
+    Rigidbody2D ownShip;
+    float movementSpeed = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ownShip = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Walk();
-        Flip();
+        var movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        movement = Vector2.ClampMagnitude(movement, movementSpeed);
+        if(movement != Vector2.zero)
+        {
+            ownShip.MovePosition(ownShip.position + movement);
+            transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y)*180/Mathf.PI);
+        }
     }
 
-    void Walk()
+    private void OnCollisionEnter(Collision collision)
     {
-        moveVector.x = Input.GetAxis("Horizontal");
-        moveVector.y = Input.GetAxis("Vertical");
-        rb.velocity = new Vector2(moveVector.x * speed, moveVector.y * speed);
+        print("collision");
     }
 
-    private void Flip()
+    public void OnTrigger2D(Collider2D collision)
     {
-        if (Input.GetAxisRaw("Horizontal") == 1)
-        {
-            transform.localScale = new Vector3(1, 1);
-        }
-        else if (Input.GetAxisRaw("Horizontal") == -1)
-        {
-            transform.localScale = new Vector3(-1, 1);
-        }
-        else if (Input.GetAxisRaw("Vertical") == 1)
-        {
-            transform.localScale = new Vector3(1, -1);
-        }
-        else if (Input.GetAxisRaw("Vertical") == -1)
-        {
-            transform.localScale = new Vector3(1, 1);
-        }
+        ownShip.position = new Vector2(-6, 4);
     }
 }
