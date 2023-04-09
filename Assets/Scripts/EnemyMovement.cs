@@ -7,21 +7,19 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform player;
 
-    private Rigidbody2D ship;
-
-    [SerializeField] private float speed;
+    public Enemy enemy { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
-        ship = GetComponent<Rigidbody2D>();
+        enemy = new Enemy(10, 0.08f, GetComponent<Rigidbody2D>());
     }
 
     // Update is called once per frame
     void Update()
     {
-        var movement = (Vector2)player.position - ship.position;
-        movement = Vector2.ClampMagnitude(movement, speed);
-        ship.MovePosition(ship.position + movement);
+        var movement = (Vector2)player.position - enemy.Ship.position;
+        movement = Vector2.ClampMagnitude(movement, enemy.Speed);
+        enemy.Ship.MovePosition(enemy.Ship.position + movement);
         transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI);
     }
 }

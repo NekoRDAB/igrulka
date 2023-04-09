@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace Assets.Scripts
 
         [SerializeField] private Transform exhaust;
 
-        private int health = 100;
+        private double health = 100;
         // Start is called before the first frame update
         void Start()
         {
@@ -31,12 +32,18 @@ namespace Assets.Scripts
                 ownShip.MovePosition(ownShip.position + movement);
                 transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y)*180/Mathf.PI);
             }
+
+            if (health <= 0 && Time.timeScale != 0)
+            {
+                print("game over");
+                Time.timeScale = 0;
+            }
         }
 
         void OnCollisionStay2D(Collision2D collision)
         {
-            var collidedObject = collision.gameObject;
-            print(collidedObject);
+            var damage = collision.gameObject.GetComponent<EnemyMovement>().enemy.Damage;
+            health -= damage / 60.0;
         }
     }
 }
