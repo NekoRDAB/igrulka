@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -5,7 +6,11 @@ namespace Assets.Scripts
     public class Move : MonoBehaviour
     {
         Rigidbody2D ownShip;
-        float movementSpeed = 0.1f;
+        [SerializeField] private float movementSpeed = 0.1f;
+
+        [SerializeField] private Transform exhaust;
+
+        private int health = 100;
         // Start is called before the first frame update
         void Start()
         {
@@ -16,6 +21,10 @@ namespace Assets.Scripts
         void Update()
         {
             var movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            if (movement == Vector2.zero)
+                exhaust.localScale = new Vector3(1, 1, 1);
+            else
+                exhaust.localScale = new Vector3(10, 3, 1);
             movement = Vector2.ClampMagnitude(movement, movementSpeed);
             if(movement != Vector2.zero)
             {
@@ -24,14 +33,10 @@ namespace Assets.Scripts
             }
         }
 
-        private void OnCollisionEnter(Collision collision)
+        void OnCollisionStay2D(Collision2D collision)
         {
-            print("collision");
-        }
-
-        public void OnTrigger2D(Collider2D collision)
-        {
-            ownShip.position = new Vector2(-6, 4);
+            var collidedObject = collision.gameObject;
+            print(collidedObject);
         }
     }
 }
