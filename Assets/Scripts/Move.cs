@@ -12,6 +12,8 @@ namespace Assets.Scripts
         [SerializeField] private Transform exhaust;
 
         private double health = 100;
+        [SerializeField] private GameOverScreen gameOverScreen;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -37,6 +39,7 @@ namespace Assets.Scripts
             {
                 print("game over");
                 Time.timeScale = 0;
+                gameOverScreen.SetUp();
             }
         }
 
