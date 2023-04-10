@@ -11,12 +11,13 @@ namespace Assets.Scripts
 
         [SerializeField] private Transform exhaust;
 
-        private double health = 100;
+        private double health;
         [SerializeField] private GameOverScreen gameOverScreen;
 
         // Start is called before the first frame update
         void Start()
         {
+            health = 100;
             ownShip = GetComponent<Rigidbody2D>();
         }
 
@@ -35,10 +36,8 @@ namespace Assets.Scripts
                 transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y)*180/Mathf.PI);
             }
 
-            if (health <= 0 && Time.timeScale != 0)
+            if (health <= 0)
             {
-                print("game over");
-                Time.timeScale = 0;
                 gameOverScreen.SetUp();
             }
         }
