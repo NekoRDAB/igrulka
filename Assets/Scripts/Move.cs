@@ -11,7 +11,7 @@ namespace Assets.Scripts
 
         [SerializeField] private Transform exhaust;
 
-        private double health;
+        public double health;
         [SerializeField] private GameOverScreen gameOverScreen;
 
         // Start is called before the first frame update
