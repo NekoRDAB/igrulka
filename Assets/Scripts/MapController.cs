@@ -31,7 +31,12 @@ public class InfiniteMap : MonoBehaviour
         else
         {
             for (var i = 1; i < 9; i++)
-                
+            {
+                if(ShipInSegment(i))
+                {
+                    RegenerateMap(i);
+                }
+            }
         }
     }
 
@@ -39,7 +44,6 @@ public class InfiniteMap : MonoBehaviour
     {
         var current = mapSegments[0];
         var position = current.transform.position;
-        GenerateMapSegment(position.x, position.y);
         for(var dx = -1; dx < 2; dx++)
         for (var dy = -1; dy < 2; dy++)
         {
@@ -56,22 +60,28 @@ public class InfiniteMap : MonoBehaviour
         mapSegments.Add(mapSegment);
     }
 
-    // void GenerateNewMapSegment() {
-    //     int lastIndex = mapSegments.Count - 1;
-    //     GenerateMapSegment(lastIndex + 1);
-    // }
-    //
-    // void RemoveOldMapSegments() {
-    //     int lastIndex = mapSegments.Count - 1;
-    //     Destroy(mapSegments[0]);
-    //     mapSegments.RemoveAt(0);
-    // }
-    //
-    // bool IsMainShipAtEdgeOfMap() {
-    //     var mainShipPosition = ownShip.transform.position;
-    //     var mapEdgeX = mapSegments.Count * segmentSize;
-    //     return Mathf.Abs(mainShipPosition.x) >= mapEdgeX || Mathf.Abs(mainShipPosition.y) >= mapEdgeX;
-    // }
+    void RegenerateMap(int index)
+    {
+        var current = mapSegments[index];
+        var position = current.transform.position;
+        for (var i = 0; i < 9; i++)
+        {
+            if (i == index) continue;
+            Destroy(mapSegments[i]);
+        }
+        mapSegments.Clear();
+        mapSegments.Add(current);
+        GenerateMap(position.x, position.y);
+    }
+
+    bool ShipInSegment(int index)
+    {
+        var current = mapSegments[index];
+        var position = current.transform.position;
+        var shipPosition = ownShip.transform.position;
+        return Math.Abs(position.x - shipPosition.x) < mapWidth / 2 
+            && Math.Abs(position.y - shipPosition.y) < mapHeight / 2;
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
