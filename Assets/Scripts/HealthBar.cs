@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var health = ownShip.GetComponent<Move>().health;
+        var health = ownShip.GetComponent<PlayerShipBehaviour>().health;
         healthBar.localScale = new Vector3((float)(health / 100.0), 1, 1);
     }
 }

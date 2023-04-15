@@ -4,7 +4,7 @@ using System.Diagnostics;
 using Assets.Scripts;
 using UnityEngine;
 
-public class ExpBehavour : MonoBehaviour
+public class ExpBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject ownShip;
 
@@ -33,7 +33,7 @@ public class ExpBehavour : MonoBehaviour
         if (distance < Mathf.Epsilon)
         {
             //AddExp();
-            var player = ownShip.GetComponent<Move>();
+            var player = ownShip.GetComponent<PlayerShipBehaviour>();
             player.expa++;
             Destroy(gameObject);
             print("exp++");

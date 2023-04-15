@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Component
+public class EnemyInterface : Component
 {
     public readonly int Damage;
     public readonly float Speed;
     public readonly Rigidbody2D Ship;
-    public Enemy(int damage, float speed, Rigidbody2D ship)
+    public EnemyInterface(int damage, float speed, Rigidbody2D ship)
     {
         Damage = damage;
         Speed = speed;

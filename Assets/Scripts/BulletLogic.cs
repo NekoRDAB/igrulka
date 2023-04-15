@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour
+public class BulletLogic : MonoBehaviour
 {
     public float speed = 20f;
     public Rigidbody2D rb;
@@ -29,7 +29,7 @@ public class bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        EnemyMovement enemy = hitInfo.GetComponent<EnemyMovement>();
+        EnemyBehaviour enemy = hitInfo.GetComponent<EnemyBehaviour>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);

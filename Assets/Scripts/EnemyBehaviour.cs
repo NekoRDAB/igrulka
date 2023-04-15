@@ -4,7 +4,7 @@ using System.Diagnostics;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] public int health = 100;
@@ -13,11 +13,11 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
 
-    public Enemy enemy { get; private set; }
+    public EnemyInterface EnemyInterface { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
-        enemy = new Enemy(60, 0.08f, GetComponent<Rigidbody2D>());
+        EnemyInterface = new EnemyInterface(60, 0.08f, GetComponent<Rigidbody2D>());
         spriteRenderer = GetComponent<SpriteRenderer>();
         timeDamaged = new Stopwatch();
         player = GameObject.Find("OwnShip");
@@ -26,9 +26,9 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var movement = (Vector2)player.transform.position - enemy.Ship.position;
-        movement = Vector2.ClampMagnitude(movement, enemy.Speed);
-        enemy.Ship.MovePosition(enemy.Ship.position + movement);
+        var movement = (Vector2)player.transform.position - EnemyInterface.Ship.position;
+        movement = Vector2.ClampMagnitude(movement, EnemyInterface.Speed);
+        EnemyInterface.Ship.MovePosition(EnemyInterface.Ship.position + movement);
         transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI);
         if (spriteRenderer.color == Color.red && timeDamaged.ElapsedMilliseconds > 400)
         {
@@ -53,8 +53,8 @@ public class EnemyMovement : MonoBehaviour
 
     void Die()
     {
-        Instantiate(explosion, enemy.Ship.position, Quaternion.identity);
-        Instantiate(exp, enemy.Ship.position, Quaternion.identity);
+        Instantiate(explosion, EnemyInterface.Ship.position, Quaternion.identity);
+        Instantiate(exp, EnemyInterface.Ship.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

@@ -102,7 +102,7 @@ namespace Assets._2D_Space_Kit.Scripts
 			
 			
                 } else {
-                    //Move pointer to the center (Will stop when it hits the deadzone)
+                    //PlayerShipBehaviour pointer to the center (Will stop when it hits the deadzone)
                     pointerPosition.x = Mathf.Lerp (pointerPosition.x, Screen.width / 2, center_speed * Time.deltaTime);
                     pointerPosition.y = Mathf.Lerp (pointerPosition.y, Screen.height / 2, center_speed * Time.deltaTime);
                 }

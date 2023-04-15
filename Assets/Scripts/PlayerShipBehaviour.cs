@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Move : MonoBehaviour
+    public class PlayerShipBehaviour : MonoBehaviour
     {
         Rigidbody2D ownShip;
         [SerializeField] private float movementSpeed = 0.1f;
@@ -48,7 +48,7 @@ namespace Assets.Scripts
 
         void OnCollisionStay2D(Collision2D collision)
         {
-            var damage = collision.gameObject.GetComponent<EnemyMovement>().enemy.Damage;
+            var damage = collision.gameObject.GetComponent<EnemyBehaviour>().EnemyInterface.Damage;
             health -= damage / 60.0;
         }
 
