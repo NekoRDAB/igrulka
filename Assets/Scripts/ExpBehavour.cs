@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Assets.Scripts;
 using UnityEngine;
 
 public class ExpBehavour : MonoBehaviour
@@ -32,6 +33,8 @@ public class ExpBehavour : MonoBehaviour
         if (distance < Mathf.Epsilon)
         {
             //AddExp();
+            var player = ownShip.GetComponent<Move>();
+            player.expa++;
             Destroy(gameObject);
             print("exp++");
         }

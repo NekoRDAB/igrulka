@@ -14,6 +14,9 @@ namespace Assets.Scripts
         public double health;
         [SerializeField] private GameOverScreen gameOverScreen;
 
+        private int level = 1;
+        public float expa;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -24,6 +27,7 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            levelUp();
             var movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             if (movement == Vector2.zero)
                 exhaust.localScale = new Vector3(1, 1, 1);
@@ -46,6 +50,16 @@ namespace Assets.Scripts
         {
             var damage = collision.gameObject.GetComponent<EnemyMovement>().enemy.Damage;
             health -= damage / 60.0;
+        }
+
+        void levelUp()
+        {
+            if (expa == level + level * 5)
+            {
+                level++;
+                expa = 0;
+                print($"Level up. New level = {level}");
+            }
         }
     }
 }

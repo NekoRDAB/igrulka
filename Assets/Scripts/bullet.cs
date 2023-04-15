@@ -37,7 +37,6 @@ public class bullet : MonoBehaviour
         var target = hitInfo.name;
         if(target == "OwnShip" || target == "bullet(Clone)")
             return;
-        Debug.Log(hitInfo.name);
         Destroy(gameObject);
     }
 }
