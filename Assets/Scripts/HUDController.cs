@@ -10,6 +10,7 @@ public class HUDController : MonoBehaviour
     private TextMeshProUGUI level;
     private Canvas HUD;
     private TextMeshProUGUI killCountText;
+    private TextMeshProUGUI timeSurvived;
     private GameStateController gameStateController;
 
     private int killCount;
@@ -17,6 +18,7 @@ public class HUDController : MonoBehaviour
     void Start()
     {
         HUD = GetComponent<Canvas>();
+        timeSurvived = GameObject.Find("TimeSurvived").GetComponent<TextMeshProUGUI>();
         slider = GameObject.Find("ExpBar").GetComponent<Slider>();
         level = GameObject.Find("Level").GetComponent<TextMeshProUGUI>();
         killCountText = GameObject.Find("KillCount").GetComponent<TextMeshProUGUI>();
@@ -31,6 +33,10 @@ public class HUDController : MonoBehaviour
         slider.value = gameStateController.experience;
         level.text = $"lvl. {gameStateController.level}";
         killCountText.text = $"killed: {killCount}";
+        var timer = gameStateController.survivalTimer;
+        var minutes = timer.Elapsed.Minutes < 10 ? "0" + timer.Elapsed.Minutes.ToString() : timer.Elapsed.Minutes.ToString();
+        var seconds = timer.Elapsed.Seconds < 10 ? "0" + timer.Elapsed.Seconds.ToString() : timer.Elapsed.Seconds.ToString();
+        timeSurvived.text = $"{minutes}:{seconds}";
     }
 
     public void IncreaseKillCount()

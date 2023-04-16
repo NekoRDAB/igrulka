@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Assets.Scripts;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class GameStateController : MonoBehaviour
 {
     public int level { get; private set; }
     public int experience { get; private set; }
-
+    public Stopwatch survivalTimer;
     private GameObject ownShip;
     private double health;
     [SerializeField] private GameOverScreen gameOverScreen;
@@ -15,6 +16,8 @@ public class GameStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        survivalTimer = new Stopwatch();
+        survivalTimer.Start();
         level = 1;
         experience = 0;
         ownShip = GameObject.Find("OwnShip");
@@ -24,7 +27,7 @@ public class GameStateController : MonoBehaviour
     void Update()
     {
         health = ownShip.GetComponent<PlayerShipBehaviour>().health;
-        if (health <= 0)
+        if (health <= 0 || survivalTimer.Elapsed.Minutes >= 20)
         {
             gameOverScreen.SetUp();
         }
