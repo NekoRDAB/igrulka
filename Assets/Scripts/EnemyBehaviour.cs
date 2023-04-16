@@ -12,6 +12,7 @@ public class EnemyBehaviour : MonoBehaviour
     private Stopwatch timeDamaged;
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
+    [SerializeField] private GameObject damageNumbers;
 
     public EnemyInterface EnemyInterface { get; private set; }
     // Start is called before the first frame update
@@ -42,6 +43,8 @@ public class EnemyBehaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        var damageNumber = Instantiate(damageNumbers, EnemyInterface.Ship.position, Quaternion.identity);
+        damageNumber.GetComponent<NumbersBehaviour>().SetNumber(damage);
         spriteRenderer.color = Color.red;
         if (health <= 0)
         {

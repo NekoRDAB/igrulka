@@ -1018,6 +1018,7 @@ GameObject:
   - component: {fileID: 1060619518}
   - component: {fileID: 1060619517}
   - component: {fileID: 1060619516}
+  - component: {fileID: 1060619520}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1110,6 +1111,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1060619520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060619515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19c0436f27758c4789126beaf0e1487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1124987156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,6 +2322,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1992808652}
+    - target: {fileID: 134434226275874292, guid: 782d983eb4009be40a825515312dcd24, type: 3}
+      propertyPath: damageNumbers
+      value: 
+      objectReference: {fileID: 1567834111071343437, guid: 2d886ea40f64c494aa1d6b446760d49c, type: 3}
     - target: {fileID: 389095176044957469, guid: 782d983eb4009be40a825515312dcd24, type: 3}
       propertyPath: m_Name
       value: Enemy
