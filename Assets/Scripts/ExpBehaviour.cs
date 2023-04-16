@@ -32,7 +32,7 @@ public class ExpBehaviour : MonoBehaviour
             exp.MovePosition(exp.position + movement);
         }
 
-        if (distance < Mathf.Epsilon)
+        if (distance < 5)
         {
             gameStateController.AddExp();
             Destroy(gameObject);
