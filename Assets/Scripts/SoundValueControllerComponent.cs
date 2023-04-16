@@ -19,7 +19,7 @@ public class SoundVolumeControllerComponent : MonoBehaviour
     [SerializeField] private string textVolumeTag;
 
     [Header("Parameters")]
-    [SerializeField] private float volume;
+    [SerializeField] private float volume = 100;
 
     private void Awake()
     {

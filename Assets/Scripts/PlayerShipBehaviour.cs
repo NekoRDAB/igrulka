@@ -36,8 +36,9 @@ namespace Assets.Scripts
 
         void OnCollisionStay2D(Collision2D collision)
         {
-            var damage = collision.gameObject.GetComponent<EnemyBehaviour>().EnemyInterface.Damage;
+            var damage = collision.gameObject.GetComponent<EnemyBehaviour>().damage;
             health -= damage / 60.0;
+            print(damage);
         }
     }
 }

@@ -7,19 +7,19 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] public int health = 100;
-    [SerializeField] public int damage = 40;
+    [SerializeField] public int health;
+    [SerializeField] public int damage;
+    [SerializeField] private float speed;
+    private Rigidbody2D ship;
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
     [SerializeField] private GameObject damageNumbers;
-
-    public EnemyInterface EnemyInterface { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
-        EnemyInterface = new EnemyInterface(damage, 0.08f, GetComponent<Rigidbody2D>());
+        ship = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         timeDamaged = new Stopwatch();
         player = GameObject.Find("OwnShip");
@@ -28,9 +28,9 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var movement = (Vector2)player.transform.position - EnemyInterface.Ship.position;
-        movement = Vector2.ClampMagnitude(movement, EnemyInterface.Speed);
-        EnemyInterface.Ship.MovePosition(EnemyInterface.Ship.position + movement);
+        var movement = (Vector2)player.transform.position - ship.position;
+        movement = Vector2.ClampMagnitude(movement, speed);
+        ship.MovePosition(ship.position + movement);
         transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI);
         if (spriteRenderer.color == Color.red && timeDamaged.ElapsedMilliseconds > 400)
         {
@@ -44,7 +44,7 @@ public class EnemyBehaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        var damageNumber = Instantiate(damageNumbers, EnemyInterface.Ship.position, Quaternion.identity);
+        var damageNumber = Instantiate(damageNumbers, ship.position, Quaternion.identity);
         damageNumber.GetComponent<NumbersBehaviour>().SetNumber(damage);
         spriteRenderer.color = Color.red;
         if (health <= 0)
@@ -57,8 +57,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Die()
     {
-        Instantiate(explosion, EnemyInterface.Ship.position, Quaternion.identity);
-        Instantiate(exp, EnemyInterface.Ship.position, Quaternion.identity);
+        Instantiate(explosion, ship.position, Quaternion.identity);
+        Instantiate(exp, ship.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
