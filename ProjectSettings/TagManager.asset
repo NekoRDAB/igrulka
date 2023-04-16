@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BG_Music_Volume_Slider
+  - BG_Music_Volume_Text
   layers:
   - Default
   - TransparentFX
