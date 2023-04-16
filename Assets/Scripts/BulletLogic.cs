@@ -10,10 +10,13 @@ public class BulletLogic : MonoBehaviour
     public int damage = 60;
     public GameObject ownShip;
     public float maxDistance = 15000;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.up * speed;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
         ownShip = GameObject.Find("OwnShip");
     }
     
