@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Transform ship;
-    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject enemy1;
+    [SerializeField] private GameObject enemy2;
     [SerializeField] private float spawnInterval = 3.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemy(spawnInterval, enemy));
+        StartCoroutine(SpawnEnemy(spawnInterval, enemy1, enemy2));
     }
 
     void Update()
@@ -19,15 +20,20 @@ public class EnemySpawner : MonoBehaviour
         transform.transform.position = ship.position;
     }
 
-    private IEnumerator SpawnEnemy(float interval, GameObject enemy)
+    private IEnumerator SpawnEnemy(float interval, GameObject enemy1, GameObject enemy2)
     {
         yield return new WaitForSeconds(interval);
-        var newEnemy = Instantiate(
-            enemy, 
+        var newEnemy1 = Instantiate(
+            enemy1, 
             GetSpawnPosition(ship.position), 
             Quaternion.identity
             );
-        StartCoroutine(SpawnEnemy(interval, enemy));
+        var newEnemy2 = Instantiate(
+            enemy2, 
+            GetSpawnPosition(ship.position), 
+            Quaternion.identity
+        );
+        StartCoroutine(SpawnEnemy(interval, enemy1, enemy2));
     }
 
     private Vector3 GetSpawnPosition(Vector3 playerPosition)
