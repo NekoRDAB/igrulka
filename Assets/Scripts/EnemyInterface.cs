@@ -13,15 +13,4 @@ public class EnemyInterface : Component
         Speed = speed;
         Ship = ship;
     }
-    // Start is called before the first frame update
-    public void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

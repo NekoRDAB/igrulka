@@ -8,6 +8,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] public int health = 100;
+    [SerializeField] public int damage = 40;
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
     [SerializeField] private GameObject explosion;
@@ -18,7 +19,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnemyInterface = new EnemyInterface(60, 0.08f, GetComponent<Rigidbody2D>());
+        EnemyInterface = new EnemyInterface(damage, 0.08f, GetComponent<Rigidbody2D>());
         spriteRenderer = GetComponent<SpriteRenderer>();
         timeDamaged = new Stopwatch();
         player = GameObject.Find("OwnShip");

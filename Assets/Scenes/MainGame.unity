@@ -1850,6 +1850,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798688101}
   m_CullTransparentMesh: 1
+--- !u!1 &1813881644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 389095176044957469, guid: 782d983eb4009be40a825515312dcd24, type: 3}
+  m_PrefabInstance: {fileID: 3855517378590794627}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1813881645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813881644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3b255f9bb3e55439b959e010611dc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1992808647}
+  health: 100
+  damage: 40
+  spriteRenderer: {fileID: 0}
+  explosion: {fileID: 8899618006193897075, guid: dbe0e9f5c40d7bd4db5a266e18e5340a, type: 3}
+  exp: {fileID: 5336000287990818286, guid: a13e4dd5e5de8c046a7f5307cbdc26f7, type: 3}
+  damageNumbers: {fileID: 1567834111071343437, guid: 2d886ea40f64c494aa1d6b446760d49c, type: 3}
+  <EnemyInterface>k__BackingField: {fileID: 0}
 --- !u!1 &1818666567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,7 +2548,7 @@ PrefabInstance:
     - target: {fileID: 134434226275874292, guid: 782d983eb4009be40a825515312dcd24, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1992808652}
+      objectReference: {fileID: 1992808647}
     - target: {fileID: 134434226275874292, guid: 782d983eb4009be40a825515312dcd24, type: 3}
       propertyPath: damageNumbers
       value: 
@@ -2579,5 +2604,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 389095176044957469, guid: 782d983eb4009be40a825515312dcd24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1813881645}
   m_SourcePrefab: {fileID: 100100000, guid: 782d983eb4009be40a825515312dcd24, type: 3}
