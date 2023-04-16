@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SoundVolumeControllerComponent : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private AudioSource audio;
+    [SerializeField] private new AudioSource audio;
     [SerializeField] private Slider slider;
     [SerializeField] private Text text;
 

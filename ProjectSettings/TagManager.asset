@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BG_Music_Volume_Slider
   - BG_Music_Volume_Text
+  - BG_Music_Created
   layers:
   - Default
   - TransparentFX
