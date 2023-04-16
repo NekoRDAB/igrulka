@@ -8,14 +8,8 @@ namespace Assets.Scripts
     {
         Rigidbody2D ownShip;
         [SerializeField] private float movementSpeed = 0.1f;
-
         [SerializeField] private Transform exhaust;
-
         public double health;
-        [SerializeField] private GameOverScreen gameOverScreen;
-
-        private int level = 1;
-        public float expa;
 
         // Start is called before the first frame update
         void Start()
@@ -27,7 +21,6 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            levelUp();
             var movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             if (movement == Vector2.zero)
                 exhaust.localScale = new Vector3(1, 1, 1);
@@ -39,27 +32,12 @@ namespace Assets.Scripts
                 ownShip.MovePosition(ownShip.position + movement);
                 transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y)*180/Mathf.PI);
             }
-
-            if (health <= 0)
-            {
-                gameOverScreen.SetUp();
-            }
         }
 
         void OnCollisionStay2D(Collision2D collision)
         {
             var damage = collision.gameObject.GetComponent<EnemyBehaviour>().EnemyInterface.Damage;
             health -= damage / 60.0;
-        }
-
-        void levelUp()
-        {
-            if (expa == level + level * 5)
-            {
-                level++;
-                expa = 0;
-                print($"Level up. New level = {level}");
-            }
         }
     }
 }

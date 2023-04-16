@@ -9,6 +9,7 @@ public class ExpBehaviour : MonoBehaviour
     [SerializeField] private GameObject ownShip;
 
     [SerializeField] public float pickUpRange;
+    private GameStateController gameStateController;
     private float expSpeed = 1;
 
     private Rigidbody2D exp;
@@ -17,6 +18,7 @@ public class ExpBehaviour : MonoBehaviour
     {
         exp = GetComponent<Rigidbody2D>();
         ownShip = GameObject.Find("OwnShip");
+        gameStateController = GameObject.Find("GameStateController").GetComponent<GameStateController>();
     }
 
     // Update is called once per frame
@@ -32,9 +34,7 @@ public class ExpBehaviour : MonoBehaviour
 
         if (distance < Mathf.Epsilon)
         {
-            //AddExp();
-            var player = ownShip.GetComponent<PlayerShipBehaviour>();
-            player.expa++;
+            gameStateController.AddExp();
             Destroy(gameObject);
             print("exp++");
         }
