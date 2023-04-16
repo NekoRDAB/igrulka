@@ -36,7 +36,6 @@ public class ExpBehaviour : MonoBehaviour
         {
             gameStateController.AddExp();
             Destroy(gameObject);
-            print("exp++");
         }
     }
 }
