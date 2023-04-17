@@ -17,6 +17,7 @@ public class GameStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         survivalTimer = new Stopwatch();
         survivalTimer.Start();
         level = 1;
@@ -31,6 +32,7 @@ public class GameStateController : MonoBehaviour
         health = ownShip.GetComponent<PlayerShipBehaviour>().health;
         if (health <= 0 || survivalTimer.Elapsed.Minutes >= 20)
         {
+            Time.timeScale = 0;
             gameOverScreen.SetUp();
         }
     }
