@@ -13,6 +13,7 @@ public class EnemyBehaviour : MonoBehaviour
     private Rigidbody2D ship;
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
+    private AudioSource audio;
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
     [SerializeField] private GameObject damageNumbers;
@@ -23,6 +24,7 @@ public class EnemyBehaviour : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         timeDamaged = new Stopwatch();
         player = GameObject.Find("OwnShip");
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,7 +45,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        audio.Play();
         health -= damage;
+        var movement = ((Vector2)player.transform.position - ship.position).normalized;
+        ship.AddForce(-movement * 8000);
         var damageNumber = Instantiate(damageNumbers, ship.position, Quaternion.identity);
         damageNumber.GetComponent<NumbersBehaviour>().SetNumber(damage);
         spriteRenderer.color = Color.red;
