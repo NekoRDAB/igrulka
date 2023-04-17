@@ -11,6 +11,7 @@ public class GameStateController : MonoBehaviour
     public Stopwatch survivalTimer;
     private GameObject ownShip;
     private double health;
+    private AudioSource audio;
     [SerializeField] private GameOverScreen gameOverScreen;
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class GameStateController : MonoBehaviour
         level = 1;
         experience = 0;
         ownShip = GameObject.Find("OwnShip");
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class GameStateController : MonoBehaviour
 
     public void AddExp()
     {
+        audio.Play();
         experience++;
         if (experience >= level + level * 5)
         {

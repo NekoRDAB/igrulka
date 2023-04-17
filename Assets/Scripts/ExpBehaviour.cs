@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Assets.Scripts;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ExpBehaviour : MonoBehaviour
