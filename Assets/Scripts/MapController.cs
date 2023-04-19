@@ -74,7 +74,7 @@ public class InfiniteMap : MonoBehaviour
         GenerateMap(position.x, position.y);
     }
 
-    bool ShipInSegment(int index)
+    public bool ShipInSegment(int index)
     {
         var current = mapSegments[index];
         var position = current.transform.position;
