@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,10 +8,20 @@ namespace Assets.Scripts
     public class PlayerShipBehaviour : MonoBehaviour
     {
         Rigidbody2D ownShip;
+        public int turretsCount;
         [SerializeField] private float movementSpeed = 0.1f;
         [SerializeField] private Transform exhaust;
         public double health;
         private AudioSource audio;
+
+        public readonly List<Vector2> positionsList = new List<Vector2>()
+            {
+                new Vector2(0.375f, -1.5f), 
+                new Vector2(-0.375f, -1.5f),
+                new Vector2(0.375f, -0.5f),
+                new Vector2(-0.375f, -0.5f),
+                new Vector2(0, 0.6f)
+            };
 
         // Start is called before the first frame update
         void Start()
