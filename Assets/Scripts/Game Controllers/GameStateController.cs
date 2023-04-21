@@ -12,6 +12,7 @@ public class GameStateController : MonoBehaviour
     private GameObject ownShip;
     private double health;
     private AudioSource audio;
+    [SerializeField] private LevelUpScreen levelUpScreen;
     [SerializeField] private GameOverScreen gameOverScreen;
 
     // Start is called before the first frame update
@@ -21,8 +22,22 @@ public class GameStateController : MonoBehaviour
         survivalTimer = new Stopwatch();
         survivalTimer.Start();
         level = 1;
-        experience = 0;
-        ownShip = GameObject.Find("OwnShip");
+        // level = PlayerPrefs.GetInt("Level", 1); // Загружаем сохраненный уровень
+        // experience = PlayerPrefs.GetInt("Experience", 0); // Загружаем сохраненный опыт
+        //
+        // ownShip = GameObject.Find("OwnShip");
+        // var playerShipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
+        //
+        // // Загружаем сохраненное здоровье корабля
+        // var health = PlayerPrefs.GetFloat("Health", 100f);
+        // playerShipBehaviour.health = health;
+        //
+        // var hud = FindObjectOfType<HUDController>();
+        // var hudBehaviour = hud.GetComponent<HUDController>();
+        //
+        // var killCount = PlayerPrefs.GetString("KillCount", "0");
+        // hudBehaviour.killCountText.text = killCount;
+
         audio = GetComponent<AudioSource>();
     }
 
@@ -39,7 +54,11 @@ public class GameStateController : MonoBehaviour
 
     public void AddExp()
     {
-        audio.Play();
+        if (audio != null)
+        {
+            audio.Play();
+        }
+    
         experience++;
         if (experience >= level + level * 5)
         {
@@ -49,8 +68,19 @@ public class GameStateController : MonoBehaviour
         }
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     private void LevelUp()
     {
+        // var hud = GameObject.FindObjectOfType<HUDController>();
+        // var hudBehaviour = hud.GetComponent<HUDController>();
+        //
+        // PlayerPrefs.SetInt("Level", level);
+        // PlayerPrefs.SetInt("Experience", experience);
+        // PlayerPrefs.SetFloat("Health", (float)health);
+        // PlayerPrefs.SetString("KillCount", hudBehaviour.killCountText.text);
+        // PlayerPrefs.SetString("TimeSurvived", hudBehaviour.timeSurvived.text);
+        levelUpScreen.SetUp();
         print($"Level up. New level = {level}");
+        Time.timeScale = 0;
     }
 }

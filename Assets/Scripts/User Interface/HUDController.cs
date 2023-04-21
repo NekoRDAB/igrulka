@@ -9,8 +9,8 @@ public class HUDController : MonoBehaviour
     private Slider slider;
     private TextMeshProUGUI level;
     private Canvas HUD;
-    private TextMeshProUGUI killCountText;
-    private TextMeshProUGUI timeSurvived;
+    public TextMeshProUGUI killCountText;
+    public TextMeshProUGUI timeSurvived;
     private GameStateController gameStateController;
 
     private int killCount;
