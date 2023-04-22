@@ -56,7 +56,6 @@ namespace Assets.Scripts
         {
             var damage = collision.gameObject.GetComponent<EnemyBehaviour>().damage;
             health -= damage / 60.0;
-            print(damage);
         }
     }
 }
