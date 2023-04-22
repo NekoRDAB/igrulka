@@ -6,12 +6,10 @@ using UnityEngine;
 public interface ITurret
 {
     public Sprite GetSprite();
-    public float DamageMultiplier { get; set; }
-    public float SpeedMultiplier { get; set; }
 
-    public int AmountMultiplier { get; set; }
+    public string GetDescription();
 
-    public float CoolDownMultiplier { get; set; }
+    public int GetLevel();
 
     public void LevelUp();
 }

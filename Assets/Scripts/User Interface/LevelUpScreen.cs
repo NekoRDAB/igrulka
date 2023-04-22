@@ -14,7 +14,7 @@ public class LevelUpScreen : MonoBehaviour
     
     public void BackToGame()
     {
-
-        SceneManager.LoadScene("MainGame");
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
     }
 }

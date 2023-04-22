@@ -1471,10 +1471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19c0436f27758c4789126beaf0e1487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  level: {fileID: 0}
-  killCountText: {fileID: 0}
-  timeSurvived: {fileID: 0}
+  killCountText: {fileID: 1818666569}
+  timeSurvived: {fileID: 2067938929}
 --- !u!1 &1124987156
 GameObject:
   m_ObjectHideFlags: 0

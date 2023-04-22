@@ -52,6 +52,17 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
     {
         return gameObject.GetComponent<Sprite>();
     }
+
+    public string GetDescription()
+    {
+        return "выпускает протонные торпеды перед кораблем";
+    }
+
+    public int GetLevel()
+    {
+        return level;
+    }
+
     public void LevelUp()
     {
 
