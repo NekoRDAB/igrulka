@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserTurret : MonoBehaviour
+public class LaserTurret : MonoBehaviour, ITurret
 {
     [SerializeField] private GameObject laser;
     public int Damage { get; private set; }
@@ -46,5 +46,25 @@ public class LaserTurret : MonoBehaviour
             }
             elapsed = 0;
         }
+    }
+
+    public Sprite GetSprite()
+    {
+        return gameObject.GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public string GetDescription()
+    {
+        return "Абоба";
+    }
+
+    public int GetLevel()
+    {
+        return level;
+    }
+
+    public void LevelUp()
+    {
+
     }
 }
