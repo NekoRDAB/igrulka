@@ -1,25 +1,52 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 {
     [SerializeField] private GameObject torpedo;
-    public int Damage { get; private set; }
+    public static int Damage { get; private set; }
 
-    public float Speed { get; private set; }
-    public int Amount { get; private set; }
-    public float CoolDown { get; private set; }
+    public static float Speed { get; private set; }
+    public static int Amount { get; private set; }
+    public static float CoolDown { get; private set; }
 
     private int level;
-    private GameObject ownShip;
-    private PlayerShipBehaviour shipBehaviour;
+    private static GameObject ownShip;
+    private static PlayerShipBehaviour shipBehaviour;
     private float elapsed = 0.5f;
+    public static GameObject ThisTurret;
     public float DamageMultiplier { get; set; }
     public float SpeedMultiplier { get; set; }
     public int AmountMultiplier { get; set; }
     public float CoolDownMultiplier { get; set; }
+
+    private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
+    {
+        {0, "стреляет ракетами из носа корабля"},
+        {1, "выпускает дополнительный снаряд"},
+        {2, "+10 урона, +10% скорострельности"},
+        {3, "+10% к скорости"},
+        {4, "что - то"},
+    };
+
+    private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
+    {
+        { 0, Init },
+        { 1, () => Amount++ },
+        {
+            2, () =>
+            {
+                Damage++;
+                CoolDown *= 0.9f;
+            }
+        },
+        { 3, () => Speed *= 1.1f },
+        { 4, () => print("неа") },
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +82,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 
     public string GetDescription()
     {
-        return "Абоба";
+        return $"уровень {level}\n{DescriptionDict[level]}";
     }
 
     public int GetLevel()
@@ -65,6 +92,12 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 
     public void LevelUp()
     {
+        LevelUpDict[level].Invoke();
+        level++;
+    }
 
+    private static void Init()
+    {
+        
     }
 }

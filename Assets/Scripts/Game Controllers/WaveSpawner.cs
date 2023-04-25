@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if (state != SpawnState.Spawning)
             {
-                //StartCoroutine(SpawnWave(waveProcessing.GetNextWave()));
+                StartCoroutine(SpawnWave(waveProcessing.GetNextWave()));
             }
         }
         else
@@ -102,7 +102,7 @@ public class Wave
 
 class WaveProcessing
 {
-    private List<(Wave, int)> waves;
+    private List<(Wave, int)> waves = new List<(Wave, int)>();
     private int waveNumber;
 
     public WaveProcessing(IEnumerable waves)

@@ -17,7 +17,7 @@ public class ProtonTorpedo : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         turret = GameObject.Find("ProtonTorpedoesTurret");
         turretBehaviour = turret.GetComponent<ProtonTorpedoesTurret>();
-        rb.velocity = transform.up * turretBehaviour.Speed;
+        rb.velocity = transform.up * ProtonTorpedoesTurret.Speed;
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
         ownShip = GameObject.Find("OwnShip");
@@ -38,7 +38,7 @@ public class ProtonTorpedo : MonoBehaviour
         EnemyBehaviour enemy = hitInfo.GetComponent<EnemyBehaviour>();
         if (enemy != null)
         {
-            enemy.TakeDamage(turretBehaviour.Damage);
+            enemy.TakeDamage(ProtonTorpedoesTurret.Damage);
             Destroy(gameObject);
         }
     }
