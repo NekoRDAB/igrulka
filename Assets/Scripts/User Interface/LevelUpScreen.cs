@@ -16,11 +16,12 @@ public class LevelUpScreen : MonoBehaviour
     public Button secondCardButton;
     public Button thirdCardButton;
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
+    [SerializeField] private SuperPuperTurret secondTurret;
 
     void Start()
     {
-        var turrets = new List<ProtonTorpedoesTurret>();
-        turrets.Add(firstTurret);
+        var turrets = new List<ITurret>();
+        turrets.Add(secondTurret);
         turrets.Add(firstTurret);
         turrets.Add(firstTurret);
 
@@ -30,7 +31,7 @@ public class LevelUpScreen : MonoBehaviour
         var firstUpgrade = turrets[firstIndex];
         var firstSprite = firstUpgrade.GetSprite();
         firstCardButton.image.sprite = firstSprite;
-        firstCardButton.GetComponentInChildren<Text>().text = firstTurret.GetDescription() + " 1";
+        firstCardButton.GetComponentInChildren<Text>().text = firstUpgrade.GetDescription() + " 1";
         
         var secondIndex = rnd.Next(0, turrets.Count);
         var secondUpgrade = turrets[secondIndex];
