@@ -4,7 +4,7 @@ OS: 'Windows 11  (10.0.22623) 64bit CoreSingleLanguage' Language: 'ru' Physical 
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.2.14f1\Editor\Unity.exe
+D:\UnityEditor\2022.2.14f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm

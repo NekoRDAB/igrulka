@@ -12,4 +12,6 @@ public interface ITurret
     public int GetLevel();
 
     public void LevelUp();
+
+    public void Init();
 }

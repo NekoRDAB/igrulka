@@ -18,6 +18,7 @@ public class LevelUpScreen : MonoBehaviour
     public Button thirdCardButton;
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
     [SerializeField] private SuperPuperTurret secondTurret;
+
     private List<ITurret> turrets;
     private ITurret firstUpgrade;
     private ITurret secondUpgrade;
@@ -25,19 +26,20 @@ public class LevelUpScreen : MonoBehaviour
 
     void Start()
     {
-        turrets = new List<ITurret>();
-        turrets.Add(secondTurret);
-        turrets.Add(firstTurret);
-        turrets.Add(firstTurret);
-        ProtonTorpedoesTurret.ThisTurret = firstTurret.gameObject;
-        DrawChoices();
+        
     }
 
     // Start is called before the first frame update
     public void SetUp()
     {
         gameObject.SetActive(true);
-
+        if (turrets is null)
+        {
+            turrets = new List<ITurret>();
+            turrets.Add(firstTurret);
+            turrets.Add(secondTurret);
+        }
+        DrawChoices();
     }
 
     private void DrawChoices()
@@ -71,21 +73,30 @@ public class LevelUpScreen : MonoBehaviour
     public void ChoseFirst()
     {
         print("1");
-        firstUpgrade.LevelUp();
+        if (firstUpgrade.GetLevel() == 0)
+            firstUpgrade.Init();
+        else
+            firstUpgrade.LevelUp();
         BackToGame();
     }
 
     public void ChoseSecond()
     {
         print("2");
-        secondUpgrade.LevelUp();
+        if (secondUpgrade.GetLevel() == 0)
+            secondUpgrade.Init();
+        else
+            secondUpgrade.LevelUp();
         BackToGame();
     }
 
     public void ChoseThird()
     {
         print("3");
-        thirdUpgrade.LevelUp();
+        if (thirdUpgrade.GetLevel() == 0)
+            thirdUpgrade.Init();
+        else
+            thirdUpgrade.LevelUp();
         BackToGame();
     }
 }

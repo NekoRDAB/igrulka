@@ -67,4 +67,9 @@ public class SuperPuperTurret : MonoBehaviour, ITurret
     {
 
     }
+
+    public void Init()
+    {
+        
+    }
 }

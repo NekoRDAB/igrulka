@@ -67,4 +67,9 @@ public class LaserTurret : MonoBehaviour, ITurret
     {
 
     }
+
+    public void Init()
+    {
+        
+    }
 }
