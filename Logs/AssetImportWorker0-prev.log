@@ -1,10 +1,6 @@
 Using pre-set license
 Built from '2022.2/staging' branch; Version is '2022.2.14f1 (b2c9b1ac6cc0) revision 11717041'; Using compiler version '192829333'; Build Type 'Release'
-<<<<<<< Updated upstream
 OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'ru' Physical Memory: 15741 MB
-=======
-OS: 'Windows 10  (10.0.19044) 64bit EnterpriseS' Language: 'ru' Physical Memory: 16319 MB
->>>>>>> Stashed changes
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -15,7 +11,6 @@ C:\Program Files\Unity\Hub\Editor\2022.2.14f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-<<<<<<< Updated upstream
 C:/Users/79521/Desktop/Game/igrulka
 -logFile
 Logs/AssetImportWorker0.log
@@ -23,15 +18,6 @@ Logs/AssetImportWorker0.log
 49975
 Successfully changed project path to: C:/Users/79521/Desktop/Game/igrulka
 C:/Users/79521/Desktop/Game/igrulka
-=======
-D:/Game/igrulka
--logFile
-Logs/AssetImportWorker0.log
--srvPort
-6173
-Successfully changed project path to: D:/Game/igrulka
-D:/Game/igrulka
->>>>>>> Stashed changes
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -61,7 +47,6 @@ D:/Game/igrulka
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-<<<<<<< Updated upstream
 Player connection [13884] Host "[IP] 10.240.10.185 [Port] 0 [Flags] 2 [Guid] 3882409356 [EditorId] 3882409356 [Version] 1048832 [Id] WindowsEditor(7,hempigod) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
 Player connection [13884] Host "[IP] 10.240.10.185 [Port] 0 [Flags] 2 [Guid] 3882409356 [EditorId] 3882409356 [Version] 1048832 [Id] WindowsEditor(7,hempigod) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
@@ -78,29 +63,10 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     3962 MB
     Driver:   30.0.15.1215
-=======
-Player connection [15732] Host "[IP] 192.168.0.47 [Port] 0 [Flags] 2 [Guid] 2823763006 [EditorId] 2823763006 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-0OD6UKE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
-
-Player connection [15732] Host "[IP] 192.168.0.47 [Port] 0 [Flags] 2 [Guid] 2823763006 [EditorId] 2823763006 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-0OD6UKE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
-
-Refreshing native plugins compatible for Editor in 9.12 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2022.2.14f1 (b2c9b1ac6cc0)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Game/igrulka/Assets
-GfxDevice: creating device client; threaded=0; jobified=0
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1060 3GB (ID=0x1c02)
-    Vendor:   NVIDIA
-    VRAM:     2978 MB
-    Driver:   31.0.15.2756
->>>>>>> Stashed changes
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/MonoBleedingEdge/etc'
-<<<<<<< Updated upstream
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -113,48 +79,21 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (215ms)
 		BeginReloadAssembly (93ms)
-=======
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56152
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.010351 seconds.
-- Loaded All Assemblies, in  0.340 seconds
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.273 seconds
-Domain Reload Profiling:
-	ReloadAssembly (199ms)
-		BeginReloadAssembly (89ms)
->>>>>>> Stashed changes
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
 		LoadAllAssembliesAndSetupDomain (0ms)
-<<<<<<< Updated upstream
 			LoadAssemblies (90ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (142ms)
 				TypeCache.Initialize (141ms)
 					TypeCache.ScanAssembly (138ms)
-=======
-			LoadAssemblies (88ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (135ms)
-				TypeCache.Initialize (134ms)
-					TypeCache.ScanAssembly (132ms)
->>>>>>> Stashed changes
 				ResolveRequiredComponents (1ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-<<<<<<< Updated upstream
 			SetupLoadedEditorAssemblies (267ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (10ms)
@@ -163,16 +102,6 @@ Domain Reload Profiling:
 				BeforeProcessingInitializeOnLoad (1ms)
 				ProcessInitializeOnLoadAttributes (182ms)
 				ProcessInitializeOnLoadMethodAttributes (65ms)
-=======
-			SetupLoadedEditorAssemblies (215ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (6ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (146ms)
-				ProcessInitializeOnLoadMethodAttributes (51ms)
->>>>>>> Stashed changes
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -180,7 +109,6 @@ Domain Reload Profiling:
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-<<<<<<< Updated upstream
 Symbol file LoadedFromMemory doesn't match image C:\Users\79521\Desktop\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\79521\Desktop\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 - Loaded All Assemblies, in  0.803 seconds
@@ -202,36 +130,10 @@ Domain Reload Profiling:
 			SetupTypeCache (342ms)
 				TypeCache.Initialize (313ms)
 					TypeCache.ScanAssembly (307ms)
-=======
-Symbol file LoadedFromMemory doesn't match image D:\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.728 seconds
-Refreshing native plugins compatible for Editor in 2.73 ms, found 4 plugins.
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.545 seconds
-Domain Reload Profiling:
-	ReloadAssembly (215ms)
-		BeginReloadAssembly (129ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		LoadAllAssembliesAndSetupDomain (511ms)
-			LoadAssemblies (268ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (306ms)
-				TypeCache.Initialize (279ms)
-					TypeCache.ScanAssembly (275ms)
->>>>>>> Stashed changes
 				ResolveRequiredComponents (5ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-<<<<<<< Updated upstream
 			SetupLoadedEditorAssemblies (435ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (7ms)
@@ -251,27 +153,6 @@ Unloading 4039 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 63 unused Assets / (70.4 KB). Loaded Objects now: 4508.
 Memory consumption went from 134.4 MB to 134.3 MB.
 Total: 4.544500 ms (FindLiveObjects: 0.538100 ms CreateObjectMapping: 0.338500 ms MarkObjects: 3.487600 ms  DeleteObjects: 0.178600 ms)
-=======
-			SetupLoadedEditorAssemblies (387ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (3ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (63ms)
-				ProcessInitializeOnLoadAttributes (276ms)
-				ProcessInitializeOnLoadMethodAttributes (31ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 3.08 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4039 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 63 unused Assets / (70.5 KB). Loaded Objects now: 4508.
-Memory consumption went from 134.2 MB to 134.1 MB.
-Total: 3.175000 ms (FindLiveObjects: 0.281600 ms CreateObjectMapping: 0.247600 ms MarkObjects: 2.535100 ms  DeleteObjects: 0.109800 ms)
->>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -286,37 +167,22 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-<<<<<<< Updated upstream
   Time since last request: 193.360290 seconds.
   path: Assets/Scenes/MainGame.unity
   artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/MainGame.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e0d2643f9727d823db48e96cdbf4094') in 0.003145 seconds
-=======
-  Time since last request: 10463.178689 seconds.
-  path: Assets/2D Space Kit/Scripts/PSDestroy.cs
-  artifactKey: Guid(75795b269014860408c543a40cba331d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Scripts/PSDestroy.cs using Guid(75795b269014860408c543a40cba331d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a96b54ecfca6d550c2648ff67445e402') in 0.002382 seconds
->>>>>>> Stashed changes
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-<<<<<<< Updated upstream
   Time since last request: 113.500946 seconds.
   path: Assets/Scripts/Turrets
   artifactKey: Guid(b11fcd2a822f8ed4bb6de959ec7adfc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/Turrets using Guid(b11fcd2a822f8ed4bb6de959ec7adfc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cffd794d27263f71a82658b4960d957d') in 0.004750 seconds
-=======
-  Time since last request: 12.424432 seconds.
-  path: Assets/Scripts/Turrets/LaserProjectile.cs
-  artifactKey: Guid(4cf7cd3270c3b7d4c801364a795745fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Turrets/LaserProjectile.cs using Guid(4cf7cd3270c3b7d4c801364a795745fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5cf0c9dcfe23219352d684104fab513') in 0.000941 seconds
->>>>>>> Stashed changes
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-<<<<<<< Updated upstream
   Time since last request: 3.630462 seconds.
   path: Assets/Scripts/Turrets/ProtonTorpedoesTurret.cs
   artifactKey: Guid(968fc6b7bbf0f3f4fae53f806f3ee0f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -894,11 +760,3 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-=======
-  Time since last request: 0.517961 seconds.
-  path: Assets/Scripts/Turrets/LaserTurret.cs
-  artifactKey: Guid(7b1f8e7dcdd48da48b7e16e22fe3e565) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Turrets/LaserTurret.cs using Guid(7b1f8e7dcdd48da48b7e16e22fe3e565) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac43bb8cab432e633906708da53b10ca') in 0.000362 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
->>>>>>> Stashed changes
