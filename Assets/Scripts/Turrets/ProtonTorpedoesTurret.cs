@@ -15,10 +15,9 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
     public static float CoolDown { get; private set; }
 
     private int level;
-    private static GameObject ownShip;
-    private static PlayerShipBehaviour shipBehaviour;
+    public static GameObject ownShip;
+    private  PlayerShipBehaviour shipBehaviour;
     private float elapsed = 0.5f;
-    public static GameObject ThisTurret;
     public float DamageMultiplier { get; set; }
     public float SpeedMultiplier { get; set; }
     public int AmountMultiplier { get; set; }
@@ -35,7 +34,6 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
     {
-        { 0, Init },
         { 1, () => Amount++ },
         {
             2, () =>
@@ -57,7 +55,6 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         CoolDown = 5f;
         Damage = 50;
         Speed = 30f;
-        level = 1;
     }
 
     // Update is called once per frame
@@ -96,8 +93,11 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         level++;
     }
 
-    private static void Init()
+    public void Init()
     {
-        
+        Start();
+        var turret = Instantiate(gameObject, ownShip.transform.position, ownShip.transform.rotation);
+        turret.transform.SetParent(ownShip.transform);
+        turret.transform.localPosition = shipBehaviour.positionsList[shipBehaviour.turretsCount];
     }
 }
