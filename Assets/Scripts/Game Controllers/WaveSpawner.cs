@@ -102,18 +102,14 @@ public class Wave
 
 class WaveProcessing
 {
-<<<<<<< HEAD
-    private List<(Wave, int)> waves = new List<(Wave, int)>();
-=======
     private List<Wave> waves = new List<Wave>();
->>>>>>> WabeSpawner
     private int waveNumber;
 
     public WaveProcessing(Wave[] waves)
     {
         waveNumber = -1;
         foreach (var wave in waves)
-            this.waves.Add((wave));
+            this.waves.Add(wave);
     }
 
     public Wave GetNextWave()
