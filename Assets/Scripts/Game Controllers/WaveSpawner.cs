@@ -11,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private GameObject enemy2;
     private WaveProcessing waveProcessing;
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves = 1f;
     public float waveCountDown;
     public SpawnState state = SpawnState.Counting;
     private void Start()
@@ -23,18 +23,17 @@ public class WaveSpawner : MonoBehaviour
                         {
                             { enemy1, 10 }
                         },
-                        20
+                        2
                     ),
                 new Wave(
                         new Dictionary<GameObject, int>
                         {
                             { enemy2, 15 }
                         },
-                        20
+                        1
                     )
             };
         waveProcessing = new WaveProcessing(waves);
-        Debug.Log(waveProcessing);
     }
 
     private void Update()
@@ -44,7 +43,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if (state != SpawnState.Spawning)
             {
-                //StartCoroutine(SpawnWave(waveProcessing.GetNextWave()));
+                StartCoroutine(SpawnWave(waveProcessing.GetNextWave()));
             }
         }
         else
@@ -68,6 +67,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(GameObject enemy)
     {
+        Debug.Log(enemy);
         Instantiate(
             enemy,
             GetSpawnPosition(),
@@ -102,19 +102,19 @@ public class Wave
 
 class WaveProcessing
 {
-    private List<(Wave, int)> waves;
+    private List<Wave> waves = new List<Wave>();
     private int waveNumber;
 
-    public WaveProcessing(IEnumerable waves)
+    public WaveProcessing(Wave[] waves)
     {
         waveNumber = -1;
         foreach (var wave in waves)
-            this.waves.Add(((Wave)wave, 1));
+            this.waves.Add((wave));
     }
 
     public Wave GetNextWave()
     {
         waveNumber = (waveNumber + 1) % waves.Count;
-        return waves[waveNumber].Item1;
+        return waves[waveNumber];
     }
 }
