@@ -199,7 +199,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -217,6 +217,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 757223011}
+  - {fileID: 424797253}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -586,7 +587,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 757223011}
+  m_Father: {fileID: 12801325}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -606,6 +607,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2064f803deefda45a02eec6f334a2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 424797255}
+  - {fileID: 424797255}
+  activateButtonKey: 271
+  nextButtonKey: 0
+  prevButtonKey: 0
 --- !u!114 &424797255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +637,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6039216, g: 0.07450981, b: 0.35686275, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -896,6 +903,38 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8405709469675222746, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
+      propertyPath: m_HandleRect
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405709469675222746, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405709469675222746, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405709469675222746, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.07450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405709469675222746, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405709469675222746, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405709469675222746, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.07450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405709469675222746, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.6039216
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8028963249851356512, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
@@ -937,7 +976,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1396579221}
-  - {fileID: 424797253}
   m_Father: {fileID: 12801325}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

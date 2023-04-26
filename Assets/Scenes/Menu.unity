@@ -380,9 +380,9 @@ MonoBehaviour:
   - {fileID: 274519840}
   - {fileID: 659491660}
   - {fileID: 1429361285}
-  activateButtonKey: 32
-  nextButtonKey: 274
-  prevButtonKey: 273
+  activateButtonKey: 271
+  nextButtonKey: 0
+  prevButtonKey: 0
 --- !u!1 &429907628
 GameObject:
   m_ObjectHideFlags: 0

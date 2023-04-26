@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -11,9 +12,9 @@ public class MainMenu : MonoBehaviour
 
     private int activeButtonIndex = 0;
 
-    public KeyCode activateButtonKey = KeyCode.Space;
-    public KeyCode nextButtonKey = KeyCode.Tab;
-    public KeyCode prevButtonKey = KeyCode.LeftShift;
+    [SerializeField] public KeyCode activateButtonKey = KeyCode.KeypadEnter;
+    [SerializeField] public KeyCode nextButtonKey = KeyCode.UpArrow;
+    [SerializeField] public KeyCode prevButtonKey = KeyCode.DownArrow;
 
     void Start()
     {
@@ -25,43 +26,31 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(activateButtonKey))
         {
-            // Trigger the button click event when the activate key is pressed
             buttons[activeButtonIndex].onClick.Invoke();
         }
 
+        if (buttons.Length == 1)
+            return;
+
         if (Input.GetKeyDown(nextButtonKey))
         {
-            // Deselect the current button when the next key is pressed
             buttons[activeButtonIndex].OnDeselect(null);
-
-            // Set the active button index to the next one
+            
+            if (activeButtonIndex == buttons.Length)
+                return;
             activeButtonIndex++;
-
-            // Wrap around to the first button if we reach the end of the list
-            if (activeButtonIndex >= buttons.Length)
-            {
-                activeButtonIndex = 0;
-            }
-
-            // Select the new active button
+            
             buttons[activeButtonIndex].Select();
         }
 
         if (Input.GetKeyDown(prevButtonKey))
         {
-            // Deselect the current button when the previous key is pressed
             buttons[activeButtonIndex].OnDeselect(null);
 
-            // Set the active button index to the previous one
+            if (activeButtonIndex == 0)
+                return;
             activeButtonIndex--;
-
-            // Wrap around to the last button if we reach the beginning of the list
-            if (activeButtonIndex < 0)
-            {
-                activeButtonIndex = buttons.Length - 1;
-            }
-
-            // Select the new active button
+            
             buttons[activeButtonIndex].Select();
         }
     }
