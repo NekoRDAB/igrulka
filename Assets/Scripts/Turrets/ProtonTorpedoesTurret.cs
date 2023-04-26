@@ -79,7 +79,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
             {
                 print(nearestEnemy);
                 var deviation = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
-                Instantiate(torpedo, nearestEnemy.position, ownShip.transform.rotation);
+                Instantiate(torpedo, ownShip.transform.position + deviation, nearestEnemy.rotation * Quaternion.Euler(180, 0, 0));
             }
             elapsed = 0;
         }
