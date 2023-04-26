@@ -25,8 +25,8 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "стреляет ракетами из носа корабля"},
-        {1, "выпускает дополнительный снаряд"},
+        {0, "Стреляет ракетами в сторону ближайшего врага"},
+        {1, "Туррели выполняют дополнительный снаряд"},
         {2, "+10 урона, +10% скорострельности"},
         {3, "+10% к скорости"},
         {4, "что - то"},
