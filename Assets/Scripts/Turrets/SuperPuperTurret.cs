@@ -70,6 +70,11 @@ public class SuperPuperTurret : MonoBehaviour, ITurret
 
     public void Init()
     {
-        
+        Start();
+        var turret = Instantiate(gameObject, ownShip.transform.position, ownShip.transform.rotation);
+        turret.transform.SetParent(ownShip.transform);
+        turret.transform.localPosition = shipBehaviour.positionsList[shipBehaviour.turretsCount];
+        shipBehaviour.turretsCount++;
+        level++;
     }
 }

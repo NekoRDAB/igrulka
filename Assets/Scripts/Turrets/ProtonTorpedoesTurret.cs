@@ -51,6 +51,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
     {
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
+        level = 0;
         Amount = 4;
         CoolDown = 5f;
         Damage = 50;
@@ -112,5 +113,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         var turret = Instantiate(gameObject, ownShip.transform.position, ownShip.transform.rotation);
         turret.transform.SetParent(ownShip.transform);
         turret.transform.localPosition = shipBehaviour.positionsList[shipBehaviour.turretsCount];
+        shipBehaviour.turretsCount++;
+        level++;
     }
 }

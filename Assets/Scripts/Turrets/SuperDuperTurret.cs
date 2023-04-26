@@ -1,48 +1,86 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SuperDuperTurret : MonoBehaviour, ITurret
 {
     [SerializeField] private GameObject superDuper;
-    public int Damage { get; private set; }
+    public static int Damage { get; private set; }
 
-    public float Speed { get; private set; }
-    public int Amount { get; private set; }
-    public float CoolDown { get; private set; }
+    public static float Speed { get; private set; }
+    public static int Amount { get; private set; }
+    public static float CoolDown { get; private set; }
 
     private int level;
-    private GameObject ownShip;
-    private PlayerShipBehaviour shipBehaviour;
+    public static GameObject ownShip;
+    private  PlayerShipBehaviour shipBehaviour;
     private float elapsed = 0.5f;
     public float DamageMultiplier { get; set; }
     public float SpeedMultiplier { get; set; }
     public int AmountMultiplier { get; set; }
     public float CoolDownMultiplier { get; set; }
 
+    private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
+    {
+        {0, "Стреляет ракетами в сторону ближайшего врага"},
+        {1, "Туррели выполняют дополнительный снаряд"},
+        {2, "+10 урона, +10% скорострельности"},
+        {3, "+10% к скорости"},
+        {4, "что - то"},
+    };
+
+    private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
+    {
+        { 1, () => Amount++ },
+        {
+            2, () =>
+            {
+                Damage++;
+                CoolDown *= 0.9f;
+            }
+        },
+        { 3, () => Speed *= 1.1f },
+        { 4, () => print("неа") },
+    };
+
     // Start is called before the first frame update
     void Start()
     {
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
+        level = 0;
         Amount = 4;
         CoolDown = 5f;
         Damage = 50;
         Speed = 30f;
-        level = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        var enemies = GameObject.FindGameObjectsWithTag("enemy");
+        Transform nearestEnemy = null;
+        var maxDistance = Mathf.Infinity;
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < maxDistance)
+            {
+                nearestEnemy = enemy.transform;
+                maxDistance = distance;
+            }
+        }
         elapsed += Time.deltaTime;
         if (elapsed >= CoolDown)
         {
             for (var i = 0; i < Amount; i++)
             {
+                print(nearestEnemy);
                 var deviation = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
-                Instantiate(superDuper, ownShip.transform.position + deviation, ownShip.transform.rotation);
+                Instantiate(superDuper, ownShip.transform.position + deviation, nearestEnemy.rotation * Quaternion.Euler(180, 0, 0));
             }
             elapsed = 0;
         }
@@ -55,7 +93,7 @@ public class SuperDuperTurret : MonoBehaviour, ITurret
 
     public string GetDescription()
     {
-        return "Абоба супер дупер";
+        return $"уровень {level}\n{DescriptionDict[level]} супер дупер";
     }
 
     public int GetLevel()
@@ -65,11 +103,17 @@ public class SuperDuperTurret : MonoBehaviour, ITurret
 
     public void LevelUp()
     {
-
+        LevelUpDict[level].Invoke();
+        level++;
     }
 
     public void Init()
     {
-        
+        Start();
+        var turret = Instantiate(gameObject, ownShip.transform.position, ownShip.transform.rotation);
+        turret.transform.SetParent(ownShip.transform);
+        turret.transform.localPosition = shipBehaviour.positionsList[shipBehaviour.turretsCount];
+        shipBehaviour.turretsCount++;
+        level++;
     }
 }
