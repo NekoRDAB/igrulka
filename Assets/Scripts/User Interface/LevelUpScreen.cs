@@ -22,6 +22,7 @@ public class LevelUpScreen : MonoBehaviour
     public TextMeshProUGUI thirdCardText;
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
     [SerializeField] private SuperPuperTurret secondTurret;
+    [SerializeField] private SuperDuperTurret thirdTurret;
 
     private List<ITurret> turrets;
     private ITurret firstUpgrade;
@@ -42,6 +43,7 @@ public class LevelUpScreen : MonoBehaviour
             turrets = new List<ITurret>();
             turrets.Add(firstTurret);
             turrets.Add(secondTurret);
+            turrets.Add(thirdTurret);
         }
         DrawChoices();
     }

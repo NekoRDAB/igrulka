@@ -1872,6 +1872,7 @@ MonoBehaviour:
   thirdCardText: {fileID: 324770988}
   firstTurret: {fileID: 7466736504094731712, guid: 6e4d2d015109d9645b50267d04bdff59, type: 3}
   secondTurret: {fileID: 7451256155772070648, guid: 1f093dc03e659f24fab07720b6942c93, type: 3}
+  thirdTurret: {fileID: 882412867537805900, guid: 790c60f063de60c4abadf71adc4f2fbc, type: 3}
 --- !u!114 &1043596127
 MonoBehaviour:
   m_ObjectHideFlags: 0
