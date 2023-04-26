@@ -34,7 +34,14 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            var movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            var horizontalInput = Input.GetAxis("Horizontal");
+            var verticalInput = Input.GetAxis("Vertical");
+            var movement = new Vector2(horizontalInput, verticalInput);
+            if (movement.magnitude > 0.1f) // проверяем, что есть движение
+            {
+                ownShip.MovePosition(ownShip.position + movement * movementSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.LookRotation(Vector3.forward, movement);
+            }
             if (movement == Vector2.zero)
             {
                 exhaust.localScale = new Vector3(1, 1, 1);
@@ -48,7 +55,11 @@ namespace Assets.Scripts
             if(movement != Vector2.zero)
             {
                 ownShip.MovePosition(ownShip.position + movement);
-                transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y)*180/Mathf.PI);
+                var direction = new Vector3(horizontalInput, verticalInput, 0);
+                if (direction.magnitude > 0.1f) // проверяем, что есть движение
+                {
+                    transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+                }
             }
         }
 

@@ -25,8 +25,8 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "стреляет ракетами из носа корабля"},
-        {1, "выпускает дополнительный снаряд"},
+        {0, "Стреляет ракетами в сторону ближайшего врага"},
+        {1, "Туррели выполняют дополнительный снаряд"},
         {2, "+10 урона, +10% скорострельности"},
         {3, "+10% к скорости"},
         {4, "что - то"},
@@ -60,13 +60,26 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
     // Update is called once per frame
     void Update()
     {
+        var enemies = GameObject.FindGameObjectsWithTag("enemy");
+        Transform nearestEnemy = null;
+        var maxDistance = Mathf.Infinity;
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < maxDistance)
+            {
+                nearestEnemy = enemy.transform;
+                maxDistance = distance;
+            }
+        }
         elapsed += Time.deltaTime;
         if (elapsed >= CoolDown)
         {
             for (var i = 0; i < Amount; i++)
             {
+                print(nearestEnemy);
                 var deviation = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
-                Instantiate(torpedo, ownShip.transform.position + deviation, ownShip.transform.rotation);
+                Instantiate(torpedo, ownShip.transform.position + deviation, nearestEnemy.rotation * Quaternion.Euler(180, 0, 0));
             }
             elapsed = 0;
         }
