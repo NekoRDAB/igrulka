@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
 using Microsoft.Unity.VisualStudio.Editor;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,8 +15,11 @@ using Random = System.Random;
 public class LevelUpScreen : MonoBehaviour
 {
     public Button firstCardButton;
+    public TextMeshProUGUI firstCardText;
     public Button secondCardButton;
+    public TextMeshProUGUI secondCardText;
     public Button thirdCardButton;
+    public TextMeshProUGUI thirdCardText;
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
     [SerializeField] private SuperPuperTurret secondTurret;
 
@@ -49,19 +53,19 @@ public class LevelUpScreen : MonoBehaviour
         firstUpgrade = turrets[firstIndex];
         var firstSprite = firstUpgrade.GetSprite();
         firstCardButton.image.sprite = firstSprite;
-        firstCardButton.GetComponentInChildren<Text>().text = firstUpgrade.GetDescription() + " 1";
+        firstCardText.text = firstUpgrade.GetDescription();
 
         var secondIndex = rnd.Next(0, turrets.Count);
         secondUpgrade = turrets[secondIndex];
         var secondSprite = secondUpgrade.GetSprite();
         secondCardButton.image.sprite = secondSprite;
-        secondCardButton.GetComponentInChildren<Text>().text = secondUpgrade.GetDescription() + " 2";
+        secondCardText.text = secondUpgrade.GetDescription();
 
         var thirdIndex = rnd.Next(0, turrets.Count);
         thirdUpgrade = turrets[thirdIndex];
         var thirdSprite = thirdUpgrade.GetSprite();
         thirdCardButton.image.sprite = thirdSprite;
-        thirdCardButton.GetComponentInChildren<Text>().text = thirdUpgrade.GetDescription() + " 3";
+        thirdCardText.text = thirdUpgrade.GetDescription();
     }
     
     public void BackToGame()
