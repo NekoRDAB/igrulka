@@ -14,11 +14,11 @@ using Random = System.Random;
 
 public class LevelUpScreen : MonoBehaviour
 {
-    public Button firstCardButton;
+    public Image firstCardButtonImage;
     public TextMeshProUGUI firstCardText;
-    public Button secondCardButton;
+    public Image secondCardButtonImage;
     public TextMeshProUGUI secondCardText;
-    public Button thirdCardButton;
+    public Image thirdCardButtonImage;
     public TextMeshProUGUI thirdCardText;
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
     [SerializeField] private SuperPuperTurret secondTurret;
@@ -54,19 +54,19 @@ public class LevelUpScreen : MonoBehaviour
         var firstIndex = rnd.Next(0, turrets.Count);
         firstUpgrade = turrets[firstIndex];
         var firstSprite = firstUpgrade.GetSprite();
-        firstCardButton.image.sprite = firstSprite;
+        firstCardButtonImage.sprite = firstSprite;
         firstCardText.text = firstUpgrade.GetDescription();
 
         var secondIndex = rnd.Next(0, turrets.Count);
         secondUpgrade = turrets[secondIndex];
         var secondSprite = secondUpgrade.GetSprite();
-        secondCardButton.image.sprite = secondSprite;
+        secondCardButtonImage.sprite = secondSprite;
         secondCardText.text = secondUpgrade.GetDescription();
 
         var thirdIndex = rnd.Next(0, turrets.Count);
         thirdUpgrade = turrets[thirdIndex];
         var thirdSprite = thirdUpgrade.GetSprite();
-        thirdCardButton.image.sprite = thirdSprite;
+        thirdCardButtonImage.sprite = thirdSprite;
         thirdCardText.text = thirdUpgrade.GetDescription();
     }
     
