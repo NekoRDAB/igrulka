@@ -14,7 +14,8 @@ public class GameStateController : MonoBehaviour
     private AudioSource audio;
     [SerializeField] private LevelUpScreen levelUpScreen;
     [SerializeField] private GameOverScreen gameOverScreen;
-
+    [SerializeField] private PauseScreen pauseScreen;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +33,14 @@ public class GameStateController : MonoBehaviour
         health = ownShip.GetComponent<PlayerShipBehaviour>().health;
         if (health <= 0 || survivalTimer.Elapsed.Minutes >= 20)
         {
-            Time.timeScale = 0;
             gameOverScreen.SetUp();
+            Time.timeScale = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            pauseScreen.SetUp();
         }
     }
 
