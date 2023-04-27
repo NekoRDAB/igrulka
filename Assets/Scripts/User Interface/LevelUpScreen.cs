@@ -28,11 +28,7 @@ public class LevelUpScreen : MonoBehaviour
     private ITurret firstUpgrade;
     private ITurret secondUpgrade;
     private ITurret thirdUpgrade;
-
-    void Start()
-    {
-        
-    }
+    
 
     // Start is called before the first frame update
     public void SetUp()
@@ -51,25 +47,28 @@ public class LevelUpScreen : MonoBehaviour
     private void DrawChoices()
     {
         var rnd = new Random();
-        var firstIndex = rnd.Next(0, turrets.Count);
-        firstUpgrade = turrets[firstIndex];
-        var firstSprite = firstUpgrade.GetSprite();
-        firstCardButtonImage.sprite = firstSprite;
+        var availableTurrets = new List<ITurret>(turrets);
+        firstUpgrade = GetRandomTurret(rnd, availableTurrets);
+        secondUpgrade = GetRandomTurret(rnd, availableTurrets);
+        thirdUpgrade = GetRandomTurret(rnd, availableTurrets);
+
+        firstCardButtonImage.sprite = firstUpgrade.GetSprite();
+        secondCardButtonImage.sprite = secondUpgrade.GetSprite();
+        thirdCardButtonImage.sprite = thirdUpgrade.GetSprite();
+
         firstCardText.text = firstUpgrade.GetDescription();
-
-        var secondIndex = rnd.Next(0, turrets.Count);
-        secondUpgrade = turrets[secondIndex];
-        var secondSprite = secondUpgrade.GetSprite();
-        secondCardButtonImage.sprite = secondSprite;
         secondCardText.text = secondUpgrade.GetDescription();
-
-        var thirdIndex = rnd.Next(0, turrets.Count);
-        thirdUpgrade = turrets[thirdIndex];
-        var thirdSprite = thirdUpgrade.GetSprite();
-        thirdCardButtonImage.sprite = thirdSprite;
         thirdCardText.text = thirdUpgrade.GetDescription();
+    } 
+
+    private ITurret GetRandomTurret(Random rnd, List<ITurret> availableTurrets)
+    {
+        var index = rnd.Next(0, availableTurrets.Count);
+        var turret = availableTurrets[index];
+        availableTurrets.RemoveAt(index);
+        return turret;
     }
-    
+
     public void BackToGame()
     {
         Time.timeScale = 1;
