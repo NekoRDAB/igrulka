@@ -236,15 +236,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 40889849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 602619109d192f4429bc567676b8f281, type: 3}
+  m_Script: {fileID: 11500000, guid: a85b187a17c273a4990cea6ee8c96fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 1649948245}
   - {fileID: 1082170081}
-  activateButtonKey: 0
-  nextButtonKey: 0
-  prevButtonKey: 0
+  activateButtonKey: 271
+  nextButtonKey: 273
+  prevButtonKey: 274
 --- !u!1 &153614309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,7 +2061,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1043596125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 609c073c4f245d8449a33b3533f2488c, type: 3}
+  m_Script: {fileID: 11500000, guid: b5002911121a1b8428011f2d23c4a8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firstCardButtonImage: {fileID: 1183001101}
@@ -4066,10 +4066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602619109d192f4429bc567676b8f281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
-  activateButtonKey: 271
-  nextButtonKey: 273
-  prevButtonKey: 274
 --- !u!1 &1992808647
 GameObject:
   m_ObjectHideFlags: 0
