@@ -25,11 +25,11 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Стреляет ракетами в сторону ближайшего врага"},
-        {1, "Туррели выполняют дополнительный снаряд"},
-        {2, "+10 урона, +10% скорострельности"},
-        {3, "+10% к скорости"},
-        {4, "что - то"},
+        {0, "Shoot torpedoes from front of the ship"},
+        {1, "Shots additional projectile"},
+        {2, "+10 damage, +10% fire rate"},
+        {3, "+10% к projectile speed"},
+        {4, "something"},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
@@ -80,7 +80,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 
     public string GetDescription()
     {
-        return $"уровень {level}\n{DescriptionDict[level]}";
+        return $"level {level}\n{DescriptionDict[level]}";
     }
 
     public int GetLevel()

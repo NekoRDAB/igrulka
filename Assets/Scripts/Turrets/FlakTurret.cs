@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FlakTurret : MonoBehaviour, ITurret
 {
@@ -18,14 +20,35 @@ public class FlakTurret : MonoBehaviour, ITurret
     private PlayerShipBehaviour shipBehaviour;
     private float elapsed = 0.5f;
 
+    private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
+    {
+        {0, "Shots at the neares enemy"},
+        {1, "Shoots another projectile"},
+        {2, "+30% fire rate"},
+        {3, "Shoots another projectile"},
+        {4, "+15 damage"},
+    };
+
+    private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
+    {
+        { 1, () => Amount++ },
+        {
+            2, () =>
+            {
+                CoolDown *= 0.7f;
+            }
+        },
+        { 3, () => Amount++},
+        { 4, () => Damage += 15 },
+    };
     // Start is called before the first frame update
     void Start()
     {
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
         Amount = 2;
-        CoolDown = 1f;
-        Damage = 50;
+        CoolDown = 2f;
+        Damage = 45;
         Speed = 30f;
     }
 
@@ -65,7 +88,7 @@ public class FlakTurret : MonoBehaviour, ITurret
 
     public string GetDescription()
     {
-        return "Абоба супер пупер";
+        return $"level {level}\n{DescriptionDict[level]}";
     }
 
     public int GetLevel()
@@ -75,7 +98,8 @@ public class FlakTurret : MonoBehaviour, ITurret
 
     public void LevelUp()
     {
-
+        LevelUpDict[level].Invoke();
+        level++;
     }
 
     public void Init()

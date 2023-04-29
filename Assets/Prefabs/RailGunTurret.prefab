@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3236947654946901652}
   - component: {fileID: 882412867537805900}
   m_Layer: 0
-  m_Name: SuperDuperTurret
+  m_Name: RailGunTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6151850585620579014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 27.588438, y: -1.6291481, z: 1.0800998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 32767
-  m_Sprite: {fileID: 21300000, guid: c2fcd762a8bd6cf4dbd18ba12ddc1525, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75d0fa0347708ef4498355b920afb845, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
