@@ -1,48 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts;
 using UnityEngine;
 
-public class SuperPuperTurret : MonoBehaviour, ITurret
+public class FlakTurret : MonoBehaviour, ITurret
 {
-    [SerializeField] private GameObject superPuper;
-    public int Damage { get; private set; }
+    [SerializeField] private GameObject FlakProjectile;
+    public static int Damage { get; private set; }
 
-    public float Speed { get; private set; }
-    public int Amount { get; private set; }
-    public float CoolDown { get; private set; }
+    public static float Speed { get; private set; }
+    public static int Amount { get; private set; }
+    public static float CoolDown { get; private set; }
 
     private int level;
-    private GameObject ownShip;
+    public static GameObject ownShip;
     private PlayerShipBehaviour shipBehaviour;
     private float elapsed = 0.5f;
-    public float DamageMultiplier { get; set; }
-    public float SpeedMultiplier { get; set; }
-    public int AmountMultiplier { get; set; }
-    public float CoolDownMultiplier { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
-        Amount = 4;
-        CoolDown = 5f;
+        Amount = 2;
+        CoolDown = 1f;
         Damage = 50;
         Speed = 30f;
-        level = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        var enemies = GameObject.FindGameObjectsWithTag("enemy");
+        Transform nearestEnemy = null;
+        var maxDistance = Mathf.Infinity;
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < maxDistance)
+            {
+                nearestEnemy = enemy.transform;
+                maxDistance = distance;
+            }
+        }
+        var directionToEnemy = nearestEnemy.position - transform.position;
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToEnemy);
         elapsed += Time.deltaTime;
         if (elapsed >= CoolDown)
         {
             for (var i = 0; i < Amount; i++)
             {
                 var deviation = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
-                Instantiate(superPuper, ownShip.transform.position + deviation, ownShip.transform.rotation);
+                Instantiate(FlakProjectile, transform.position + deviation, transform.rotation);
             }
             elapsed = 0;
         }

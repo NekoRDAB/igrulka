@@ -21,7 +21,7 @@ public class LevelUpScreen : MonoBehaviour
     public Image thirdCardButtonImage;
     public TextMeshProUGUI thirdCardText;
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
-    [SerializeField] private SuperPuperTurret secondTurret;
+    [SerializeField] private FlakTurret secondTurret;
     [SerializeField] private SuperDuperTurret thirdTurret;
 
     private List<ITurret> turrets;
