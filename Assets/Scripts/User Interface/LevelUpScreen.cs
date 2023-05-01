@@ -24,7 +24,6 @@ public class LevelUpScreen : MonoBehaviour
     [SerializeField] private FlakTurret secondTurret;
     [SerializeField] private RailGunTurret thirdTurret;
     [SerializeField] private MiniNukeTurret fourthTurret;
-    [SerializeField] private RefrigeratorTurret fifthTurret;
 
     private List<ITurret> turrets;
     private ITurret firstUpgrade;
@@ -43,7 +42,6 @@ public class LevelUpScreen : MonoBehaviour
             turrets.Add(secondTurret);
             turrets.Add(thirdTurret);
             turrets.Add(fourthTurret);
-            turrets.Add(fifthTurret);
         }
         DrawChoices();
     }
