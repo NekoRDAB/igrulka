@@ -22,7 +22,7 @@ public class LevelUpScreen : MonoBehaviour
     public TextMeshProUGUI thirdCardText;
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
     [SerializeField] private FlakTurret secondTurret;
-    [SerializeField] private SuperDuperTurret thirdTurret;
+    [SerializeField] private RailGunTurret thirdTurret;
 
     private List<ITurret> turrets;
     private ITurret firstUpgrade;

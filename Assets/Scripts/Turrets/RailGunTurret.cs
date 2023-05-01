@@ -1,14 +1,13 @@
 using System;
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Assets.Scripts;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class FlakTurret : MonoBehaviour, ITurret
+public class RailGunTurret : MonoBehaviour, ITurret
 {
-    [SerializeField] private GameObject FlakProjectile;
+    [SerializeField] private GameObject RailGunProjectile;
     public static int Damage { get; private set; }
 
     public static float Speed { get; private set; }
@@ -22,61 +21,41 @@ public class FlakTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Shots at the nearest enemy"},
-        {1, "Shoots another projectile"},
+        {0, "Shots piercing projectile at random enemy"},
+        {1, "+30% fire rate"},
         {2, "+30% fire rate"},
-        {3, "Shoots another projectile"},
-        {4, "+15 damage"},
+        {3, "+20 damage"},
+        {4, "+40% projectile speed"},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
     {
-        { 1, () => Amount++ },
-        {
-            2, () =>
-            {
-                CoolDown *= 0.7f;
-            }
-        },
-        { 3, () => Amount++},
-        { 4, () => Damage += 15 },
+        { 1, () => CoolDown *= 0.7f },
+        { 2, () => CoolDown *= 0.7f },
+        { 3, () => Damage += 20},
+        { 4, () => Speed *= 1.4f },
     };
     // Start is called before the first frame update
     void Start()
     {
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
-        Amount = 2;
-        CoolDown = 2f;
-        Damage = 45;
-        Speed = 30f;
+        CoolDown = 5f;
+        Damage = 100;
+        Speed = 80f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        var enemies = GameObject.FindGameObjectsWithTag("enemy");
-        Transform nearestEnemy = null;
-        var maxDistance = Mathf.Infinity;
-        foreach (GameObject enemy in enemies)
-        {
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distance < maxDistance)
-            {
-                nearestEnemy = enemy.transform;
-                maxDistance = distance;
-            }
-        }
-        var directionToEnemy = nearestEnemy.position - transform.position;
+        var enemy = GameObject.FindGameObjectWithTag("enemy");
+        
+        var directionToEnemy = enemy.transform.position - transform.position;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToEnemy);
         elapsed += Time.deltaTime;
         if (elapsed >= CoolDown)
         {
-            for (var i = 0; i < Amount; i++)
-            {
-                var deviation = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
-                Instantiate(FlakProjectile, transform.position + deviation, transform.rotation);
-            }
+            Instantiate(RailGunProjectile, transform.position , transform.rotation);
             elapsed = 0;
         }
     }
