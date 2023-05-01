@@ -14,6 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
     private AudioSource audio;
+    private float timeFrozen;
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
     [SerializeField] private GameObject damageNumbers;
@@ -32,8 +33,13 @@ public class EnemyBehaviour : MonoBehaviour
     {
         var movement = (Vector2)player.transform.position - ship.position;
         movement = Vector2.ClampMagnitude(movement, speed);
-        ship.MovePosition(ship.position + movement);
-        transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI);
+        if (timeFrozen <= 0)
+        {
+            ship.MovePosition(ship.position + movement);
+            transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI);
+        }
+        else
+            timeFrozen -= Time.deltaTime;
         if (spriteRenderer.color == Color.red && timeDamaged.ElapsedMilliseconds > 400)
         {
             spriteRenderer.color = Color.white;
@@ -65,5 +71,10 @@ public class EnemyBehaviour : MonoBehaviour
         Instantiate(explosion, ship.position, Quaternion.identity);
         Instantiate(exp, ship.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    public void Freeze(float time)
+    {
+        timeFrozen = time;
     }
 }
