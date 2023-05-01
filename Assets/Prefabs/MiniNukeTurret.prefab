@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2346199669509990758}
   - component: {fileID: 6658880953459260000}
+  - component: {fileID: -779361833123556534}
   m_Layer: 0
   m_Name: MiniNukeTurret
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: 21300000, guid: 677b4bafa69a3f24b904f82f7fc3deee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-779361833123556534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9108619331567647979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be91b6f2f6a6cda488b168ce5095cdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MiniNukeProjectile: {fileID: 1213065083150470891, guid: dc99970ac3139ae498e2a882aff46fd6, type: 3}

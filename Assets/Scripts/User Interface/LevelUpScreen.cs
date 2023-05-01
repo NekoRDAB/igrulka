@@ -23,12 +23,13 @@ public class LevelUpScreen : MonoBehaviour
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
     [SerializeField] private FlakTurret secondTurret;
     [SerializeField] private RailGunTurret thirdTurret;
+    [SerializeField] private MiniNukeTurret fourthTurret;
 
     private List<ITurret> turrets;
     private ITurret firstUpgrade;
     private ITurret secondUpgrade;
     private ITurret thirdUpgrade;
-    
+
 
     // Start is called before the first frame update
     public void SetUp()
@@ -40,6 +41,7 @@ public class LevelUpScreen : MonoBehaviour
             turrets.Add(firstTurret);
             turrets.Add(secondTurret);
             turrets.Add(thirdTurret);
+            turrets.Add(fourthTurret);
         }
         DrawChoices();
     }
