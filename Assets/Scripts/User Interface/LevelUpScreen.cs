@@ -25,6 +25,7 @@ public class LevelUpScreen : MonoBehaviour
     [SerializeField] private RailGunTurret thirdTurret;
     [SerializeField] private MiniNukeTurret fourthTurret;
     [SerializeField] private RefrigeratorTurret fifthTurret;
+    [SerializeField] private ShieldGenerator sixthTurret;
 
     private List<ITurret> turrets;
     private ITurret firstUpgrade;
@@ -38,12 +39,15 @@ public class LevelUpScreen : MonoBehaviour
         gameObject.SetActive(true);
         if (turrets is null)
         {
-            turrets = new List<ITurret>();
-            turrets.Add(firstTurret);
-            turrets.Add(secondTurret);
-            turrets.Add(thirdTurret);
-            turrets.Add(fourthTurret);
-            turrets.Add(fifthTurret);
+            turrets = new List<ITurret>
+            {
+                firstTurret,
+                secondTurret,
+                thirdTurret,
+                fourthTurret,
+                fifthTurret,
+                sixthTurret
+            };
             Debug.Log(fifthTurret);
         }
         DrawChoices();

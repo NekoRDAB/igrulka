@@ -8,6 +8,8 @@ TagManager:
   - BG_Music_Volume_Text
   - BG_Music_Created
   - enemy
+  - Projectile
+  - shield
   layers:
   - Default
   - TransparentFX

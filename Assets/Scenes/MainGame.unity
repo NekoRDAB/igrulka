@@ -2027,6 +2027,7 @@ MonoBehaviour:
   thirdTurret: {fileID: -3842292805687125520, guid: 790c60f063de60c4abadf71adc4f2fbc, type: 3}
   fourthTurret: {fileID: -779361833123556534, guid: c64af64f71614204395b2dfdd460e888, type: 3}
   fifthTurret: {fileID: -4261860414855495707, guid: baeec996c7aa95a45940982a8e3ba7d7, type: 3}
+  sixthTurret: {fileID: -7361688756770138214, guid: adb45e22b46870f449e0f9520200da81, type: 3}
 --- !u!114 &1043596127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4251,7 +4252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992808647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5204, y: 1.2796, z: 0}
+  m_LocalPosition: {x: -1.45, y: 1.67, z: 0}
   m_LocalScale: {x: 8.970485, y: 6.1506214, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

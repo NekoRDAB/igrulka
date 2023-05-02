@@ -13,6 +13,7 @@ namespace Assets.Scripts
         [SerializeField] private Transform exhaust;
         public double health;
         private AudioSource audio;
+        private GameObject shield;
 
         public readonly List<Vector2> positionsList = new List<Vector2>()
             {
@@ -66,7 +67,16 @@ namespace Assets.Scripts
         void OnCollisionStay2D(Collision2D collision)
         {
             var damage = collision.gameObject.GetComponent<EnemyBehaviour>().damage;
-            health -= damage / 60.0;
+            shield = GameObject.FindGameObjectWithTag("shield");
+            if (shield != null)
+            {
+                var shieldHealth = shield.GetComponent<ShieldBubble>().shieldHealth;
+                shield.GetComponent<ShieldBubble>().shieldHealth = shieldHealth - damage / 60.0;
+            }
+            else
+            {
+                health -= damage / 60.0;
+            }
         }
     }
 }
