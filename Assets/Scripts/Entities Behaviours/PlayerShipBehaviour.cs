@@ -68,7 +68,8 @@ namespace Assets.Scripts
         {
             var damage = collision.gameObject.GetComponent<EnemyBehaviour>().damage;
             shield = GameObject.FindGameObjectWithTag("shield");
-            if (shield != null)
+            if (shield != null &&
+                shield.GetComponent<ShieldBubble>().state == ShieldBubble.ShieldStates.Online)
             {
                 var shieldHealth = shield.GetComponent<ShieldBubble>().shieldHealth;
                 shield.GetComponent<ShieldBubble>().shieldHealth = shieldHealth - damage / 60.0;

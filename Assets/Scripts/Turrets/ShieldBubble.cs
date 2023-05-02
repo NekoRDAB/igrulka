@@ -6,11 +6,11 @@ using UnityEngine;
 public class ShieldBubble : MonoBehaviour
 {
     public double shieldHealth;
-    private ShieldStates state;
+    public ShieldStates state;
     private Stopwatch timer;
     private SpriteRenderer spriteRenderer;
     private CircleCollider2D collider;
-    private enum ShieldStates
+    public enum ShieldStates
     {
         Offline,
         Recharging,
