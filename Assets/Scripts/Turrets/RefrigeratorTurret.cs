@@ -55,7 +55,8 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
         {
             for (var i = 0; i < Amount; i++)
             {
-                var enemy = GameObject.FindGameObjectWithTag("enemy");
+                var enemies = GameObject.FindGameObjectsWithTag("enemy");
+                var enemy = enemies[Random.Range(0, enemies.Length)];
                 var directionToEnemy = enemy.transform.position - transform.position;
                 transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToEnemy);
                 Instantiate(fridge, transform.position, transform.rotation);

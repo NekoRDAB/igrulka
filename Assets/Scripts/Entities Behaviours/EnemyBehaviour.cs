@@ -31,10 +31,10 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var movement = (Vector2)player.transform.position - ship.position;
-        movement = Vector2.ClampMagnitude(movement, speed);
         if (timeFrozen <= 0)
         {
+            var movement = (Vector2)player.transform.position - ship.position;
+            movement = Vector2.ClampMagnitude(movement, speed);
             ship.MovePosition(ship.position + movement);
             transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI);
         }
@@ -53,8 +53,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         audio.Play();
         health -= damage;
-        var movement = ((Vector2)player.transform.position - ship.position).normalized;
-        ship.AddForce(-movement * 8000);
+        if (timeFrozen <= 0)
+        {
+            var movement = ((Vector2)player.transform.position - ship.position).normalized;
+            ship.AddForce(-movement * 8000);
+        }
         var damageNumber = Instantiate(damageNumbers, ship.position, Quaternion.identity);
         damageNumber.GetComponent<NumbersBehaviour>().SetNumber(damage);
         spriteRenderer.color = Color.red;

@@ -9,12 +9,12 @@ public class Refrigerator : MonoBehaviour
     private AudioSource audioSource;
     private GameObject turret;
 
-    private ProtonTorpedoesTurret turretBehaviour;
+    private RefrigeratorTurret turretBehaviour;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * ProtonTorpedoesTurret.Speed;
+        rb.velocity = transform.up * RefrigeratorTurret.Speed;
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
     }
@@ -22,7 +22,7 @@ public class Refrigerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, ProtonTorpedoesTurret.ownShip.transform.position);
+        float distance = Vector2.Distance(transform.position, RefrigeratorTurret.ownShip.transform.position);
         if (distance > 150)
             Destroy(gameObject);
     }
@@ -31,6 +31,9 @@ public class Refrigerator : MonoBehaviour
     {
         EnemyBehaviour enemy = hitInfo.GetComponent<EnemyBehaviour>();
         if (enemy != null)
+        {
             enemy.Freeze(3);
+            Destroy(gameObject);
+        }
     }
 }
