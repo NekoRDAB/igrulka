@@ -1,0 +1,18 @@
+{
+    "name": "Behaviourasmdef",
+    "rootNamespace": "",
+    "references": [
+        "GUID:22e4449bfe360df44905d0a2d190b89e",
+        "GUID:755ebb8ae48ff574d9ec4579b00ef2f2",
+        "GUID:d4efc82429638c540bae2c94d2899e80"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
