@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
@@ -58,8 +59,23 @@ public class LevelUpScreen : MonoBehaviour
         var rnd = new Random();
         var availableTurrets = new List<ITurret>(turrets);
         firstUpgrade = GetRandomTurret(rnd, availableTurrets);
+        if (firstUpgrade.GetLevel() == 4)
+        {
+            availableTurrets.Remove(firstUpgrade);
+            firstUpgrade = GetRandomTurret(rnd, availableTurrets);
+        }
         secondUpgrade = GetRandomTurret(rnd, availableTurrets);
+        if (secondUpgrade.GetLevel() == 4)
+        {
+            availableTurrets.Remove(firstUpgrade);
+            secondUpgrade = GetRandomTurret(rnd, availableTurrets);
+        }
         thirdUpgrade = GetRandomTurret(rnd, availableTurrets);
+        if (thirdUpgrade.GetLevel() == 4)
+        {
+            availableTurrets.Remove(firstUpgrade);
+            thirdUpgrade = GetRandomTurret(rnd, availableTurrets);
+        }
 
         firstCardButtonImage.sprite = firstUpgrade.GetSprite();
         secondCardButtonImage.sprite = secondUpgrade.GetSprite();
