@@ -4,11 +4,11 @@ using System.Diagnostics;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
+public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject player;
     [SerializeField] public int health;
-    [SerializeField] public int damage;
+    [SerializeField] public int damage { get; set; }
     [SerializeField] private float speed;
     private Rigidbody2D ship;
     private SpriteRenderer spriteRenderer;
@@ -26,6 +26,7 @@ public class EnemyBehaviour : MonoBehaviour
         timeDamaged = new Stopwatch();
         player = GameObject.Find("OwnShip");
         audio = GetComponent<AudioSource>();
+        damage = 20;
     }
 
     // Update is called once per frame

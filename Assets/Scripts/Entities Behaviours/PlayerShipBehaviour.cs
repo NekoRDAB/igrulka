@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -66,7 +65,7 @@ namespace Assets.Scripts
 
         void OnCollisionStay2D(Collision2D collision)
         {
-            var damage = collision.gameObject.GetComponent<EnemyBehaviour>().damage;
+            var damage = collision.gameObject.GetComponent<IEnemy>().damage;
             shield = GameObject.FindGameObjectWithTag("shield");
             if (shield != null &&
                 shield.GetComponent<ShieldBubble>().state == ShieldBubble.ShieldStates.Online)
@@ -78,6 +77,19 @@ namespace Assets.Scripts
             {
                 health -= damage / 60.0;
             }
+        }
+
+        public void TakeDamage(double damage)
+        {
+            shield = GameObject.FindGameObjectWithTag("shield");
+            if (shield != null &&
+                shield.GetComponent<ShieldBubble>().state == ShieldBubble.ShieldStates.Online)
+            {
+                var shieldHealth = shield.GetComponent<ShieldBubble>().shieldHealth;
+                shield.GetComponent<ShieldBubble>().shieldHealth = shieldHealth - damage / 60.0;
+            }
+            else
+                health -= damage / 60.0;
         }
     }
 }

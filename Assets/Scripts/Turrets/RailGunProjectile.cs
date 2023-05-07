@@ -29,7 +29,7 @@ public class RailGunProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        EnemyBehaviour enemy = hitInfo.GetComponent<EnemyBehaviour>();
+        IEnemy enemy = hitInfo.GetComponent<IEnemy>();
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hitInfo);
         if (enemy != null)
         {

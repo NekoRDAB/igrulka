@@ -32,7 +32,7 @@ public class ProtonTorpedo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        EnemyBehaviour enemy = hitInfo.GetComponent<EnemyBehaviour>();
+        IEnemy enemy = hitInfo.GetComponent<IEnemy>();
         if (enemy != null)
         {
             enemy.TakeDamage(ProtonTorpedoesTurret.Damage);
