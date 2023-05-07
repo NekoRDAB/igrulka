@@ -56,6 +56,8 @@ public class FlakTurret : MonoBehaviour, ITurret
     void Update()
     {
         var enemies = GameObject.FindGameObjectsWithTag("enemy");
+        if (enemies.Length == 0)
+            return;
         Transform nearestEnemy = null;
         var maxDistance = Mathf.Infinity;
         foreach (GameObject enemy in enemies)

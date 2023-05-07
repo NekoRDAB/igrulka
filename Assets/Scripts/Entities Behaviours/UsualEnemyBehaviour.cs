@@ -18,7 +18,7 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
     [SerializeField] private GameObject damageNumbers;
-    // Start is called before the first frame update
+
     void Start()
     {
         ship = GetComponent<Rigidbody2D>();
@@ -29,7 +29,6 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
         damage = 20;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timeFrozen <= 0)

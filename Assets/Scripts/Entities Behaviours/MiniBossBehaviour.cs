@@ -1,11 +1,10 @@
-using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
-public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
+public class MiniBossBehaviour : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject player;
     [SerializeField] public int health;
@@ -19,7 +18,7 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
     [SerializeField] private GameObject damageNumbers;
-    // Start is called before the first frame update
+
     void Start()
     {
         ship = GetComponent<Rigidbody2D>();
@@ -27,11 +26,10 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
         timeDamaged = new Stopwatch();
         player = GameObject.Find("OwnShip");
         audio = GetComponent<AudioSource>();
-        damage = 2000;
-        health = 500;
+        damage = 150;
+        health = 1500;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timeFrozen <= 0)
@@ -82,18 +80,5 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
     public void Freeze(float time)
     {
         timeFrozen = time;
-    }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        var player = collision.gameObject.GetComponent<PlayerShipBehaviour>();
-        if (player != null)
-            Explode(player);
-    }
-
-    private void Explode(PlayerShipBehaviour player)
-    {
-        player.TakeDamage(damage);
-        Die();
     }
 }

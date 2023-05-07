@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
     [SerializeField] private GameObject enemy3;
+    [SerializeField] private GameObject miniBoss;
     private WaveProcessing waveProcessing;
 
     public float timeBetweenWaves = 1f;
@@ -22,7 +23,6 @@ public class WaveSpawner : MonoBehaviour
                 new Wave(
                         new Dictionary<GameObject, int>
                         {
-                            { enemy3, 1 }, /// delete
                             { enemy1, 10 }
                         },
                         2
@@ -49,6 +49,16 @@ public class WaveSpawner : MonoBehaviour
                         {
                             { enemy1, 15 },
                             { enemy2, 7 },
+                        },
+                        2
+                    ),
+                new Wave(
+                        new Dictionary<GameObject, int>
+                        {
+                            { enemy1, 5 },
+                            { enemy2, 5 },
+                            { enemy3, 3 },
+                            { miniBoss, 1 }
                         },
                         2
                     ),
