@@ -13,6 +13,8 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
     public static int Amount { get; private set; }
     public static float CoolDown { get; private set; }
 
+    public static float Duration { get; private set; }
+
     private int level;
     public static GameObject ownShip;
     private PlayerShipBehaviour shipBehaviour;
@@ -22,7 +24,7 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
     {
         {0, "Shots nuke at random enemy"},
         {1, "+30% fire rate"},
-        {2, "+30% fire rate"},
+        {2, "+30% duration"},
         {3, "+20 damage"},
         {4, "+40% projectile speed"},
     };
@@ -30,7 +32,7 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
     {
         { 1, () => CoolDown *= 0.7f },
-        { 2, () => CoolDown *= 0.7f },
+        { 2, () => Duration *= 1.3f },
         { 3, () => Damage += 20},
         { 4, () => Speed *= 1.4f },
     };
@@ -39,9 +41,10 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
     {
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
-        CoolDown = 5f;
+        CoolDown = 6f;
         Damage = 100;
         Speed = 30f;
+        Duration = 1500;
     }
 
     // Update is called once per frame

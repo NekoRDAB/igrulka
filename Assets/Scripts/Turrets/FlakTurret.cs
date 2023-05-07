@@ -48,7 +48,7 @@ public class FlakTurret : MonoBehaviour, ITurret
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
         Amount = 2;
         CoolDown = 2f;
-        Damage = 45;
+        Damage = 50;
         Speed = 30f;
     }
 

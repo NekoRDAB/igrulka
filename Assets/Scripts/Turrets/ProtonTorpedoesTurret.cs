@@ -27,9 +27,9 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
     {
         {0, "Shoot torpedoes from front of the ship"},
         {1, "Shots additional projectile"},
-        {2, "+10 damage, +10% fire rate"},
+        {2, "+20 damage, +20% fire rate"},
         {3, "+10% к projectile speed"},
-        {4, "something"},
+        {4, "Shots additional projectile"},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
@@ -38,12 +38,12 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         {
             2, () =>
             {
-                Damage++;
-                CoolDown *= 0.9f;
+                Damage += 20;
+                CoolDown *= 0.8f;
             }
         },
         { 3, () => Speed *= 1.1f },
-        { 4, () => print("неа") },
+        { 4, () => Amount++ },
     };
 
     // Start is called before the first frame update
@@ -52,9 +52,9 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
         level = 0;
-        Amount = 4;
-        CoolDown = 5f;
-        Damage = 50;
+        Amount = 2;
+        CoolDown = 4f;
+        Damage = 80;
         Speed = 30f;
     }
 

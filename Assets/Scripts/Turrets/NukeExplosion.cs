@@ -17,13 +17,13 @@ public class NukeExplosion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeAlive.ElapsedMilliseconds > 1000)
+        if (timeAlive.ElapsedMilliseconds > MiniNukeTurret.Duration)
         {
             timeAlive.Stop();
             Destroy(gameObject);
         }
 
-        transform.localScale *= 1.005f;
+        transform.localScale *= 1.006f;
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
@@ -31,7 +31,7 @@ public class NukeExplosion : MonoBehaviour
         IEnemy enemy = hitInfo.GetComponent<IEnemy>();
         if (enemy != null)
         {
-            enemy.TakeDamage(100);
+            enemy.TakeDamage(MiniNukeTurret.Damage);
         }
     }
 }

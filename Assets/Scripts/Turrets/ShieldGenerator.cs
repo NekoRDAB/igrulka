@@ -24,23 +24,18 @@ public class ShieldGenerator : MonoBehaviour, ITurret
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
         {0, "Generates shield around ship"},
-        {1, "Shoots another projectile"},
-        {2, "+30% fire rate"},
-        {3, "Shoots another projectile"},
-        {4, "+15 damage"},
+        {1, " +30 shield health"},
+        {2, "-30% shield recharging time"},
+        {3, "+30 shield health"},
+        {4, "-30% shield recharging time"},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
     {
-        { 1, () => Amount++ },
-        {
-            2, () =>
-            {
-                CoolDown *= 0.7f;
-            }
-        },
-        { 3, () => Amount++},
-        { 4, () => Damage += 15 },
+        { 1, () => ShieldHealth += 30 },
+        { 2, () => CoolDown *= 0.7f },
+        { 3, () => ShieldHealth += 30},
+        { 4, () => CoolDown *= 0.7f },
     };
     // Start is called before the first frame update
     void Start()

@@ -21,10 +21,10 @@ public class RailGunTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Shots piercing projectile at random enemy"},
+        {0, "Shots piercing projectile at nearest enemy"},
         {1, "+30% fire rate"},
         {2, "+30% fire rate"},
-        {3, "+20 damage"},
+        {3, "+50 damage"},
         {4, "+40% projectile speed"},
     };
 
@@ -32,7 +32,7 @@ public class RailGunTurret : MonoBehaviour, ITurret
     {
         { 1, () => CoolDown *= 0.7f },
         { 2, () => CoolDown *= 0.7f },
-        { 3, () => Damage += 20},
+        { 3, () => Damage += 50},
         { 4, () => Speed *= 1.4f },
     };
     // Start is called before the first frame update
@@ -48,9 +48,21 @@ public class RailGunTurret : MonoBehaviour, ITurret
     // Update is called once per frame
     void Update()
     {
-        var enemy = GameObject.FindGameObjectWithTag("enemy");
-        
-        var directionToEnemy = enemy.transform.position - transform.position;
+        var enemies = GameObject.FindGameObjectsWithTag("enemy");
+        if (enemies.Length == 0)
+            return;
+        Transform nearestEnemy = null;
+        var maxDistance = Mathf.Infinity;
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < maxDistance)
+            {
+                nearestEnemy = enemy.transform;
+                maxDistance = distance;
+            }
+        }
+        var directionToEnemy = nearestEnemy.position - transform.position;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToEnemy);
         elapsed += Time.deltaTime;
         if (elapsed >= CoolDown)
