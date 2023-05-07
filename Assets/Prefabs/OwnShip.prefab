@@ -243,7 +243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4354710548637431717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5204, y: 1.2796, z: 0}
+  m_LocalPosition: {x: -1.45, y: 1.67, z: 0}
   m_LocalScale: {x: 8.970485, y: 6.1506214, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eae1ca38d195a24c878485c3dbce4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turretsCount: 0
   movementSpeed: 2
   exhaust: {fileID: 2651299623649516903}
   health: 0

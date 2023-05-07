@@ -60,6 +60,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainGame");
     }
 
+    public void PlayTutorial()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
+
     public void Options()
     {
         SceneManager.LoadScene("Options");
