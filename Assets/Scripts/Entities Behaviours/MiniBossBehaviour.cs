@@ -72,7 +72,8 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
     void Die()
     {
         Instantiate(explosion, ship.position, Quaternion.identity);
-        Instantiate(exp, ship.position, Quaternion.identity);
+        for (var i =0; i < 5; i++)
+            Instantiate(exp, ship.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
