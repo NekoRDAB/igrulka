@@ -47,11 +47,8 @@ public class GameStateController : MonoBehaviour
 
     public void AddExp()
     {
-        if (audio != null)
-        {
-            audio.Play();
-        }
-    
+        audio.Play();
+
         experience++;
         if (experience >= level + level * 5)
         {

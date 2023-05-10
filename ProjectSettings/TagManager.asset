@@ -10,6 +10,7 @@ TagManager:
   - enemy
   - Projectile
   - shield
+  - exp
   layers:
   - Default
   - TransparentFX

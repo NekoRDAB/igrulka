@@ -19,7 +19,6 @@ public class ShieldGenerator : MonoBehaviour, ITurret
     private int level;
     public static GameObject ownShip;
     private PlayerShipBehaviour shipBehaviour;
-    private float elapsed = 0.5f;
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {

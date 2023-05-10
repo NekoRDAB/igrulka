@@ -6,6 +6,8 @@ public class FlakProjectileLogic : MonoBehaviour
 {
     public Rigidbody2D rb;
     private AudioSource audioSource;
+
+    [SerializeField] private GameObject hitEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class FlakProjectileLogic : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(FlakTurret.Damage);
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

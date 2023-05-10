@@ -30,9 +30,11 @@ public class NumbersBehaviour : MonoBehaviour
         }
     }
 
-    public void SetNumber(int number)
+    public void SetNumber(int number, bool regen=false)
     {
         damageNumber.text = number.ToString();
+        if (regen)
+            damageNumber.color = Color.green;
         Start();
     }
 }

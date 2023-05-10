@@ -8,7 +8,7 @@ using UnityEngine;
 public class ExpBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject ownShip;
-
+    public bool IsMagnetized = false;
     [SerializeField] public float pickUpRange;
     private GameStateController gameStateController;
     private float expSpeed = 1;
@@ -26,7 +26,14 @@ public class ExpBehaviour : MonoBehaviour
     void Update()
     {
         var distance = Vector2.Distance(ownShip.transform.position, exp.transform.position);
-        if (pickUpRange > distance)
+        if (IsMagnetized)
+        {
+            var movement = (Vector2)(ownShip.transform.position - exp.transform.position);
+            movement = Vector2.ClampMagnitude(movement, 5);
+            exp.MovePosition(exp.position + movement);
+        }
+
+        else if (pickUpRange > distance)
         {
             var movement = (Vector2)(ownShip.transform.position - exp.transform.position);
             movement = Vector2.ClampMagnitude(movement, expSpeed);
