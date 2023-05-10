@@ -9,7 +9,7 @@ public class ProtonTorpedo : MonoBehaviour
     public GameObject ownShip;
     private AudioSource audioSource;
     private GameObject turret;
-
+    [SerializeField] private GameObject hitEffect;
     private ProtonTorpedoesTurret turretBehaviour;
     // Start is called before the first frame update
     void Start()
@@ -36,6 +36,7 @@ public class ProtonTorpedo : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(ProtonTorpedoesTurret.Damage);
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

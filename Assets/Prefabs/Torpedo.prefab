@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: -2797879914580779399}
   ownShip: {fileID: 0}
+  hitEffect: {fileID: 100002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
 --- !u!50 &-2797879914580779399
 Rigidbody2D:
   serializedVersion: 4

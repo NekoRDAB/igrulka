@@ -6,6 +6,8 @@ public class RailGunProjectile : MonoBehaviour
 {
     public Rigidbody2D rb;
     private AudioSource audioSource;
+
+    [SerializeField] private GameObject hitEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class RailGunProjectile : MonoBehaviour
     {
         IEnemy enemy = hitInfo.GetComponent<IEnemy>();
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hitInfo);
+        Instantiate(hitEffect, transform.position, Quaternion.identity);
         if (enemy != null)
         {
             enemy.TakeDamage(RailGunTurret.Damage);
