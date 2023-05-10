@@ -40,6 +40,7 @@ public class GameStateController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0;
+            survivalTimer.Stop();
             pauseScreen.SetUp();
         }
     }

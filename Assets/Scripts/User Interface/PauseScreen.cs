@@ -9,7 +9,7 @@ public class PauseScreen : MonoBehaviour
     public Button[] buttons;
 
     private int activeButtonIndex = 0;
-
+    [SerializeField] private GameStateController controller;
     [SerializeField] KeyCode activateButtonKey = KeyCode.KeypadEnter;
     [SerializeField] public KeyCode nextButtonKey = KeyCode.UpArrow;
     [SerializeField] public KeyCode prevButtonKey = KeyCode.DownArrow;
@@ -52,6 +52,11 @@ public class PauseScreen : MonoBehaviour
             
             buttons[activeButtonIndex].Select();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            BackToGame();
+        }
     }
     
     public void SetUp()
@@ -63,6 +68,7 @@ public class PauseScreen : MonoBehaviour
     {
         Time.timeScale = 1;
         gameObject.SetActive(false);
+        controller.survivalTimer.Start();
     }
     
     public void BackToMainMenu()

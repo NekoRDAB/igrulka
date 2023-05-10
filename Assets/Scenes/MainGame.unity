@@ -242,6 +242,7 @@ MonoBehaviour:
   buttons:
   - {fileID: 1649948245}
   - {fileID: 1082170081}
+  controller: {fileID: 1873863517}
   activateButtonKey: 271
   nextButtonKey: 273
   prevButtonKey: 274
@@ -1322,6 +1323,7 @@ MonoBehaviour:
   secondCardText: {fileID: 678817992}
   thirdCardButtonImage: {fileID: 1609922134}
   thirdCardText: {fileID: 324770988}
+  controller: {fileID: 1873863517}
   firstTurret: {fileID: 7466736504094731712, guid: 6e4d2d015109d9645b50267d04bdff59, type: 3}
   secondTurret: {fileID: 7451256155772070648, guid: 1f093dc03e659f24fab07720b6942c93, type: 3}
   thirdTurret: {fileID: -3842292805687125520, guid: 790c60f063de60c4abadf71adc4f2fbc, type: 3}
@@ -2701,6 +2703,17 @@ MonoBehaviour:
   activateButtonKey: 271
   nextButtonKey: 0
   prevButtonKey: 0
+--- !u!114 &1873863517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8467184505703266273, guid: efdc197d451cb934a9267a11ff4906bf, type: 3}
+  m_PrefabInstance: {fileID: 5082139657663483686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b29493add075446947a49a663ee65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1919718516
 PrefabInstance:
   m_ObjectHideFlags: 0
