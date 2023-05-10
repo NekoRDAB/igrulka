@@ -13,8 +13,8 @@ public class MiniNuke : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * MiniNukeTurret.Speed;
-        //audioSource = GetComponent<AudioSource>();
-        //audioSource.Play();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
 
     // Update is called once per frame

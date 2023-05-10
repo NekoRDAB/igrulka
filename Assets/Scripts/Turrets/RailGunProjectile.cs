@@ -11,8 +11,8 @@ public class RailGunProjectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * RailGunTurret.Speed;
-        //audioSource = GetComponent<AudioSource>();
-        //audioSource.Play();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
 
     // Update is called once per frame
