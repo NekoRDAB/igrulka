@@ -13,7 +13,7 @@ public class HUDController : MonoBehaviour
     public TextMeshProUGUI timeSurvived;
     private GameStateController gameStateController;
 
-    public int killCount;
+    private int killCount;
     // Start is called before the first frame update
     void Start()
     {
