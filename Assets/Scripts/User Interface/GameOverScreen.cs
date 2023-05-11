@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,15 +11,21 @@ public class GameOverScreen : MonoBehaviour
 
     private int activeButtonIndex = 0;
 
+    public TextMeshProUGUI killsCountText;
+    public HUDController hud;
+
     [SerializeField] KeyCode activateButtonKey = KeyCode.KeypadEnter;
     [SerializeField] public KeyCode nextButtonKey = KeyCode.UpArrow;
     [SerializeField] public KeyCode prevButtonKey = KeyCode.DownArrow;
     void Start()
     {
+        var hud = gameObject.AddComponent<HUDController>();
+        killsCountText.text = $"You killed {hud.killCount} enemy";
         buttons[activeButtonIndex].Select();
     }
     void Update()
     {
+        killsCountText.text = $"You killed {hud.killCount} enemy";
         if (Input.GetKeyDown(activateButtonKey))
         {
             buttons[activeButtonIndex].onClick.Invoke();
@@ -46,6 +53,7 @@ public class GameOverScreen : MonoBehaviour
             buttons[activeButtonIndex].Select();
         }
     }
+    
     public void SetUp()
     {
         gameObject.SetActive(true);
