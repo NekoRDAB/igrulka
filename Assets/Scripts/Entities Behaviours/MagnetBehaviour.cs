@@ -7,6 +7,7 @@ public class MagnetBehaviour : MonoBehaviour
     [SerializeField] private GameObject ownShip;
     [SerializeField] public float pickUpRange = 50;
     private float expSpeed = 1;
+    private AudioSource audioSource;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -34,6 +35,8 @@ public class MagnetBehaviour : MonoBehaviour
             {
                 exp.GetComponent<ExpBehaviour>().IsMagnetized = true;
             }
+            audioSource = GetComponent<AudioSource>();
+            audioSource.Play();
             Destroy(gameObject);
         }
     }

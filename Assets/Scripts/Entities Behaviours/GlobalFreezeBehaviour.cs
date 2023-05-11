@@ -7,6 +7,7 @@ public class GlobalFreezeBehaviour : MonoBehaviour
     [SerializeField] private GameObject ownShip;
     [SerializeField] public float pickUpRange = 50;
     private float expSpeed = 1;
+    private AudioSource audioSource;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -36,6 +37,8 @@ public class GlobalFreezeBehaviour : MonoBehaviour
                 if (ienemy.damage != 0)
                     ienemy.Freeze(5);
             }
+            audioSource = GetComponent<AudioSource>();
+            audioSource.Play();
             Destroy(gameObject);
         }
     }

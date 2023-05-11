@@ -11,6 +11,7 @@ public class RepairKitBehaviour : MonoBehaviour
     [SerializeField] private GameObject damageNumbers;
     [SerializeField] public float pickUpRange = 50;
     private float expSpeed = 1;
+    private AudioSource audioSource;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -37,6 +38,8 @@ public class RepairKitBehaviour : MonoBehaviour
             player.health = Math.Min(100, player.health + 25);
             var damageNumber = Instantiate(damageNumbers, ownShip.transform.position, Quaternion.identity);
             damageNumber.GetComponent<NumbersBehaviour>().SetNumber(25, regen:true);
+            audioSource = GetComponent<AudioSource>();
+            audioSource.Play();
             Destroy(gameObject);
         }
     }
