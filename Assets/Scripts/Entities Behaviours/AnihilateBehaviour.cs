@@ -10,7 +10,7 @@ public class AnihilateBehaviour : MonoBehaviour
     [SerializeField] private GameObject ownShip;
     [SerializeField] public float pickUpRange = 50;
     private float expSpeed = 1;
-    private AudioSource audioSource;
+    private GameStateController controller;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -18,6 +18,7 @@ public class AnihilateBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ownShip = GameObject.Find("OwnShip");
+        controller = GameObject.Find("GameStateController").GetComponent<GameStateController>();
     }
 
     // Update is called once per frame
@@ -40,8 +41,7 @@ public class AnihilateBehaviour : MonoBehaviour
                 if (ienemy.damage != 0)
                     ienemy.TakeDamage(9999);
             }
-            audioSource = GetComponent<AudioSource>();
-            audioSource.Play();
+            controller.PlaySound(2);
             Destroy(gameObject);
         }
     }

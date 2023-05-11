@@ -47,7 +47,7 @@ public class GameStateController : MonoBehaviour
 
     public void AddExp()
     {
-        audio.Play();
+        PlaySound(1);
 
         experience++;
         if (experience >= level * 4)
@@ -64,5 +64,11 @@ public class GameStateController : MonoBehaviour
         levelUpScreen.SetUp();
         print($"Level up. New level = {level}");
         Time.timeScale = 0;
+    }
+
+    public void PlaySound(float pitch)
+    {
+        audio.pitch = pitch;
+        audio.Play();
     }
 }
