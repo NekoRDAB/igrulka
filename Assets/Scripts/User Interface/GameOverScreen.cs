@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 public class GameOverScreen : MonoBehaviour
 {
     public Button[] buttons;
-
+    [SerializeField] private TextMeshProUGUI killCountText;
     private int activeButtonIndex = 0;
 
     [SerializeField] KeyCode activateButtonKey = KeyCode.KeypadEnter;
@@ -46,9 +47,11 @@ public class GameOverScreen : MonoBehaviour
             buttons[activeButtonIndex].Select();
         }
     }
-    public void SetUp()
+    public void SetUp(int killCount)
     {
         gameObject.SetActive(true);
+        Start();
+        killCountText.text = $"Enemies destroyed: {killCount}";
     }
 
     public void RestartButton()

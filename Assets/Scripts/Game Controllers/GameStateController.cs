@@ -12,6 +12,7 @@ public class GameStateController : MonoBehaviour
     private GameObject ownShip;
     private double health;
     private AudioSource audio;
+    [SerializeField]private HUDController hudController;
     [SerializeField] private LevelUpScreen levelUpScreen;
     [SerializeField] private GameOverScreen gameOverScreen;
     [SerializeField] private PauseScreen pauseScreen;
@@ -33,7 +34,7 @@ public class GameStateController : MonoBehaviour
         health = ownShip.GetComponent<PlayerShipBehaviour>().health;
         if (health <= 0 || survivalTimer.Elapsed.Minutes >= 20)
         {
-            gameOverScreen.SetUp();
+            gameOverScreen.SetUp(hudController.killCount);
             Time.timeScale = 0;
         }
 
