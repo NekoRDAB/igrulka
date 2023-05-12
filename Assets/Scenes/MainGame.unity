@@ -2008,6 +2008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323079182}
   - component: {fileID: 1323079181}
+  - component: {fileID: 1323079183}
   m_Layer: 0
   m_Name: WaveSpawner
   m_TagString: Untagged
@@ -2050,6 +2051,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1323079183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323079180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1681d0be88821448ab24f3fb0f1547d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 1992808652}
+  debri: {fileID: 1541000859918953371, guid: 7c587f81c5c61684ebd728b2034bccc1, type: 3}
+  timeBetweenSpawning: 5
+  debriCountDown: 0
 --- !u!1 &1539514371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2997,6 +3014,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705907135}
   m_CullTransparentMesh: 1
+--- !u!1 &1745325172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745325173}
+  m_Layer: 0
+  m_Name: DebriSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1745325173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745325172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 102.511314, y: -66.10178, z: -0.35380167}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1750237357
 GameObject:
   m_ObjectHideFlags: 0

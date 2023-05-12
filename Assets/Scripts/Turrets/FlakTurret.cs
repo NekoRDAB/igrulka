@@ -23,9 +23,9 @@ public class FlakTurret : MonoBehaviour, ITurret
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
         {0, "Shots at the nearest enemy"},
-        {1, "Shoots another projectile"},
+        {1, "Shoots 1 more projectile"},
         {2, "+30% fire rate"},
-        {3, "Shoots another projectile"},
+        {3, "Shoots 1 more projectile"},
         {4, "+15 damage"},
     };
 
