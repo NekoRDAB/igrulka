@@ -50,7 +50,6 @@ public class LevelUpScreen : MonoBehaviour
                 fifthTurret,
                 sixthTurret
             };
-            Debug.Log(fifthTurret);
         }
         DrawChoices();
     }
@@ -58,25 +57,13 @@ public class LevelUpScreen : MonoBehaviour
     private void DrawChoices()
     {
         var rnd = new Random();
-        var availableTurrets = new List<ITurret>(turrets);
+        var availableTurrets = turrets
+            .Where(t => t.GetLevel() < 5)
+            .ToList();
+
         firstUpgrade = GetRandomTurret(rnd, availableTurrets);
-        if (firstUpgrade.GetLevel() == 4)
-        {
-            availableTurrets.Remove(firstUpgrade);
-            firstUpgrade = GetRandomTurret(rnd, availableTurrets);
-        }
         secondUpgrade = GetRandomTurret(rnd, availableTurrets);
-        if (secondUpgrade.GetLevel() == 4)
-        {
-            availableTurrets.Remove(firstUpgrade);
-            secondUpgrade = GetRandomTurret(rnd, availableTurrets);
-        }
         thirdUpgrade = GetRandomTurret(rnd, availableTurrets);
-        if (thirdUpgrade.GetLevel() == 4)
-        {
-            availableTurrets.Remove(firstUpgrade);
-            thirdUpgrade = GetRandomTurret(rnd, availableTurrets);
-        }
 
         firstCardButtonImage.sprite = firstUpgrade.GetSprite();
         secondCardButtonImage.sprite = secondUpgrade.GetSprite();
