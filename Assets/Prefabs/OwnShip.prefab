@@ -226,7 +226,6 @@ GameObject:
   - component: {fileID: 1421383903223256583}
   - component: {fileID: 8147058140998548320}
   - component: {fileID: 6086238415712658858}
-  - component: {fileID: 1493441870565881525}
   - component: {fileID: 3311708517151927131}
   m_Layer: 0
   m_Name: OwnShip
@@ -393,20 +392,6 @@ MonoBehaviour:
   movementSpeed: 2
   exhaust: {fileID: 2651299623649516903}
   health: 0
---- !u!114 &1493441870565881525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4354710548637431717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1818ad12d173e5408feb4a228dc1ad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 4700749317151736999}
-  bulletPrefab: {fileID: 3927878691097005390, guid: 87ed2f26be7efc546983518129bce60b, type: 3}
 --- !u!82 &3311708517151927131
 AudioSource:
   m_ObjectHideFlags: 0

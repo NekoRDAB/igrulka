@@ -28,6 +28,7 @@ public class GameStateController : MonoBehaviour
         level = 1;
         ownShip = GameObject.Find("OwnShip");
         audio = GetComponent<AudioSource>();
+        LevelUp();
     }
 
     // Update is called once per frame
