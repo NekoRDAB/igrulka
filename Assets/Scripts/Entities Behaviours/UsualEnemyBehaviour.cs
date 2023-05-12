@@ -25,6 +25,7 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
         timeDamaged = new Stopwatch();
         player = GameObject.Find("OwnShip");
         audio = GetComponent<AudioSource>();
+        audio.volume = PlayerPrefs.GetFloat("soundVolume");
         damage = 20;
     }
 

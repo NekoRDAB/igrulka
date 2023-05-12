@@ -15,6 +15,7 @@ public class FlakProjectileLogic : MonoBehaviour
         rb.velocity = (transform.up + transform.right*Random.Range(-0.2f, 0.2f)) * FlakTurret.Speed;
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume");
     }
 
     // Update is called once per frame

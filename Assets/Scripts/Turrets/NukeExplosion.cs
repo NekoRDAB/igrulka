@@ -6,12 +6,15 @@ using UnityEngine;
 public class NukeExplosion : MonoBehaviour
 {
     private Stopwatch timeAlive;
+    private AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
         timeAlive = new Stopwatch();
         timeAlive.Start();
+        audio = GetComponent<AudioSource>();
+        audio.volume = PlayerPrefs.GetFloat("soundVolume");
     }
 
     // Update is called once per frame

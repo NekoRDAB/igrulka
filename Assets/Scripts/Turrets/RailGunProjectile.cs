@@ -15,6 +15,7 @@ public class RailGunProjectile : MonoBehaviour
         rb.velocity = transform.up * RailGunTurret.Speed;
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume");
     }
 
     // Update is called once per frame

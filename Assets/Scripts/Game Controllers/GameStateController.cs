@@ -20,6 +20,8 @@ public class GameStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!PlayerPrefs.HasKey("soundVolume"))
+            PlayerPrefs.SetFloat("soundVolume", 1);
         Time.timeScale = 1;
         survivalTimer = new Stopwatch();
         survivalTimer.Start();
@@ -71,6 +73,7 @@ public class GameStateController : MonoBehaviour
     public void PlaySound(float pitch)
     {
         audio.pitch = pitch;
+        audio.volume = PlayerPrefs.GetFloat("soundVolume");
         audio.Play();
     }
 }

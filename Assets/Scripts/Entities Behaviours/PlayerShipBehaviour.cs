@@ -29,6 +29,7 @@ namespace Assets.Scripts
             health = 100;
             ownShip = GetComponent<Rigidbody2D>();
             audio = GetComponent<AudioSource>();
+            audio.volume = PlayerPrefs.GetFloat("soundVolume");
         }
 
         // Update is called once per frame

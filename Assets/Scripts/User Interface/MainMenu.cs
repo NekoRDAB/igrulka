@@ -72,7 +72,6 @@ public class MainMenu : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Комп крашнулся, лох");
         Application.Quit();
     }
 }

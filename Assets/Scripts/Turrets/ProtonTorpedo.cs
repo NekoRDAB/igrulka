@@ -18,6 +18,7 @@ public class ProtonTorpedo : MonoBehaviour
         rb.velocity = transform.up * ProtonTorpedoesTurret.Speed;
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume");
     }
 
     // Update is called once per frame

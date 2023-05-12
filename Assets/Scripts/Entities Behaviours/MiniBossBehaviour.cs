@@ -25,6 +25,7 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
         timeDamaged = new Stopwatch();
         player = GameObject.Find("OwnShip");
         audio = GetComponent<AudioSource>();
+        audio.volume = PlayerPrefs.GetFloat("soundVolume");
         damage = 150;
         health = 1500;
     }

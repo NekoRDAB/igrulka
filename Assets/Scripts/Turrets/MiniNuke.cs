@@ -15,6 +15,7 @@ public class MiniNuke : MonoBehaviour
         rb.velocity = transform.up * MiniNukeTurret.Speed;
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume");
     }
 
     // Update is called once per frame
