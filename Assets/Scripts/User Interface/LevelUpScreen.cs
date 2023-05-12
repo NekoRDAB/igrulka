@@ -20,6 +20,7 @@ public class LevelUpScreen : MonoBehaviour
     public TextMeshProUGUI secondCardText;
     public Image thirdCardButtonImage;
     public TextMeshProUGUI thirdCardText;
+    [SerializeField] private PlayerShipBehaviour ownShip;
     [SerializeField] private GameStateController controller;
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
     [SerializeField] private FlakTurret secondTurret;
@@ -60,6 +61,13 @@ public class LevelUpScreen : MonoBehaviour
         var availableTurrets = turrets
             .Where(t => t.GetLevel() < 5)
             .ToList();
+        if (ownShip.turretsCount == 5)
+        {
+            availableTurrets = availableTurrets
+                .Where(t => t.GetLevel() > 0)
+                .ToList();
+        }
+        
 
         firstUpgrade = GetRandomTurret(rnd, availableTurrets);
         secondUpgrade = GetRandomTurret(rnd, availableTurrets);
