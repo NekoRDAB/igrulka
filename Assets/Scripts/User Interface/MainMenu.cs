@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+
         // Use the first button as the default active button
         buttons[activeButtonIndex].Select();
     }

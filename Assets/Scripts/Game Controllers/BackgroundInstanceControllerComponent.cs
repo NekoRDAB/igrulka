@@ -1,23 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BackgroundInstanceControllerComponent : MonoBehaviour
 {
-    [Header("Tags")] 
-    [SerializeField] private string createTag;
-    private void Awake()
+    private AudioSource audio;
+    void Start()
     {
-        var obj = GameObject.FindWithTag(this.createTag);
-        if (obj != null)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            this.gameObject.tag = this.createTag;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        DontDestroyOnLoad(this.gameObject);
+        if (!PlayerPrefs.HasKey("musicVolume"))
+            PlayerPrefs.SetFloat("musicVolume", 1);
+        audio = GetComponent<AudioSource>();
+        audio.Play();
+        audio.volume = PlayerPrefs.GetFloat("musicVolume");
+    }
+
+    void FixedUpdate()
+    {
+        audio.volume = PlayerPrefs.GetFloat("musicVolume");
     }
 }
