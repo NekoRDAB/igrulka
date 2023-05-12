@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6800952824497523464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.57, y: 3.92, z: 0}
-  m_LocalScale: {x: 2.9217608, y: 0.9325299, z: 1}
+  m_LocalScale: {x: 3.6, y: 1.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,4 +127,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownShip: {fileID: 0}
   pickUpRange: 50
-  clip: {fileID: 8300000, guid: 88cfd7b1831d081469fc5fe649739eb7, type: 3}
