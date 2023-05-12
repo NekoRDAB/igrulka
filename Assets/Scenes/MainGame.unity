@@ -1518,6 +1518,7 @@ MonoBehaviour:
   secondCardText: {fileID: 678817992}
   thirdCardButtonImage: {fileID: 1609922134}
   thirdCardText: {fileID: 324770988}
+  ownShip: {fileID: 1992808653}
   controller: {fileID: 1873863517}
   firstTurret: {fileID: 7466736504094731712, guid: 6e4d2d015109d9645b50267d04bdff59, type: 3}
   secondTurret: {fileID: 7451256155772070648, guid: 1f093dc03e659f24fab07720b6942c93, type: 3}
@@ -3329,6 +3330,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5187421591837077012, guid: 66ab126214c310347bceb10e2347dc4c, type: 3}
   m_PrefabInstance: {fileID: 1301319230584403760}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1992808653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6086238415712658858, guid: 66ab126214c310347bceb10e2347dc4c, type: 3}
+  m_PrefabInstance: {fileID: 1301319230584403760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992808647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eae1ca38d195a24c878485c3dbce4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2031471135
 GameObject:
   m_ObjectHideFlags: 0
