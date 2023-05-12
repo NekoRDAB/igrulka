@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,52 +16,46 @@ public class SoundVolumeControllerComponent : MonoBehaviour
     [SerializeField] private string textVolumeTag;
 
     [Header("Parameters")]
-    [SerializeField] private float volume = 100;
+    [SerializeField] private float volume = 0.5f;
 
     private void Awake()
     {
-        if (PlayerPrefs.HasKey(this.saveVolumeKey))
-        {
-            this.volume = PlayerPrefs.GetFloat(this.saveVolumeKey);
-            this.audio.volume = this.volume;
+        volume = PlayerPrefs.HasKey(saveVolumeKey) ? 
+            PlayerPrefs.GetFloat(saveVolumeKey) : 0.5f;
+        audio.volume = volume;
 
-            var sliderObj = GameObject.FindWithTag(this.sliderTag);
-            if (sliderObj != null)
-            {
-                this.slider = sliderObj.GetComponent<Slider>();
-                this.slider.value = this.volume;
-            }
-            else
-            {
-                this.volume = 0.5f;
-                PlayerPrefs.SetFloat(this.saveVolumeKey, this.volume);
-                this.audio.volume = this.volume;
-            }
-        }
-    }
-    private void LateUpdate()
-    {
-        var sliderObj = GameObject.FindWithTag(this.sliderTag);
+        var sliderObj = GameObject.FindWithTag(sliderTag);
         if (sliderObj != null)
         {
-            this.slider = sliderObj.GetComponent<Slider>();
-            this.volume = slider.value;
+            slider = sliderObj.GetComponent<Slider>();
+            slider.value = volume;
+        }
+        else
+        {
+            PlayerPrefs.SetFloat(saveVolumeKey, volume);
+        }
+    }
 
-            if (this.audio.volume != this.volume)
-            {
-                PlayerPrefs.SetFloat(this.saveVolumeKey, this.volume);
-            }
-
-            var textObj = GameObject.FindWithTag(this.textVolumeTag);
-
-            if (textObj != null)
-            {
-                this.text = textObj.GetComponent<Text>();
-
-                this.text.text = Mathf.Round(this.volume * 100) + "%";
-            }
+    private void LateUpdate()
+    {
+        slider = GameObject.FindWithTag(sliderTag)?.GetComponent<Slider>();
+        if (slider == null)
+        {
+            return;
+        }
+        
+        volume = slider.value;
+        if (audio.volume != volume)
+        {
+            PlayerPrefs.SetFloat(saveVolumeKey, volume);
         }
 
-        this.audio.volume = this.volume;
+        text = GameObject.FindWithTag(textVolumeTag)?.GetComponent<Text>();
+        if (text != null)
+        {
+            text.text = Mathf.Round(volume * 100) + "%";
+        }
+
+        audio.volume = volume;
     }
 }
