@@ -8,10 +8,12 @@ public class GameStateController : MonoBehaviour
 {
     public int level { get; private set; }
     public int experience { get; private set; }
-    public Stopwatch survivalTimer;
+    // public Stopwatch survivalTimer;
     private GameObject ownShip;
     private double health;
     private AudioSource audio;
+    public float survivalTimeLimit = 1200f; 
+    public float survivalTimer;
     [SerializeField]private HUDController hudController;
     [SerializeField] private LevelUpScreen levelUpScreen;
     [SerializeField] private GameOverScreen gameOverScreen;
@@ -23,19 +25,24 @@ public class GameStateController : MonoBehaviour
         if (!PlayerPrefs.HasKey("soundVolume"))
             PlayerPrefs.SetFloat("soundVolume", 1);
         Time.timeScale = 1;
-        survivalTimer = new Stopwatch();
-        survivalTimer.Start();
         level = 1;
         ownShip = GameObject.Find("OwnShip");
         audio = GetComponent<AudioSource>();
         LevelUp();
+        survivalTimer = survivalTimeLimit;
     }
 
     // Update is called once per frame
     void Update()
     {
         health = ownShip.GetComponent<PlayerShipBehaviour>().health;
-        if (health <= 0 || survivalTimer.Elapsed.Minutes >= 20)
+
+        // уменьшаем значение таймера каждый кадр
+        survivalTimer -= Time.deltaTime;
+
+        // если таймер достиг нуля или здоровье игрока меньше или равно нулю,
+        // вызываем экран проигрыша и останавливаем игру
+        if (survivalTimer <= 0f || health <= 0)
         {
             gameOverScreen.SetUp(hudController.killCount);
             Time.timeScale = 0;
@@ -44,7 +51,6 @@ public class GameStateController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0;
-            survivalTimer.Stop();
             pauseScreen.SetUp();
         }
     }

@@ -29,14 +29,14 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.maxValue = gameStateController.level + gameStateController.level * 5;
+        slider.maxValue = gameStateController.level * 4;
         slider.value = gameStateController.experience;
-        level.text = $"lvl. {gameStateController.level}";
-        killCountText.text = $"killed: {killCount}";
+        level.text = $"Уровень: {gameStateController.level}";
+        killCountText.text = $"Убийств: {killCount}";
         var timer = gameStateController.survivalTimer;
-        var minutes = timer.Elapsed.Minutes < 10 ? "0" + timer.Elapsed.Minutes.ToString() : timer.Elapsed.Minutes.ToString();
-        var seconds = timer.Elapsed.Seconds < 10 ? "0" + timer.Elapsed.Seconds.ToString() : timer.Elapsed.Seconds.ToString();
-        timeSurvived.text = $"{minutes}:{seconds}";
+        var maxTime = gameStateController.survivalTimeLimit;
+        var timeSpan = new System.TimeSpan(0, 0, (int)(maxTime - timer));
+        timeSurvived.text = $"{timeSpan.Minutes.ToString("D2")}:{timeSpan.Seconds.ToString("D2")}";
     }
 
     public void IncreaseKillCount()

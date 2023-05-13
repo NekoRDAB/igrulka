@@ -68,7 +68,7 @@ public class PauseScreen : MonoBehaviour
     {
         Time.timeScale = 1;
         gameObject.SetActive(false);
-        controller.survivalTimer.Start();
+        // controller.survivalTimer.Start();
     }
     
     public void BackToMainMenu()

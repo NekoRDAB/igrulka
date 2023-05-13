@@ -38,7 +38,7 @@ public class LevelUpScreen : MonoBehaviour
     // Start is called before the first frame update
     public void SetUp()
     {
-        controller.survivalTimer.Stop();
+        // controller.survivalTimer.Stop();
         gameObject.SetActive(true);
         if (turrets is null)
         {
@@ -94,7 +94,7 @@ public class LevelUpScreen : MonoBehaviour
     {
         Time.timeScale = 1;
         gameObject.SetActive(false);
-        controller.survivalTimer.Start();
+        // controller.survivalTimer.Start();
     }
 
     public void ChoseFirst()
