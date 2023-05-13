@@ -27,8 +27,8 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
     {
         {0, "Shoot torpedoes from front of the ship"},
         {1, "Shots 1 more projectile"},
-        {2, "+20 damage, +20% fire rate"},
-        {3, "+10% projectile speed"},
+        {2, "+40 damage, +30% fire rate"},
+        {3, "+20% projectile speed"},
         {4, "Shots 1 more projectile"},
     };
 
@@ -38,11 +38,11 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         {
             2, () =>
             {
-                Damage += 20;
-                CoolDown *= 0.8f;
+                Damage += 40;
+                CoolDown *= 0.7f;
             }
         },
-        { 3, () => Speed *= 1.1f },
+        { 3, () => Speed *= 1.2f },
         { 4, () => Amount++ },
     };
 
