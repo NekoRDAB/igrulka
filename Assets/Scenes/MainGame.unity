@@ -1160,6 +1160,7 @@ MonoBehaviour:
   fourthTurret: {fileID: -779361833123556534, guid: c64af64f71614204395b2dfdd460e888, type: 3}
   fifthTurret: {fileID: -4261860414855495707, guid: baeec996c7aa95a45940982a8e3ba7d7, type: 3}
   sixthTurret: {fileID: -7361688756770138214, guid: adb45e22b46870f449e0f9520200da81, type: 3}
+  seventhTurret: {fileID: -8362727341198751354, guid: 5e13e5803d4453a41b0be43bf99206b6, type: 3}
 --- !u!114 &1043596127
 MonoBehaviour:
   m_ObjectHideFlags: 0

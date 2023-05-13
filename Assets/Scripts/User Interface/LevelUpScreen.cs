@@ -28,6 +28,7 @@ public class LevelUpScreen : MonoBehaviour
     [SerializeField] private MiniNukeTurret fourthTurret;
     [SerializeField] private RefrigeratorTurret fifthTurret;
     [SerializeField] private ShieldGenerator sixthTurret;
+    [SerializeField] private LaserTurretBehaviour seventhTurret;
 
     private List<ITurret> turrets;
     private ITurret firstUpgrade;
@@ -49,7 +50,8 @@ public class LevelUpScreen : MonoBehaviour
                 thirdTurret,
                 fourthTurret,
                 fifthTurret,
-                sixthTurret
+                sixthTurret,
+                seventhTurret
             };
         }
         DrawChoices();

@@ -36,7 +36,7 @@ public class HUDController : MonoBehaviour
         var timer = gameStateController.survivalTimer;
         var maxTime = gameStateController.survivalTimeLimit;
         var timeSpan = new System.TimeSpan(0, 0, (int)(maxTime - timer));
-        timeSurvived.text = $"{timeSpan.Minutes.ToString("D2")}:{timeSpan.Seconds.ToString("D2")}";
+        timeSurvived.text = $"{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
     }
 
     public void IncreaseKillCount()
