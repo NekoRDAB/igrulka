@@ -15,7 +15,7 @@ C:/Users/cooluser/Game/igrulka
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-1631
+2152
 Successfully changed project path to: C:/Users/cooluser/Game/igrulka
 C:/Users/cooluser/Game/igrulka
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/cooluser/Game/igrulka
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [15088] Host "[IP] 192.168.1.139 [Port] 0 [Flags] 2 [Guid] 2365147742 [EditorId] 2365147742 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ECIVO6B) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [9432] Host "[IP] 192.168.1.139 [Port] 0 [Flags] 2 [Guid] 4029054858 [EditorId] 4029054858 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ECIVO6B) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [15088] Host "[IP] 192.168.1.139 [Port] 0 [Flags] 2 [Guid] 2365147742 [EditorId] 2365147742 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ECIVO6B) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9432] Host "[IP] 192.168.1.139 [Port] 0 [Flags] 2 [Guid] 4029054858 [EditorId] 4029054858 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-ECIVO6B) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 15.23 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 20.94 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.2.14f1 (b2c9b1ac6cc0)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/Resources/UnitySubsystems
@@ -67,22 +67,22 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56084
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56504
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.020959 seconds.
-- Loaded All Assemblies, in  0.563 seconds
+Registered in 0.019709 seconds.
+- Loaded All Assemblies, in  0.582 seconds
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 1451 ms
+Android Extension - Scanning For ADB Devices 465 ms
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.970 seconds
+- Finished resetting the current domain, in  1.019 seconds
 Domain Reload Profiling:
 	ReloadAssembly (339ms)
 		BeginReloadAssembly (149ms)
@@ -92,23 +92,23 @@ Domain Reload Profiling:
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
 		LoadAllAssembliesAndSetupDomain (0ms)
-			LoadAssemblies (147ms)
+			LoadAssemblies (148ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (213ms)
-				TypeCache.Initialize (212ms)
-					TypeCache.ScanAssembly (210ms)
+			SetupTypeCache (231ms)
+				TypeCache.Initialize (229ms)
+					TypeCache.ScanAssembly (226ms)
 				ResolveRequiredComponents (1ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1868ms)
+			SetupLoadedEditorAssemblies (915ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (1598ms)
+				InitializePlatformSupportModulesInManaged (631ms)
 				SetLoadedEditorAssemblies (7ms)
 				RefreshPlugins (0ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (182ms)
-				ProcessInitializeOnLoadMethodAttributes (79ms)
+				ProcessInitializeOnLoadAttributes (192ms)
+				ProcessInitializeOnLoadMethodAttributes (83ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -118,51 +118,51 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\cooluser\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\cooluser\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  1.230 seconds
-Refreshing native plugins compatible for Editor in 6.27 ms, found 4 plugins.
+- Loaded All Assemblies, in  1.308 seconds
+Refreshing native plugins compatible for Editor in 6.90 ms, found 4 plugins.
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.954 seconds
+- Finished resetting the current domain, in  1.001 seconds
 Domain Reload Profiling:
-	ReloadAssembly (356ms)
-		BeginReloadAssembly (219ms)
+	ReloadAssembly (381ms)
+		BeginReloadAssembly (228ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (11ms)
+			DisableScriptedObjects (12ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (35ms)
-		LoadAllAssembliesAndSetupDomain (870ms)
-			LoadAssemblies (472ms)
+		LoadAllAssembliesAndSetupDomain (923ms)
+			LoadAssemblies (492ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (493ms)
-				TypeCache.Initialize (449ms)
-					TypeCache.ScanAssembly (443ms)
-				ResolveRequiredComponents (8ms)
+			SetupTypeCache (541ms)
+				TypeCache.Initialize (485ms)
+					TypeCache.ScanAssembly (477ms)
+				ResolveRequiredComponents (10ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (677ms)
+			SetupLoadedEditorAssemblies (708ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (38ms)
+				InitializePlatformSupportModulesInManaged (42ms)
 				SetLoadedEditorAssemblies (6ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (104ms)
-				ProcessInitializeOnLoadAttributes (459ms)
+				BeforeProcessingInitializeOnLoad (112ms)
+				ProcessInitializeOnLoadAttributes (477ms)
 				ProcessInitializeOnLoadMethodAttributes (60ms)
-				AfterProcessingInitializeOnLoad (10ms)
+				AfterProcessingInitializeOnLoad (11ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (11ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 2.99 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 6.14 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4063 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 63 unused Assets / (70.5 KB). Loaded Objects now: 4534.
+Unloading 4065 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 63 unused Assets / (70.5 KB). Loaded Objects now: 4536.
 Memory consumption went from 135.1 MB to 135.0 MB.
-Total: 4.908400 ms (FindLiveObjects: 0.434000 ms CreateObjectMapping: 0.183500 ms MarkObjects: 4.127700 ms  DeleteObjects: 0.161800 ms)
+Total: 5.063500 ms (FindLiveObjects: 0.415300 ms CreateObjectMapping: 0.260800 ms MarkObjects: 4.163500 ms  DeleteObjects: 0.221800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -177,290 +177,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 274.797458 seconds.
-  path: Assets/Prefabs/SpaceDebris.prefab
-  artifactKey: Guid(7c587f81c5c61684ebd728b2034bccc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/SpaceDebris.prefab using Guid(7c587f81c5c61684ebd728b2034bccc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '019cb441f3fbe11ca12229c5371d8317') in 0.235423 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 65
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/Prefabs/Enemy3.prefab
-  artifactKey: Guid(3bb518d829ea0744e9a6ec4570b5505f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemy3.prefab using Guid(3bb518d829ea0744e9a6ec4570b5505f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b817dbfb5b98b83aabe5949a801297a1') in 0.066530 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 59
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\cooluser\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\cooluser\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.991 seconds
-Refreshing native plugins compatible for Editor in 4.25 ms, found 4 plugins.
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.940 seconds
-Domain Reload Profiling:
-	ReloadAssembly (260ms)
-		BeginReloadAssembly (166ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (14ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		LoadAllAssembliesAndSetupDomain (728ms)
-			LoadAssemblies (455ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (338ms)
-				TypeCache.Initialize (328ms)
-					TypeCache.ScanAssembly (322ms)
-				ResolveRequiredComponents (6ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (414ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (27ms)
-				SetLoadedEditorAssemblies (4ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (77ms)
-				ProcessInitializeOnLoadAttributes (267ms)
-				ProcessInitializeOnLoadMethodAttributes (32ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Refreshing native plugins compatible for Editor in 3.69 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4038 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (34.7 KB). Loaded Objects now: 4548.
-Memory consumption went from 133.8 MB to 133.8 MB.
-Total: 4.180100 ms (FindLiveObjects: 0.334400 ms CreateObjectMapping: 0.124800 ms MarkObjects: 3.628100 ms  DeleteObjects: 0.091300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\cooluser\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\cooluser\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.868 seconds
-Refreshing native plugins compatible for Editor in 5.36 ms, found 4 plugins.
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.164 seconds
-Domain Reload Profiling:
-	ReloadAssembly (250ms)
-		BeginReloadAssembly (169ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (15ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (41ms)
-		LoadAllAssembliesAndSetupDomain (616ms)
-			LoadAssemblies (312ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (371ms)
-				TypeCache.Initialize (364ms)
-					TypeCache.ScanAssembly (358ms)
-				ResolveRequiredComponents (7ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (447ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (30ms)
-				SetLoadedEditorAssemblies (4ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (76ms)
-				ProcessInitializeOnLoadAttributes (278ms)
-				ProcessInitializeOnLoadMethodAttributes (50ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (24ms)
-Refreshing native plugins compatible for Editor in 6.89 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4039 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (42.1 KB). Loaded Objects now: 4552.
-Memory consumption went from 134.1 MB to 134.0 MB.
-Total: 5.147000 ms (FindLiveObjects: 0.511800 ms CreateObjectMapping: 0.270200 ms MarkObjects: 4.279300 ms  DeleteObjects: 0.083800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 198.785161 seconds.
-  path: Assets/2D Space Kit/Turrets/Turret Large 1.png
-  artifactKey: Guid(86667be20d0ae8d49af06ac515d4a30b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Turrets/Turret Large 1.png using Guid(86667be20d0ae8d49af06ac515d4a30b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02831e988ea7bc5c61573c48d9cc1e39') in 0.090597 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/2D Space Kit/Turrets/Turret Small 3.png
-  artifactKey: Guid(75d0fa0347708ef4498355b920afb845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Turrets/Turret Small 3.png using Guid(75d0fa0347708ef4498355b920afb845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eabd3e9023100dddf8580319482349e') in 0.026958 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/2D Space Kit/Turrets/Turret Large 2.png
-  artifactKey: Guid(9d7dfb09158050b4f87f70dcc341698c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Turrets/Turret Large 2.png using Guid(9d7dfb09158050b4f87f70dcc341698c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '496a9bee1a926557fa8f4b9394e8e68c') in 0.016021 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/2D Space Kit/Turrets/Turret Medium 3.png
-  artifactKey: Guid(c2fcd762a8bd6cf4dbd18ba12ddc1525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Turrets/Turret Medium 3.png using Guid(c2fcd762a8bd6cf4dbd18ba12ddc1525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd7b5aec5f4472b148f73e479b88f1d7') in 0.015734 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/2D Space Kit/Turrets/Turret Medium 2.png
-  artifactKey: Guid(a1a667fce840ba24190516baafb53769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Turrets/Turret Medium 2.png using Guid(a1a667fce840ba24190516baafb53769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6984060258fbac58837ff684e6ad0d10') in 0.024818 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000069 seconds.
-  path: Assets/2D Space Kit/Turrets/Turret Small 4.png
-  artifactKey: Guid(b520897860de45a489bea7656ba71eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Turrets/Turret Small 4.png using Guid(b520897860de45a489bea7656ba71eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fb64d9ebf269bc760fbeba85607de92') in 0.028367 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 79.204002 seconds.
-  path: Assets/Scenes/MainGame.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainGame.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27fefb79d260e93505c60b11e6ef0e7e') in 0.000703 seconds
+  Time since last request: 2089.708015 seconds.
+  path: Assets/Scripts/Turrets/ProtonTorpedoesTurret.cs
+  artifactKey: Guid(968fc6b7bbf0f3f4fae53f806f3ee0f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Turrets/ProtonTorpedoesTurret.cs using Guid(968fc6b7bbf0f3f4fae53f806f3ee0f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24aff612f17a060374bb0fb66a7d9519') in 0.002864 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 63.598148 seconds.
-  path: Assets/Prefabs/LaserTurret.prefab
-  artifactKey: Guid(5e13e5803d4453a41b0be43bf99206b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/LaserTurret.prefab using Guid(5e13e5803d4453a41b0be43bf99206b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '841d269d1bfaf4b83ce4e9096ce4c36e') in 0.047919 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
-========================================================================
-Received Import Request.
-  Time since last request: 8.772669 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Big Projectile.png
-  artifactKey: Guid(b909b07c03c5f6b4687729ca067620c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Big Projectile.png using Guid(b909b07c03c5f6b4687729ca067620c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29910a41935bd508f5e962fff4d15081') in 0.013879 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.014747 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Explosion.png
-  artifactKey: Guid(d30a353fc5e62e445b58e341d953d45e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Explosion.png using Guid(d30a353fc5e62e445b58e341d953d45e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fc888157d3308866b5f26814c846983') in 0.015243 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000132 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Projectile Sharp.png
-  artifactKey: Guid(31d8a46be10bcd3409183a6525fc1635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Projectile Sharp.png using Guid(31d8a46be10bcd3409183a6525fc1635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1a54decdc5f21a56844925156d71002') in 0.010851 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000290 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Projectile Thin.png
-  artifactKey: Guid(2b9d02daf092f1f4589868061e46f087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Projectile Thin.png using Guid(2b9d02daf092f1f4589868061e46f087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9c8579348446b89598211dd98ca5f43') in 0.016223 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Small Flare.png
-  artifactKey: Guid(b4632570e919c6f459168cdf0a8c9a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Small Flare.png using Guid(b4632570e919c6f459168cdf0a8c9a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7750cb4082ec2885b5e53c71beb0a399') in 0.013234 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Smoke 3.png
-  artifactKey: Guid(ee8075cd9076a904da23908561f65965) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Smoke 3.png using Guid(ee8075cd9076a904da23908561f65965) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f34cca131ab2fadb945632b09a585a0b') in 0.020866 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000153 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Starflare.png
-  artifactKey: Guid(0cf63e7efdccc0a4793feeb4a05ec80e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Starflare.png using Guid(0cf63e7efdccc0a4793feeb4a05ec80e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05a55b9e45b9e9537fec4c6f44fa91c7') in 0.026452 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Smoke 2.png
-  artifactKey: Guid(b0ed85a272b9b72439cc52dc2433f092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Smoke 2.png using Guid(b0ed85a272b9b72439cc52dc2433f092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a6974c907ac3783922e1eefb2b87286') in 0.025762 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Flare.png
-  artifactKey: Guid(e299877945f4faa4d87538588f58b9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Flare.png using Guid(e299877945f4faa4d87538588f58b9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8bf4bcaa48c82cdcd2e132ce17b9655') in 0.016435 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/2D Space Kit/Particles (Sprites)/Burst.png
-  artifactKey: Guid(83bb9b768d3a6734aae0bfb712f96018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Space Kit/Particles (Sprites)/Burst.png using Guid(83bb9b768d3a6734aae0bfb712f96018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '060fea589669c7babc4e464a00955ece') in 0.017710 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: ќпераци€ ввода/вывода была прервана из-за завершени€ потока команд или по запросу приложени€.
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0

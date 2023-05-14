@@ -999,6 +999,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6809792343595135162, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
+      propertyPath: m_TagString
+      value: music
+      objectReference: {fileID: 0}
     - target: {fileID: 7891462765788375391, guid: bdac3f854d4bc2944b9f77c5e6be5d59, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

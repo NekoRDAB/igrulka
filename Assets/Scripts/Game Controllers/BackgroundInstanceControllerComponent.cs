@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BackgroundInstanceControllerComponent : MonoBehaviour
 {
-    private AudioSource audio;
+    public AudioSource audio;
     void Start()
     {
         var obj = GameObject.FindWithTag("music");

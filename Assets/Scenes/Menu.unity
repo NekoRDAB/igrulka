@@ -686,6 +686,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!82 &725208868 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4294558142980279630, guid: c88c8cb62c8e4a1408bc6447d405f5f6, type: 3}
+  m_PrefabInstance: {fileID: 1851566110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1354811195
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1132,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6498638920316890901, guid: c88c8cb62c8e4a1408bc6447d405f5f6, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 725208868}
     - target: {fileID: 6498638920316890901, guid: c88c8cb62c8e4a1408bc6447d405f5f6, type: 3}
       propertyPath: createTag
       value: BG_Music_Created
