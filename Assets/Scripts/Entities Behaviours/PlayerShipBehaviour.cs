@@ -11,6 +11,7 @@ namespace Assets.Scripts
         [SerializeField] private float movementSpeed = 0.1f;
         [SerializeField] private Transform exhaust;
         public double health;
+        private SpriteRenderer spriteRenderer;
         private AudioSource audio;
         private GameObject shield;
 
@@ -30,6 +31,7 @@ namespace Assets.Scripts
             ownShip = GetComponent<Rigidbody2D>();
             audio = GetComponent<AudioSource>();
             audio.volume = PlayerPrefs.GetFloat("soundVolume");
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         // Update is called once per frame
@@ -76,8 +78,14 @@ namespace Assets.Scripts
             }
             else
             {
+                spriteRenderer.color = Color.red;
                 health -= damage / 60.0;
             }
+        }
+
+        void OnCollisionExit2D(Collision2D collision)
+        {
+            spriteRenderer.color = Color.white;
         }
 
         public void TakeDamage(double damage)
