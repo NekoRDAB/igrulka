@@ -24,17 +24,17 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
     {
         {0, "Выпускает снаряд, замораживающий случайного врага."},
         {1, "Туррель выпускает на 1 снаряд больше."},
-        {2, "Время перезарядки снарядов уменьшается."},
+        {2, "Время перезарядки снарядов уменьшается на 30%."},
         {3, "Туррель выпускает на 2 снаряда больше."},
-        {4, "Время перезарядки снарядов уменьшается."},
+        {4, "Время перезарядки снарядов уменьшается на 50%."},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
     {
         { 1, () => Amount++ },
-        { 2, () => CoolDown -= 1.5f},
+        { 2, () => CoolDown *= 0.7f},
         { 3, () => Amount += 2 },
-        { 4, () => CoolDown -= 2f },
+        { 4, () => CoolDown *= 0.5f },
     };
 
     // Start is called before the first frame update

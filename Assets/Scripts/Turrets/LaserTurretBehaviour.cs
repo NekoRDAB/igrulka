@@ -20,16 +20,16 @@ public class LaserTurretBehaviour : MonoBehaviour, ITurret
     {
         {0, "Создаёт лазер, кружащийся вокруг корабля и пронизывающий врагов."},
         {1, "Скорость вращения лазера увеличивается на 50%."},
-        {2, "Урон от лазера увеличвается на 25."},
+        {2, "Урон от лазера увеличивается на 25."},
         {3, "Скорость вращения лазера увеличивается на 50%."},
-        {4, "Урон от лазера увеличвается на 25."},
+        {4, "Урон от лазера увеличивается на 25."},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
     {
-        { 1, () => Speed += 10f},
+        { 1, () => Speed *= 1.5f},
         { 2, () => Damage += 25 },
-        { 3, () => Speed += 10f },
+        { 3, () => Speed *= 1.5f },
         { 4, () => Damage += 25 },
     };
     // Start is called before the first frame update
