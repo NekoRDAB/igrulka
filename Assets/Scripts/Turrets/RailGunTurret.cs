@@ -21,11 +21,11 @@ public class RailGunTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Shots piercing projectile at nearest enemy"},
-        {1, "+30% fire rate"},
-        {2, "+30% fire rate"},
-        {3, "+50 damage"},
-        {4, "+40% projectile speed"},
+        {0, "Выстреливает пробивным снарядом в ближайшего врага."},
+        {1, "Радиус поражения снаряда увеличивается на 30%."},
+        {2, "Радиус поражения снаряда увеличивается на 30%."},
+        {3, "Урон от снаряда увеличивается на 50."},
+        {4, "Скорость снаряда увеличивается на 40%."},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()

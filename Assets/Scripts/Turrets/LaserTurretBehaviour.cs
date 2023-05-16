@@ -18,11 +18,11 @@ public class LaserTurretBehaviour : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Излучает лазер пронизывающий врагов"},
-        {1, "+50% скорости"},
-        {2, "+25 урону"},
-        {3, "+50% скорости"},
-        {4, "+25 урону"},
+        {0, "Создаёт лазер, кружащийся вокруг корабля и пронизывающий врагов."},
+        {1, "Скорость вращения лазера увеличивается на 50%."},
+        {2, "Урон от лазера увеличвается на 25."},
+        {3, "Скорость вращения лазера увеличивается на 50%."},
+        {4, "Урон от лазера увеличвается на 25."},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()

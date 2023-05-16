@@ -22,11 +22,11 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Freezes one random enemy"},
-        {1, "Gains +1 amount"},
-        {2, "Cooldown is decreased"},
-        {3, "Gains +2 amount"},
-        {4, "Cooldown is decreased"},
+        {0, "Выпускает снаряд, замораживающий случайного врага."},
+        {1, "Туррель выпускает на 1 снаряд больше."},
+        {2, "Время перезарядки снарядов уменьшается."},
+        {3, "Туррель выпускает на 2 снаряда больше."},
+        {4, "Время перезарядки снарядов уменьшается."},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()

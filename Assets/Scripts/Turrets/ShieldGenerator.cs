@@ -22,11 +22,11 @@ public class ShieldGenerator : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Generates shield around ship"},
-        {1, " +30 shield durability"},
-        {2, "-30% cooldown"},
-        {3, "+30 shield durability"},
-        {4, "-30% cooldown"},
+        {0, "Создаёт щит вокруг корабля."},
+        {1, "Прочность щита увеличивается на 30."},
+        {2, "Время перезарядки щита уменьшается на 30%."},
+        {3, "Прочность щита увеличивается на 30."},
+        {4, "Время перезарядки щита уменьшается на 30%."},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()

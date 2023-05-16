@@ -22,11 +22,11 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Shots nuke at random enemy"},
-        {1, "+30% fire rate"},
-        {2, "+30% duration"},
-        {3, "+20 damage"},
-        {4, "+40% projectile speed"},
+        {0, "Выпускает ядерный снаряд в ближайшего врага."},
+        {1, "Радиус поражения снаряда увеличивается на 30%."},
+        {2, "Продолжительность ядерного взрыва увеличивается на 30%."},
+        {3, "Урон от снаряда увеличивается на 20."},
+        {4, "Скорость снаряда увеличивается на 40%."},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()

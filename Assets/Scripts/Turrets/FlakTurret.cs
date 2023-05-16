@@ -22,11 +22,11 @@ public class FlakTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Shots at the nearest enemy"},
-        {1, "Shoots 1 more projectile"},
-        {2, "+30% fire rate"},
-        {3, "Shoots 1 more projectile"},
-        {4, "+15 damage"},
+        {0, "Выпускает снаряды в ближайшего врага."},
+        {1, "Туррель выпускает на 1 снаряд больше."},
+        {2, "Радиус поражения снарядов увеличивается на 30%."},
+        {3, "Туррель выпускает на 1 снаряд больше."},
+        {4, "Урон от снарядов увеличивается на 15."},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()

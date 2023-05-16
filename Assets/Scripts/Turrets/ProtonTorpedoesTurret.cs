@@ -25,11 +25,11 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
     {
-        {0, "Shoot torpedoes from front of the ship"},
-        {1, "Shots 1 more projectile"},
-        {2, "+40 damage, +30% fire rate"},
-        {3, "+20% projectile speed"},
-        {4, "Shots 1 more projectile"},
+        {0, "Выпускает торпеды из носа корабля."},
+        {1, "Туррель выпускает на 1 снаряд больше."},
+        {2, "Урон от снарядов увеличивается на 40. Радиус поражения снарядов увеличивается на 30%."},
+        {3, "Скорость снарядов увеличивается на 20%."},
+        {4, "Туррель выпускает на 1 снаряд больше."},
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()

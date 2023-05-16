@@ -30,7 +30,7 @@ public class LevelUpScreen : MonoBehaviour
     [SerializeField] private ShieldGenerator sixthTurret;
     [SerializeField] private LaserTurretBehaviour seventhTurret;
 
-    private List<ITurret> turrets;
+    public List<ITurret> turrets;
     private ITurret firstUpgrade;
     private ITurret secondUpgrade;
     private ITurret thirdUpgrade;
