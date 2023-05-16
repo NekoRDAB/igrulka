@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 29747ad64b913e4488635b6818b6b91d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - RF Rufo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 153d4b025044b7b43b0565e993d8c2b7, type: 3}
+  - {fileID: 12800000, guid: 0767182e2535dd04a9884fc672c1edff, type: 3}
+  - {fileID: 12800000, guid: fbb03cd70737a494885a0d32744fcbd8, type: 3}
+  - {fileID: 12800000, guid: 323d1ac10fd56c2498e8db9dcdb2f965, type: 3}
+  - {fileID: 12800000, guid: a40ba966d3ca0e44c9b3108046e1a17f, type: 3}
+  - {fileID: 12800000, guid: f88fa23f9cfa6044eb856d4513050d00, type: 3}
+  - {fileID: 12800000, guid: 575bf7d9a4fdf764fbccfcb7167e4eca, type: 3}
+  - {fileID: 12800000, guid: f222b8d2cb5975a449197d6db37c7398, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

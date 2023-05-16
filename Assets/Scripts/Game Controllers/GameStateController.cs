@@ -12,11 +12,12 @@ public class GameStateController : MonoBehaviour
     private GameObject ownShip;
     private double health;
     private AudioSource audio;
-    public float survivalTimeLimit = 1200f; 
+    public float survivalTimeLimit; 
     public float survivalTimer;
     [SerializeField]private HUDController hudController;
     [SerializeField] private LevelUpScreen levelUpScreen;
     [SerializeField] private GameOverScreen gameOverScreen;
+    [SerializeField] private GameOverSuccessScreen gameOverSuccessScreen;
     [SerializeField] private PauseScreen pauseScreen;
     
     // Start is called before the first frame update
@@ -39,10 +40,13 @@ public class GameStateController : MonoBehaviour
 
         // уменьшаем значение таймера каждый кадр
         survivalTimer -= Time.deltaTime;
+        if (survivalTimer <= 0f)
+        {
+            gameOverSuccessScreen.SetUp(hudController.killCount);
+            Time.timeScale = 0;
+        }
 
-        // если таймер достиг нуля или здоровье игрока меньше или равно нулю,
-        // вызываем экран проигрыша и останавливаем игру
-        if (survivalTimer <= 0f || health <= 0)
+        if (health <= 0)
         {
             gameOverScreen.SetUp(hudController.killCount);
             Time.timeScale = 0;

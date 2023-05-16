@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOverScreen : MonoBehaviour
+public class GameOverSuccessScreen : MonoBehaviour
 {
     public Button[] buttons;
     [SerializeField] private TextMeshProUGUI killCountText;
@@ -51,7 +51,7 @@ public class GameOverScreen : MonoBehaviour
     {
         gameObject.SetActive(true);
         Start();
-        killCountText.text = $"Вы отразили нападение {killCount} вражеских кораблей";
+        killCountText.text = $"Вы отразили нашествие врагов на нашу планету и поразили {killCount} вражеских кораблей";
     }
 
     public void RestartButton()
