@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
-{
-    public enum SpawnState { Spawning, Waiting, Counting };
-
+{    
     [SerializeField] private Transform ship;
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
-    [SerializeField] private GameObject enemy3;
+    [SerializeField] private GameObject enemy3; 
     [SerializeField] private GameObject miniBoss;
+    public enum SpawnState { Spawning, Waiting, Counting };
     private WaveProcessing waveProcessing;
-
     public float timeBetweenWaves = 1f;
     public float waveCountDown;
     public SpawnState state = SpawnState.Counting;
+    
     private void Start()
     {
         waveCountDown = timeBetweenWaves;
@@ -68,19 +67,17 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
-
         if (waveCountDown <= 0)
         {
             if (state != SpawnState.Spawning)
-            {
                 StartCoroutine(SpawnWave(waveProcessing.GetNextWave()));
-            }
         }
+        
         else
             waveCountDown -= Time.deltaTime;
     }
 
-    IEnumerator SpawnWave(Wave wave)
+    private IEnumerator SpawnWave(Wave wave)
     {
         state = SpawnState.Spawning;
 
@@ -91,8 +88,6 @@ public class WaveSpawner : MonoBehaviour
         }
 
         state = SpawnState.Waiting;
-
-        yield break;
     }
 
     void SpawnEnemy(GameObject enemy)
@@ -126,7 +121,6 @@ public class Wave
         foreach (var pair in enemies)
             for (var i = 0; i < pair.Value; i++)
                 yield return pair.Key;
-        yield break;
     }
 }
 

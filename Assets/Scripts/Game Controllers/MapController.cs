@@ -1,19 +1,17 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Vector2 = System.Numerics.Vector2;
 
 
-public class InfiniteMap : MonoBehaviour 
+public class InfiniteMap : MonoBehaviour
 {
     [SerializeField] public GameObject ownShip;
     [SerializeField] public GameObject mapSegmentPrefab;
     private float mapWidth;
     private float mapHeight;
-    private GameObject currentSegment;
-    [SerializeField] public int numSegments = 3;
 
-    private List<GameObject> mapSegments = new ();
+
+    private List<GameObject> mapSegments = new();
 
     void Start()
     {
@@ -21,30 +19,20 @@ public class InfiniteMap : MonoBehaviour
         mapHeight = mapSegmentPrefab.transform.localScale.y * 40.96f;
         GenerateMapSegment(0, 0);
         GenerateMap(0, 0);
-        currentSegment = mapSegments[0];
     }
 
     void Update()
     {
-        if (ShipInSegment(0))
-            return;
-        else
-        {
-            for (var i = 1; i < 9; i++)
-            {
-                if(ShipInSegment(i))
-                {
-                    RegenerateMap(i);
-                }
-            }
-        }
+        for (var i = 1; i < 9; i++)
+            if (ShipInSegment(i))
+                RegenerateMap(i);
     }
 
     void GenerateMap(float x, float y)
     {
         var current = mapSegments[0];
         var position = current.transform.position;
-        for(var dx = -1; dx < 2; dx++)
+        for (var dx = -1; dx < 2; dx++)
         for (var dy = -1; dy < 2; dy++)
         {
             if (dx == 0 && dy == 0) continue;
@@ -55,7 +43,7 @@ public class InfiniteMap : MonoBehaviour
 
     void GenerateMapSegment(float x, float y)
     {
-        Vector3 position = new Vector3(x, y);
+        var position = new Vector3(x, y);
         var mapSegment = Instantiate(mapSegmentPrefab, position, Quaternion.identity);
         mapSegments.Add(mapSegment);
     }
@@ -66,28 +54,28 @@ public class InfiniteMap : MonoBehaviour
         var position = current.transform.position;
         for (var i = 0; i < 9; i++)
         {
-            if (i == index) continue;
+            if (i == index) 
+                continue;
             Destroy(mapSegments[i]);
         }
+
         mapSegments.Clear();
         mapSegments.Add(current);
         GenerateMap(position.x, position.y);
     }
 
-    public bool ShipInSegment(int index)
+    private bool ShipInSegment(int index)
     {
         var current = mapSegments[index];
         var position = current.transform.position;
         var shipPosition = ownShip.transform.position;
-        return Math.Abs(position.x - shipPosition.x) < mapWidth / 2 
-            && Math.Abs(position.y - shipPosition.y) < mapHeight / 2;
+        return Math.Abs(position.x - shipPosition.x) < mapWidth / 2
+               && Math.Abs(position.y - shipPosition.y) < mapHeight / 2;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         foreach (var segment in mapSegments)
-        {
             Destroy(segment);
-        }
     }
 }

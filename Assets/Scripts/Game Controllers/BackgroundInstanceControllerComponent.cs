@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BackgroundInstanceControllerComponent : MonoBehaviour
 {
@@ -10,13 +7,11 @@ public class BackgroundInstanceControllerComponent : MonoBehaviour
     {
         var obj = GameObject.FindWithTag("music");
         if (obj != null)
-        {
             Destroy(gameObject);
-        }
+        
         else
-        {
             gameObject.tag = "music";
-        }
+        
         DontDestroyOnLoad(gameObject);
         if (!PlayerPrefs.HasKey("musicVolume"))
             PlayerPrefs.SetFloat("musicVolume", 1);

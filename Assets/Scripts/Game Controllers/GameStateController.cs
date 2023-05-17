@@ -1,26 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using Assets.Scripts;
 using UnityEngine;
 
 public class GameStateController : MonoBehaviour
-{
+{    
+    [SerializeField] private HUDController hudController;
+    [SerializeField] private LevelUpScreen levelUpScreen;
+    [SerializeField] private GameOverScreen gameOverScreen;
+    [SerializeField] private GameOverSuccessScreen gameOverSuccessScreen;
+    [SerializeField] private PauseScreen pauseScreen;
     public int level { get; private set; }
     public int experience { get; private set; }
-    // public Stopwatch survivalTimer;
     private GameObject ownShip;
     private double health;
     private AudioSource audio;
     public float survivalTimeLimit; 
     public float survivalTimer;
-    [SerializeField]private HUDController hudController;
-    [SerializeField] private LevelUpScreen levelUpScreen;
-    [SerializeField] private GameOverScreen gameOverScreen;
-    [SerializeField] private GameOverSuccessScreen gameOverSuccessScreen;
-    [SerializeField] private PauseScreen pauseScreen;
+
     
-    // Start is called before the first frame update
     void Start()
     {
         if (!PlayerPrefs.HasKey("soundVolume"))
@@ -32,13 +28,11 @@ public class GameStateController : MonoBehaviour
         LevelUp();
         survivalTimer = survivalTimeLimit;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         health = ownShip.GetComponent<PlayerShipBehaviour>().health;
-
-        // уменьшаем значение таймера каждый кадр
+        
         survivalTimer -= Time.deltaTime;
         if (survivalTimer <= 0f)
         {
@@ -72,8 +66,7 @@ public class GameStateController : MonoBehaviour
                 LevelUp();
         }
     }
-
-    // ReSharper disable Unity.PerformanceAnalysis
+    
     private void LevelUp()
     {
         levelUpScreen.SetUp();
