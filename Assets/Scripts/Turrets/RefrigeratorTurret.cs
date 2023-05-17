@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
 using UnityEngine;
@@ -11,7 +10,6 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
     public static float Speed { get; private set; }
     public static int Amount { get; private set; }
     public static float CoolDown { get; private set; }
-
     private int level;
     public static GameObject ownShip;
     private PlayerShipBehaviour shipBehaviour;
@@ -33,8 +31,7 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
         { 3, () => Amount += 2 },
         { 4, () => CoolDown *= 0.5f },
     };
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         ownShip = GameObject.Find("OwnShip");
@@ -43,8 +40,7 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
         CoolDown = 4f;
         Speed = 40f;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         elapsed += Time.deltaTime;

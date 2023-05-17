@@ -1,18 +1,14 @@
 using System;
 using Assets.Scripts;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class RailGunTurret : MonoBehaviour, ITurret
 {
     [SerializeField] private GameObject RailGunProjectile;
     public static int Damage { get; private set; }
-
     public static float Speed { get; private set; }
     public static float CoolDown { get; private set; }
-
     private int level;
     public static GameObject ownShip;
     private PlayerShipBehaviour shipBehaviour;
@@ -34,7 +30,7 @@ public class RailGunTurret : MonoBehaviour, ITurret
         { 3, () => Damage += 50},
         { 4, () => Speed *= 1.4f },
     };
-    // Start is called before the first frame update
+
     void Start()
     {
         ownShip = GameObject.Find("OwnShip");
@@ -43,8 +39,7 @@ public class RailGunTurret : MonoBehaviour, ITurret
         Damage = 100;
         Speed = 80f;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         var enemies = GameObject.FindGameObjectsWithTag("enemy");
@@ -52,9 +47,9 @@ public class RailGunTurret : MonoBehaviour, ITurret
             return;
         Transform nearestEnemy = null;
         var maxDistance = Mathf.Infinity;
-        foreach (GameObject enemy in enemies)
+        foreach (var enemy in enemies)
         {
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            var distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (distance < maxDistance)
             {
                 nearestEnemy = enemy.transform;

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
 using UnityEngine;
@@ -9,11 +8,9 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 {
     [SerializeField] private GameObject torpedo;
     public static int Damage { get; private set; }
-
     public static float Speed { get; private set; }
     public static int Amount { get; private set; }
     public static float CoolDown { get; private set; }
-
     private int level;
     public static GameObject ownShip;
     private  PlayerShipBehaviour shipBehaviour;
@@ -41,8 +38,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         { 3, () => Speed *= 1.2f },
         { 4, () => Amount++ },
     };
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         ownShip = GameObject.Find("OwnShip");
@@ -52,8 +48,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         Damage = 80;
         Speed = 30f;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         elapsed += Time.deltaTime;

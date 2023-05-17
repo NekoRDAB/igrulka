@@ -5,7 +5,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class FlakTurret : MonoBehaviour, ITurret
-{
+{    
+    [SerializeField] private GameObject FlakProjectile;
     public static GameObject ownShip;
 
     private readonly Dictionary<int, string> DescriptionDict = new()
@@ -26,12 +27,9 @@ public class FlakTurret : MonoBehaviour, ITurret
     };
 
     private float elapsed = 0.5f;
-    [SerializeField] private GameObject FlakProjectile;
-
     private int level;
     private PlayerShipBehaviour shipBehaviour;
     public static int Damage { get; private set; }
-
     public static float Speed { get; private set; }
     public static int Amount { get; private set; }
     public static float CoolDown { get; private set; }
@@ -66,8 +64,7 @@ public class FlakTurret : MonoBehaviour, ITurret
         shipBehaviour.turretsCount++;
         level++;
     }
-
-    // Start is called before the first frame update
+    
     private void Start()
     {
         ownShip = GameObject.Find("OwnShip");
@@ -77,8 +74,7 @@ public class FlakTurret : MonoBehaviour, ITurret
         Damage = 50;
         Speed = 30f;
     }
-
-    // Update is called once per frame
+    
     private void Update()
     {
         var enemies = GameObject.FindGameObjectsWithTag("enemy");

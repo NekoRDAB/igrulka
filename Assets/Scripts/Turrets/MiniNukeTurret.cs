@@ -8,7 +8,6 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
 {
     [SerializeField] private GameObject MiniNukeProjectile;
     public static int Damage { get; private set; }
-
     public static float Speed { get; private set; }
     public static float CoolDown { get; private set; }
 
@@ -35,7 +34,7 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
         { 3, () => Damage += 20},
         { 4, () => Speed *= 1.4f },
     };
-    // Start is called before the first frame update
+
     void Start()
     {
         ownShip = GameObject.Find("OwnShip");
@@ -45,8 +44,7 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
         Speed = 30f;
         Duration = 1.5f;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         var enemy = GameObject.FindGameObjectWithTag("enemy");

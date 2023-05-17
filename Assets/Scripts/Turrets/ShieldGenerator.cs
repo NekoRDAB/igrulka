@@ -1,9 +1,7 @@
 using System;
 using Assets.Scripts;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class ShieldGenerator : MonoBehaviour, ITurret
 {
@@ -11,7 +9,6 @@ public class ShieldGenerator : MonoBehaviour, ITurret
     public static int Damage { get; private set; }
     public static int ShieldHealth { get; private set; }
     public static float CoolDown { get; private set; }
-
     private int level;
     public static GameObject ownShip;
     private PlayerShipBehaviour shipBehaviour;
@@ -32,7 +29,7 @@ public class ShieldGenerator : MonoBehaviour, ITurret
         { 3, () => ShieldHealth += 30},
         { 4, () => CoolDown *= 0.7f },
     };
-    // Start is called before the first frame update
+
     void Start()
     {
         ownShip = GameObject.Find("OwnShip");

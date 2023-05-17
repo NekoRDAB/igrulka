@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MiniNuke : MonoBehaviour
-{
+{    
+    [SerializeField] private GameObject NukeExplosion;
     public Rigidbody2D rb;
     private AudioSource audioSource;
-
-    [SerializeField] private GameObject NukeExplosion;
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,18 +14,17 @@ public class MiniNuke : MonoBehaviour
         audioSource.Play();
         audioSource.volume = PlayerPrefs.GetFloat("soundVolume");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, MiniNukeTurret.ownShip.transform.position);
+        var distance = Vector2.Distance(transform.position, MiniNukeTurret.ownShip.transform.position);
         if (distance > 150)
             Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        IEnemy enemy = hitInfo.GetComponent<IEnemy>();
+        var enemy = hitInfo.GetComponent<IEnemy>();
         if (enemy != null)
         {
             enemy.TakeDamage(MiniNukeTurret.Damage);

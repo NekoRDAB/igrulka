@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RailGunProjectile : MonoBehaviour
-{
+{    
+    [SerializeField] private GameObject hitEffect;
     public Rigidbody2D rb;
     private AudioSource audioSource;
-
-    [SerializeField] private GameObject hitEffect;
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,11 +16,10 @@ public class RailGunProjectile : MonoBehaviour
         audioSource.Play();
         audioSource.volume = PlayerPrefs.GetFloat("soundVolume");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, RailGunTurret.ownShip.transform.position);
+        var distance = Vector2.Distance(transform.position, RailGunTurret.ownShip.transform.position);
         if (distance > 150)
             Destroy(gameObject);
         var scale = rb.transform.localScale;
@@ -30,7 +28,7 @@ public class RailGunProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        IEnemy enemy = hitInfo.GetComponent<IEnemy>();
+        var enemy = hitInfo.GetComponent<IEnemy>();
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hitInfo);
         Instantiate(hitEffect, transform.position, Quaternion.identity);
         if (enemy != null)

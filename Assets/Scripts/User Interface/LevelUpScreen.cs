@@ -1,25 +1,13 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
-using Or = Unity.VisualScripting.Or;
 using Random = System.Random;
 
 public class LevelUpScreen : MonoBehaviour
-{
-    public Image firstCardButtonImage;
-    public TextMeshProUGUI firstCardText;
-    public Image secondCardButtonImage;
-    public TextMeshProUGUI secondCardText;
-    public Image thirdCardButtonImage;
-    public TextMeshProUGUI thirdCardText;
+{    
     [SerializeField] private PlayerShipBehaviour ownShip;
     [SerializeField] private GameStateController controller;
     [SerializeField] private ProtonTorpedoesTurret firstTurret;
@@ -29,17 +17,19 @@ public class LevelUpScreen : MonoBehaviour
     [SerializeField] private RefrigeratorTurret fifthTurret;
     [SerializeField] private ShieldGenerator sixthTurret;
     [SerializeField] private LaserTurretBehaviour seventhTurret;
-
+    public Image firstCardButtonImage;
+    public TextMeshProUGUI firstCardText;
+    public Image secondCardButtonImage;
+    public TextMeshProUGUI secondCardText;
+    public Image thirdCardButtonImage;
+    public TextMeshProUGUI thirdCardText;
     public List<ITurret> turrets;
     private ITurret firstUpgrade;
     private ITurret secondUpgrade;
     private ITurret thirdUpgrade;
-
-
-    // Start is called before the first frame update
+    
     public void SetUp()
     {
-        // controller.survivalTimer.Stop();
         gameObject.SetActive(true);
         if (turrets is null)
         {
@@ -96,7 +86,6 @@ public class LevelUpScreen : MonoBehaviour
     {
         Time.timeScale = 1;
         gameObject.SetActive(false);
-        // controller.survivalTimer.Start();
     }
 
     public void ChoseFirst()
@@ -104,8 +93,10 @@ public class LevelUpScreen : MonoBehaviour
         print("1");
         if (firstUpgrade.GetLevel() == 0)
             firstUpgrade.Init();
+        
         else
             firstUpgrade.LevelUp();
+        
         BackToGame();
     }
 
@@ -114,8 +105,10 @@ public class LevelUpScreen : MonoBehaviour
         print("2");
         if (secondUpgrade.GetLevel() == 0)
             secondUpgrade.Init();
+        
         else
             secondUpgrade.LevelUp();
+        
         BackToGame();
     }
 
@@ -124,8 +117,10 @@ public class LevelUpScreen : MonoBehaviour
         print("3");
         if (thirdUpgrade.GetLevel() == 0)
             thirdUpgrade.Init();
+        
         else
             thirdUpgrade.LevelUp();
+        
         BackToGame();
     }
 }
