@@ -5,12 +5,12 @@ public class TutorialController : MonoBehaviour
     public GameObject startCanvas; // ссылка на канвас туториала
     public GameObject nextCanvas;
 
-    void Start() 
+    private void Start() 
     {
         startCanvas.SetActive(true); // открываем канвас после перехода на сцену
     }
-    
-    void Update() 
+
+    private void Update() 
     {
         if (Input.anyKeyDown) 
         {
@@ -20,12 +20,11 @@ public class TutorialController : MonoBehaviour
         }
     }
 
-    public void HideTutorialCanvas() 
+    public void HideTutorialCanvas()
     {
-        if (startCanvas != null) 
-        {
-            nextCanvas.SetActive(true);
-            startCanvas.SetActive(false); // скрываем канвас при необходимости
-        }
+        if (startCanvas == null) 
+            return;
+        nextCanvas.SetActive(true);
+        startCanvas.SetActive(false); // скрываем канвас при необходимости
     }
 }

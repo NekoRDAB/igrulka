@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
 public class MiniBossBehaviour : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject player;
-    [SerializeField] public int health;
-    [SerializeField] public int damage { get; set; }
-    [SerializeField] private float speed;
+    [SerializeField] public int health;    
+    [SerializeField] private float speed;    
+    [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject exp;
+    [SerializeField] private GameObject damageNumbers;
+    public int damage { get; set; }
     private Rigidbody2D ship;
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
     private AudioSource audio;
     private float timeFrozen;
-    [SerializeField] private GameObject explosion;
-    [SerializeField] private GameObject exp;
-    [SerializeField] private GameObject damageNumbers;
-
+    
     void Start()
     {
         ship = GetComponent<Rigidbody2D>();

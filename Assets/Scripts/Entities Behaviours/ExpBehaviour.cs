@@ -1,28 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Assets.Scripts;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ExpBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject ownShip;
-    public bool IsMagnetized = false;
+    public bool IsMagnetized;
     [SerializeField] public float pickUpRange;
     private GameStateController gameStateController;
     private float expSpeed = 1;
-
     private Rigidbody2D exp;
-    // Start is called before the first frame update
+    
     void Start()
     {
         exp = GetComponent<Rigidbody2D>();
         ownShip = GameObject.Find("OwnShip");
         gameStateController = GameObject.Find("GameStateController").GetComponent<GameStateController>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         var distance = Vector2.Distance(ownShip.transform.position, exp.transform.position);

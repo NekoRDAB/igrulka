@@ -1,8 +1,3 @@
-using System;
-using Assets.Scripts;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AnihilateBehaviour : MonoBehaviour
@@ -11,17 +6,15 @@ public class AnihilateBehaviour : MonoBehaviour
     [SerializeField] public float pickUpRange = 50;
     private float expSpeed = 1;
     private GameStateController controller;
-
     private Rigidbody2D rb;
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ownShip = GameObject.Find("OwnShip");
         controller = GameObject.Find("GameStateController").GetComponent<GameStateController>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         var distance = Vector2.Distance(ownShip.transform.position, rb.transform.position);
@@ -37,9 +30,9 @@ public class AnihilateBehaviour : MonoBehaviour
             var enemies = GameObject.FindGameObjectsWithTag("enemy");
             foreach (var enemy in enemies)
             {
-                var ienemy = enemy.GetComponent<IEnemy>();
-                if (ienemy.damage != 0)
-                    ienemy.TakeDamage(9999);
+                var iEnemy = enemy.GetComponent<IEnemy>();
+                if (iEnemy.damage != 0)
+                    iEnemy.TakeDamage(9999);
             }
             controller.PlaySound(2);
             Destroy(gameObject);

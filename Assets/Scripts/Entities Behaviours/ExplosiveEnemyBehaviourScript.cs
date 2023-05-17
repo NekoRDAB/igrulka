@@ -1,6 +1,4 @@
 using Assets.Scripts;
-using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
@@ -8,17 +6,17 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject player;
     [SerializeField] public int health;
-    [SerializeField] public int damage { get; set; }
+    [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject exp;
+    [SerializeField] private GameObject damageNumbers;    
     [SerializeField] private float speed;
+    public int damage { get; set; }
     private Rigidbody2D ship;
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
     private AudioSource audio;
     private float timeFrozen;
-    [SerializeField] private GameObject explosion;
-    [SerializeField] private GameObject exp;
-    [SerializeField] private GameObject damageNumbers;
-    // Start is called before the first frame update
+
     void Start()
     {
         ship = GetComponent<Rigidbody2D>();
@@ -29,8 +27,7 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
         damage = 2000;
         health = 500;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (timeFrozen <= 0)

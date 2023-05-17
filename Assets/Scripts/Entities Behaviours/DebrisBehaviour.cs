@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = System.Random;
 
@@ -14,21 +11,13 @@ public class DebrisBehaviour : MonoBehaviour, IEnemy
     private Random random;
     public int damage { get; set; }
     private double health = 10;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         random = new Random();
         damage = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -36,9 +25,7 @@ public class DebrisBehaviour : MonoBehaviour, IEnemy
         var damageNumber = Instantiate(damageNumbers, transform.position, Quaternion.identity);
         damageNumber.GetComponent<NumbersBehaviour>().SetNumber(damage);
         if (health <= 0)
-        {
             Die();
-        }
     }
 
     public void Freeze(float time)
@@ -49,22 +36,23 @@ public class DebrisBehaviour : MonoBehaviour, IEnemy
     void Die()
     {
         var randomNumber = random.NextDouble();
-        if (randomNumber < 0.17)
+        
+        switch (randomNumber)
         {
-            Instantiate(freeze, transform.position, Quaternion.identity);
+            case < 0.17:
+                Instantiate(freeze, transform.position, Quaternion.identity);
+                break;
+            case < 0.34:
+                Instantiate(magnet, transform.position, Quaternion.identity);
+                break;
+            case < 0.51:
+                Instantiate(destruction, transform.position, Quaternion.identity);
+                break;
+            default:
+                Instantiate(repairKit, transform.position, Quaternion.identity);
+                break;
         }
-        else if (randomNumber < 0.34)
-        {
-            Instantiate(magnet, transform.position, Quaternion.identity);
-        }
-        else if (randomNumber < 0.51)
-        {
-            Instantiate(destruction, transform.position, Quaternion.identity);
-        }
-        else
-        {
-            Instantiate(repairKit, transform.position, Quaternion.identity);
-        }
+        
         Destroy(gameObject);
     }
 }

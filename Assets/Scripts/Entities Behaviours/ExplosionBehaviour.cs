@@ -8,7 +8,7 @@ public class ExplosionBehaviour : MonoBehaviour
     private Stopwatch timeAlive;
     private AudioSource audio;
     private HUDController HUD;
-    // Start is called before the first frame update
+
     void Start()
     {
         timeAlive = new Stopwatch();
@@ -18,8 +18,7 @@ public class ExplosionBehaviour : MonoBehaviour
         audio = GetComponent<AudioSource>();
         audio.volume = PlayerPrefs.GetFloat("soundVolume");
     }
-
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         if (timeAlive.ElapsedMilliseconds > 500)

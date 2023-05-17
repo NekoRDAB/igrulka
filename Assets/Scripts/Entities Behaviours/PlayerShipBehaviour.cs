@@ -1,21 +1,19 @@
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
     public class PlayerShipBehaviour : MonoBehaviour
-    {
-        Rigidbody2D ownShip;
-        public int turretsCount;
+    {        
         [SerializeField] private float movementSpeed = 0.1f;
         [SerializeField] private Transform exhaust;
-        public double health;
+        Rigidbody2D ownShip;
+        public int turretsCount { get; set; }
+        public double health { get; set; }
         private float timeDamaged;
         private SpriteRenderer spriteRenderer;
         private AudioSource audio;
         private GameObject shield;
-
         public readonly List<Vector2> positionsList = new()
             {
                 new Vector2(0.375f, -1.5f), 
@@ -24,8 +22,7 @@ namespace Assets.Scripts
                 new Vector2(-0.375f, -0.5f),
                 new Vector2(0, 0.6f)
             };
-
-        // Start is called before the first frame update
+        
         void Start()
         {
             health = 100;
@@ -34,8 +31,7 @@ namespace Assets.Scripts
             audio.volume = PlayerPrefs.GetFloat("soundVolume");
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
-
-        // Update is called once per frame
+        
         void Update()
         {
             if (timeDamaged == 0) 
@@ -56,18 +52,14 @@ namespace Assets.Scripts
                 audio.Play();
             }
             else
-            {
                 exhaust.localScale = new Vector3(10, 3, 1);
-            }
             movement = Vector2.ClampMagnitude(movement, movementSpeed);
             if(movement != Vector2.zero)
             {
                 ownShip.MovePosition(ownShip.position + movement);
                 var direction = new Vector3(horizontalInput, verticalInput, 0);
                 if (direction.magnitude > 0.1f) // проверяем, что есть движение
-                {
                     transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
-                }
             }
         }
 
