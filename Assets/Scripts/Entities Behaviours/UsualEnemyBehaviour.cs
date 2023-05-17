@@ -33,7 +33,8 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
     {
         if (timeFrozen <= 0)
         {
-            spriteRenderer.color = Color.white;
+            if (spriteRenderer.color ==  Color.blue) 
+                spriteRenderer.color = Color.white;
             var movement = (Vector2)player.transform.position - ship.position;
             movement = Vector2.ClampMagnitude(movement, speed);
             ship.MovePosition(ship.position + movement);
