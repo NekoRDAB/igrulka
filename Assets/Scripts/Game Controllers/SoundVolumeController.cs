@@ -6,21 +6,21 @@ using UnityEngine.UI;
 public class SoundVolumeController : MonoBehaviour
 {
     private Slider soundVolumeSlider;
-    // Start is called before the first frame update
+    private AudioSource audioSource;
+    public AudioClip soundEffect;
+
     void Start()
     {
-       soundVolumeSlider = GetComponent<Slider>();
-       soundVolumeSlider.value = PlayerPrefs.HasKey("soundVolume") ? PlayerPrefs.GetFloat("soundVolume") : 1;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        soundVolumeSlider = GetComponent<Slider>();
+        audioSource = soundVolumeSlider.GetComponent<AudioSource>();
+        audioSource.clip = soundEffect;   
+        soundVolumeSlider.value = PlayerPrefs.HasKey("soundVolume") ? PlayerPrefs.GetFloat("soundVolume") : 1;
     }
 
     public void OnValueChange()
     {
+        audioSource.volume = soundVolumeSlider.value;
+        audioSource.Play();
         PlayerPrefs.SetFloat("soundVolume", soundVolumeSlider.value);
     }
 }
