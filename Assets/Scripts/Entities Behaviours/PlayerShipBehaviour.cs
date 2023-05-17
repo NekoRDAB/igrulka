@@ -11,6 +11,7 @@ namespace Assets.Scripts
         [SerializeField] private float movementSpeed = 0.1f;
         [SerializeField] private Transform exhaust;
         public double health;
+        private float timeDamaged;
         private SpriteRenderer spriteRenderer;
         private AudioSource audio;
         private GameObject shield;
@@ -37,6 +38,10 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            if (timeDamaged == 0) 
+                spriteRenderer.color = Color.white;
+            else
+                timeDamaged -= Time.deltaTime;
             var horizontalInput = Input.GetAxis("Horizontal");
             var verticalInput = Input.GetAxis("Vertical");
             var movement = new Vector2(horizontalInput, verticalInput);
@@ -82,6 +87,7 @@ namespace Assets.Scripts
                 {
                     spriteRenderer.color = Color.red;
                     health -= damage / 60.0;
+                    timeDamaged = 0.4f;
                 }
             }
         }
