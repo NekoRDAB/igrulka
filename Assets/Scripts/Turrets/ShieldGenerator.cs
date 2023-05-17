@@ -9,18 +9,14 @@ public class ShieldGenerator : MonoBehaviour, ITurret
 {
     [SerializeField] private GameObject ShieldBubble;
     public static int Damage { get; private set; }
-
     public static int ShieldHealth { get; private set; }
-
-    public static float Speed { get; private set; }
-    public static int Amount { get; private set; }
     public static float CoolDown { get; private set; }
 
     private int level;
     public static GameObject ownShip;
     private PlayerShipBehaviour shipBehaviour;
 
-    private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
+    private readonly Dictionary<int, string> DescriptionDict = new()
     {
         {0, "Создаёт щит вокруг корабля."},
         {1, "Прочность щита увеличивается на 30."},
@@ -29,7 +25,7 @@ public class ShieldGenerator : MonoBehaviour, ITurret
         {4, "Время перезарядки щита уменьшается на 30%."},
     };
 
-    private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
+    private readonly Dictionary<int, Action> LevelUpDict = new()
     {
         { 1, () => ShieldHealth += 30 },
         { 2, () => CoolDown *= 0.7f },
@@ -41,17 +37,9 @@ public class ShieldGenerator : MonoBehaviour, ITurret
     {
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
-        Amount = 2;
         CoolDown = 10f;
         Damage = 45;
-        Speed = 30f;
         ShieldHealth = 100;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public Sprite GetSprite()

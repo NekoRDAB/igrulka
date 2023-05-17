@@ -23,9 +23,7 @@ public class MiniNuke : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, MiniNukeTurret.ownShip.transform.position);
         if (distance > 150)
-        {
             Destroy(gameObject);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)

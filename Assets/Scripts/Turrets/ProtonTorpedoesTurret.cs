@@ -18,12 +18,8 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
     public static GameObject ownShip;
     private  PlayerShipBehaviour shipBehaviour;
     private float elapsed = 0.5f;
-    public float DamageMultiplier { get; set; }
-    public float SpeedMultiplier { get; set; }
-    public int AmountMultiplier { get; set; }
-    public float CoolDownMultiplier { get; set; }
 
-    private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
+    private readonly Dictionary<int, string> DescriptionDict = new()
     {
         {0, "Выпускает торпеды из носа корабля."},
         {1, "Туррель выпускает на 1 снаряд больше."},
@@ -32,7 +28,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         {4, "Туррель выпускает на 1 снаряд больше."},
     };
 
-    private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
+    private readonly Dictionary<int, Action> LevelUpDict = new()
     {
         { 1, () => Amount++ },
         {
@@ -51,7 +47,6 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
     {
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
-        level = 0;
         Amount = 2;
         CoolDown = 4f;
         Damage = 80;

@@ -5,11 +5,7 @@ using UnityEngine;
 public class Refrigerator : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public GameObject ownShip;
     private AudioSource audioSource;
-    private GameObject turret;
-
-    private RefrigeratorTurret turretBehaviour;
     // Start is called before the first frame update
     void Start()
     {

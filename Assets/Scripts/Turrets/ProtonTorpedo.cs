@@ -6,11 +6,8 @@ using UnityEngine;
 public class ProtonTorpedo : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public GameObject ownShip;
     private AudioSource audioSource;
-    private GameObject turret;
     [SerializeField] private GameObject hitEffect;
-    private ProtonTorpedoesTurret turretBehaviour;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +23,7 @@ public class ProtonTorpedo : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, ProtonTorpedoesTurret.ownShip.transform.position);
         if (distance > 150)
-        {
             Destroy(gameObject);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)

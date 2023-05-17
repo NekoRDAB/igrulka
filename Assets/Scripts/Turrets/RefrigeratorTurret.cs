@@ -16,11 +16,8 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
     public static GameObject ownShip;
     private PlayerShipBehaviour shipBehaviour;
     private float elapsed = 0.5f;
-    public float SpeedMultiplier { get; set; }
-    public int AmountMultiplier { get; set; }
-    public float CoolDownMultiplier { get; set; }
 
-    private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
+    private readonly Dictionary<int, string> DescriptionDict = new()
     {
         {0, "Выпускает снаряд, замораживающий случайного врага."},
         {1, "Туррель выпускает на 1 снаряд больше."},
@@ -29,7 +26,7 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
         {4, "Время перезарядки снарядов уменьшается на 50%."},
     };
 
-    private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
+    private readonly Dictionary<int, Action> LevelUpDict = new()
     {
         { 1, () => Amount++ },
         { 2, () => CoolDown *= 0.7f},

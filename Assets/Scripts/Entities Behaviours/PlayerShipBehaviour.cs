@@ -15,7 +15,7 @@ namespace Assets.Scripts
         private AudioSource audio;
         private GameObject shield;
 
-        public readonly List<Vector2> positionsList = new List<Vector2>()
+        public readonly List<Vector2> positionsList = new()
             {
                 new Vector2(0.375f, -1.5f), 
                 new Vector2(-0.375f, -1.5f),

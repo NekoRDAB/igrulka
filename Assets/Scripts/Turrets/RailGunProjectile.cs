@@ -23,9 +23,7 @@ public class RailGunProjectile : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, RailGunTurret.ownShip.transform.position);
         if (distance > 150)
-        {
             Destroy(gameObject);
-        }
         var scale = rb.transform.localScale;
         rb.transform.localScale = new Vector3(scale.x, scale.y * 1.004f, scale.z);
     }
@@ -36,8 +34,6 @@ public class RailGunProjectile : MonoBehaviour
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hitInfo);
         Instantiate(hitEffect, transform.position, Quaternion.identity);
         if (enemy != null)
-        {
             enemy.TakeDamage(RailGunTurret.Damage);
-        }
     }
 }

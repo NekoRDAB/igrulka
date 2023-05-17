@@ -9,14 +9,12 @@ public class LaserTurretBehaviour : MonoBehaviour, ITurret
     public static int Damage { get; private set; }
 
     public static float Speed { get; private set; }
-    public static int Amount { get; private set; }
-    public static float CoolDown { get; private set; }
 
     private int level;
     public static GameObject ownShip;
     private PlayerShipBehaviour shipBehaviour;
 
-    private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
+    private readonly Dictionary<int, string> DescriptionDict = new()
     {
         {0, "Создаёт лазер, кружащийся вокруг корабля и пронизывающий врагов."},
         {1, "Скорость вращения лазера увеличивается на 50%."},
@@ -25,7 +23,7 @@ public class LaserTurretBehaviour : MonoBehaviour, ITurret
         {4, "Урон от лазера увеличивается на 25."},
     };
 
-    private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
+    private readonly Dictionary<int, Action> LevelUpDict = new()
     {
         { 1, () => Speed *= 1.5f},
         { 2, () => Damage += 25 },

@@ -10,7 +10,6 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
     public static int Damage { get; private set; }
 
     public static float Speed { get; private set; }
-    public static int Amount { get; private set; }
     public static float CoolDown { get; private set; }
 
     public static float Duration { get; private set; }
@@ -20,7 +19,7 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
     private PlayerShipBehaviour shipBehaviour;
     private float elapsed = 0.5f;
 
-    private readonly Dictionary<int, string> DescriptionDict = new Dictionary<int, string>()
+    private readonly Dictionary<int, string> DescriptionDict = new()
     {
         {0, "Выпускает ядерный снаряд в ближайшего врага."},
         {1, "Скорострельность турели увеличивается на 30%."},
@@ -29,7 +28,7 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
         {4, "Скорость снаряда увеличивается на 40%."},
     };
 
-    private readonly Dictionary<int, Action> LevelUpDict = new Dictionary<int, Action>()
+    private readonly Dictionary<int, Action> LevelUpDict = new()
     {
         { 1, () => CoolDown *= 0.7f },
         { 2, () => Duration *= 1.3f },

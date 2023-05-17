@@ -34,8 +34,6 @@ public class NukeExplosion : MonoBehaviour
     {
         IEnemy enemy = hitInfo.GetComponent<IEnemy>();
         if (enemy != null)
-        {
             enemy.TakeDamage(MiniNukeTurret.Damage);
-        }
     }
 }

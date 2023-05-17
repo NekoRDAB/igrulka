@@ -20,14 +20,14 @@ public class WaveSpawner : MonoBehaviour
     {
         waveCountDown = timeBetweenWaves;
         var waves = new Wave[] {
-                new Wave(
+                new(
                         new Dictionary<GameObject, int>
                         {
                             { enemy1, 10 }
                         },
                         2
                     ),
-                new Wave(
+                new(
                         new Dictionary<GameObject, int>
                         {
                             { enemy1, 8 },
@@ -35,7 +35,7 @@ public class WaveSpawner : MonoBehaviour
                         },
                         1
                     ),
-                new Wave(
+                new(
                         new Dictionary<GameObject, int>
                         {
                             { enemy1, 5 },
@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour
                         },
                         2
                     ),
-                new Wave(
+                new(
                         new Dictionary<GameObject, int>
                         {
                             { enemy1, 15 },
@@ -52,7 +52,7 @@ public class WaveSpawner : MonoBehaviour
                         },
                         2
                     ),
-                new Wave(
+                new(
                         new Dictionary<GameObject, int>
                         {
                             { enemy1, 5 },
@@ -132,7 +132,7 @@ public class Wave
 
 class WaveProcessing
 {
-    private List<Wave> waves = new List<Wave>();
+    private List<Wave> waves = new();
     private int waveNumber;
 
     public WaveProcessing(Wave[] waves)
