@@ -8,6 +8,7 @@ public class SoundVolumeController : MonoBehaviour
     private Slider soundVolumeSlider;
     private AudioSource audioSource;
     public AudioClip soundEffect;
+    private bool hasPlayedSound;
 
     void Start()
     {
@@ -19,6 +20,11 @@ public class SoundVolumeController : MonoBehaviour
 
     public void OnValueChange()
     {
+        if (hasPlayedSound == false)
+        {
+            hasPlayedSound = true;
+            return;
+        }
         audioSource.volume = soundVolumeSlider.value;
         audioSource.Play();
         PlayerPrefs.SetFloat("soundVolume", soundVolumeSlider.value);
