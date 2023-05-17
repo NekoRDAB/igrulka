@@ -3577,7 +3577,7 @@ PrefabInstance:
       objectReference: {fileID: 579097425}
     - target: {fileID: 8467184505703266273, guid: efdc197d451cb934a9267a11ff4906bf, type: 3}
       propertyPath: survivalTimeLimit
-      value: 5
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 8467184505703266273, guid: efdc197d451cb934a9267a11ff4906bf, type: 3}
       propertyPath: gameOverSuccessScreen

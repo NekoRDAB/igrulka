@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class NukeExplosion : MonoBehaviour
 {
-    private Stopwatch timeAlive;
     private AudioSource audio;
+    private float timeAlive;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeAlive = new Stopwatch();
-        timeAlive.Start();
         audio = GetComponent<AudioSource>();
         audio.volume = PlayerPrefs.GetFloat("soundVolume");
     }
@@ -20,13 +18,16 @@ public class NukeExplosion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeAlive.ElapsedMilliseconds > MiniNukeTurret.Duration)
+        if (timeAlive > MiniNukeTurret.Duration)
         {
-            timeAlive.Stop();
+            timeAlive = 0;
             Destroy(gameObject);
         }
-
-        transform.localScale *= 1.006f;
+        else
+        {
+            timeAlive += Time.deltaTime;
+            transform.localScale *= 1.035f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)

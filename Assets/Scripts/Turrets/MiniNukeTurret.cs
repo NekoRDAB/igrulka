@@ -44,7 +44,7 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
         CoolDown = 6f;
         Damage = 100;
         Speed = 30f;
-        Duration = 1500;
+        Duration = 1.5f;
     }
 
     // Update is called once per frame

@@ -78,8 +78,11 @@ namespace Assets.Scripts
             }
             else
             {
-                spriteRenderer.color = Color.red;
-                health -= damage / 60.0;
+                if (damage > 0)
+                {
+                    spriteRenderer.color = Color.red;
+                    health -= damage / 60.0;
+                }
             }
         }
 
