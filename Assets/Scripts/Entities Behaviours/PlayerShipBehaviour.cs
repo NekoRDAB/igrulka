@@ -34,7 +34,7 @@ namespace Assets.Scripts
         
         void Update()
         {
-            if (timeDamaged == 0) 
+            if (timeDamaged <= 0) 
                 spriteRenderer.color = Color.white;
             else
                 timeDamaged -= Time.deltaTime;
@@ -79,7 +79,7 @@ namespace Assets.Scripts
                 {
                     spriteRenderer.color = Color.red;
                     health -= damage / 60.0;
-                    timeDamaged = 0.4f;
+                    timeDamaged = 0.2f;
                 }
             }
         }
@@ -99,7 +99,10 @@ namespace Assets.Scripts
                 shield.GetComponent<ShieldBubble>().shieldHealth = shieldHealth - damage / 60.0;
             }
             else
-                health -= damage / 60.0;
+            {
+                health -= damage;
+                timeDamaged = 0.2f;
+            }
         }
     }
 }

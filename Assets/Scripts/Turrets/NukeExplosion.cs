@@ -21,7 +21,7 @@ public class NukeExplosion : MonoBehaviour
         else
         {
             timeAlive += Time.deltaTime;
-            transform.localScale *= 1.035f;
+            transform.localScale *= 1.03f;
         }
     }
 
