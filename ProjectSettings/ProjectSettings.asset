@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: CC-PC
   productName: Space death
-  defaultCursor: {fileID: 2800000, guid: fdafd10e5b6ea0a428876f077ec69b4a, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 027e103afd04d7d45807b9953e970550, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
