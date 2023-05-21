@@ -9,7 +9,6 @@ Library: D:\Game\igrulka\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generate
 --linker-options=PdbAltPath="Space death_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\Game\igrulka\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\Game\igrulka\Library\Burst
 --output=D:\Game\igrulka\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -56,7 +55,6 @@ Library: D:\Game\igrulka\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generate
 --linker-options=PdbAltPath="Space death_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\Game\igrulka\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=D:\Game\igrulka\Library\Burst
 --output=D:\Game\igrulka\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
