@@ -4,7 +4,6 @@ using UnityEngine;
 public class MiniBossBehaviour : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject player;
-    [SerializeField] public int health;    
     [SerializeField] private float speed;    
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
@@ -13,6 +12,7 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
     private float timeToShoot;
     private float shootingCoolDown;
     public int damage { get; set; }
+    public int health { get; set; }
     private Rigidbody2D ship;
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;

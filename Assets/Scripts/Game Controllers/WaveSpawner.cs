@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class WaveSpawner : MonoBehaviour
 {    
@@ -23,7 +24,6 @@ public class WaveSpawner : MonoBehaviour
                 new(
                         new Dictionary<GameObject, int>
                         {
-                            { enemy4, 2 },
                             { enemy1, 10 },
                         },
                         2
@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour
                             { enemy4, 3 },
                             { enemy3, 2 },
                         },
-                        2
+                        1
                     ),
                 new(
                         new Dictionary<GameObject, int>
@@ -53,7 +53,7 @@ public class WaveSpawner : MonoBehaviour
                             { enemy1, 15 },
                             { enemy2, 7 },
                         },
-                        2
+                        1
                     ),
                 new(
                         new Dictionary<GameObject, int>
@@ -64,7 +64,7 @@ public class WaveSpawner : MonoBehaviour
                             { enemy3, 3 },
                             { miniBoss, 1 },
                         },
-                        2
+                        1
                     ),
             };
         waveProcessing = new WaveProcessing(waves);
@@ -89,7 +89,7 @@ public class WaveSpawner : MonoBehaviour
         foreach (var enemy in wave.GetEnemy())
         {
             SpawnEnemy(enemy);
-            yield return new WaitForSeconds(wave.delay);
+            yield return new WaitForSeconds(wave.delay / (float)waveProcessing.cycle);
         }
 
         state = SpawnState.Waiting;
@@ -105,7 +105,7 @@ public class WaveSpawner : MonoBehaviour
     }
     private Vector3 GetSpawnPosition()
     {
-        var offset = Quaternion.AngleAxis(Random.Range(-180f, 180f), Vector3.back) * (new Vector3(80, 50, 0));
+        var offset = Quaternion.AngleAxis(UnityEngine.Random.Range(-180f, 180f), Vector3.back) * (new Vector3(80, 50, 0));
         return ship.position + offset;
     }
 }
@@ -133,6 +133,7 @@ class WaveProcessing
 {
     private List<Wave> waves = new();
     private int waveNumber;
+    public int cycle;
 
     public WaveProcessing(Wave[] waves)
     {
@@ -144,6 +145,7 @@ class WaveProcessing
     public Wave GetNextWave()
     {
         waveNumber = (waveNumber + 1) % waves.Count;
+        cycle += waveNumber == 0 ? 1 : 0;
         return waves[waveNumber];
     }
 }

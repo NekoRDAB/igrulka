@@ -4,7 +4,6 @@ using UnityEngine;
 public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject player;
-    [SerializeField] public int health;
     [SerializeField] private float speed;    
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
@@ -15,6 +14,7 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
     private AudioSource audio;
     private float timeFrozen;
     public int damage { get; set; }
+    public int health { get; set; }
     
     void Start()
     {

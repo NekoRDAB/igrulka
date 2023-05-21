@@ -5,12 +5,14 @@ using UnityEngine;
 public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject player;
-    [SerializeField] public int health;
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
     [SerializeField] private GameObject damageNumbers;    
     [SerializeField] private float speed;
     public int damage { get; set; }
+
+    public int health { get; set; }
+
     private Rigidbody2D ship;
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
@@ -24,7 +26,7 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
         timeDamaged = new Stopwatch();
         player = GameObject.Find("OwnShip");
         audio = GetComponent<AudioSource>();
-        damage = 2000;
+        damage = 30;
         health = 500;
     }
     
