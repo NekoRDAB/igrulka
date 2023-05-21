@@ -3,6 +3,7 @@ using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class MiniNukeTurret : MonoBehaviour, ITurret
 {
@@ -48,6 +49,8 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
     void Update()
     {
         var enemy = GameObject.FindGameObjectWithTag("enemy");
+        if (enemy == null)
+            return;
 
         var directionToEnemy = enemy.transform.position - transform.position;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToEnemy);
