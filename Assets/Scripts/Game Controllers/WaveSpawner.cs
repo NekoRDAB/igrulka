@@ -6,6 +6,7 @@ using System;
 public class WaveSpawner : MonoBehaviour
 {    
     [SerializeField] private Transform ship;
+    // У этих enemy бывают нормальные названия?
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
     [SerializeField] private GameObject enemy3; 
@@ -20,6 +21,7 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         waveCountDown = timeBetweenWaves;
+        // Чет мне это создание Wave[] вообще не нравится. Может, лучше на нормальные конструкторы переписать?
         var waves = new Wave[] {
                 new(
                         new Dictionary<GameObject, int>
@@ -129,6 +131,7 @@ public class Wave
     }
 }
 
+//WaveProcessor
 class WaveProcessing
 {
     private List<Wave> waves = new();

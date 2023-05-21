@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TutorialController : MonoBehaviour 
 {
+    // public поля?)
     public GameObject startCanvas; // ссылка на канвас туториала
     public GameObject nextCanvas;
 

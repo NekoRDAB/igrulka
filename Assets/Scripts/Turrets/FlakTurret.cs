@@ -9,6 +9,7 @@ public class FlakTurret : MonoBehaviour, ITurret
     [SerializeField] private GameObject FlakProjectile;
     public static GameObject ownShip;
 
+    // Как будто хочется это переписать на что-то другое. Тем более, что для одного уровня у вас есть и описание и действие. Может, какой-то классик небольшой?
     private readonly Dictionary<int, string> DescriptionDict = new()
     {
         { 0, "Выпускает снаряды в ближайшего врага." },
