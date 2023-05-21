@@ -32,6 +32,8 @@ public class DebriSpawner : MonoBehaviour
             GetSpawnPosition(),
             Quaternion.identity);
     }
+
+    // Лучше CreateSpawnPosition
     private Vector3 GetSpawnPosition()
     {
         var offset = Quaternion.AngleAxis(Random.Range(-180f, 180f), Vector3.back) * (new Vector3(80, 50, 0));
