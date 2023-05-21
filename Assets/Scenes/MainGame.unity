@@ -1138,8 +1138,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74, y: -318}
-  m_SizeDelta: {x: 600, y: 180}
+  m_AnchoredPosition: {x: 1.436, y: -312}
+  m_SizeDelta: {x: 544.441, y: 187.229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679284852
 MonoBehaviour:
@@ -2199,8 +2199,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076293945, y: 50}
-  m_SizeDelta: {x: 1000, y: 400}
+  m_AnchoredPosition: {x: 1.435, y: 67.229}
+  m_SizeDelta: {x: 905.243, y: 434.457}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1577173837
 MonoBehaviour:
@@ -2435,7 +2435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46f7f2e0b8580404e9f491b2af53037e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d305d6d12c5b7a4191fea94c969f916, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2623,7 +2623,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2.992, y: -311.015}
-  m_SizeDelta: {x: 1025.612, y: 188.432}
+  m_SizeDelta: {x: 800, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705907137
 MonoBehaviour:
@@ -3149,8 +3149,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87.648, y: 59.462}
-  m_SizeDelta: {x: 662.791, y: 484.923}
+  m_AnchoredPosition: {x: -0.000030518, y: 71}
+  m_SizeDelta: {x: 912.606, y: 545.223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2133536585
 GameObject:
@@ -3212,7 +3212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6467879ce74b7f14f93d1c35526e7a2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d305d6d12c5b7a4191fea94c969f916, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3577,7 +3577,7 @@ PrefabInstance:
       objectReference: {fileID: 579097425}
     - target: {fileID: 8467184505703266273, guid: efdc197d451cb934a9267a11ff4906bf, type: 3}
       propertyPath: survivalTimeLimit
-      value: 5
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 8467184505703266273, guid: efdc197d451cb934a9267a11ff4906bf, type: 3}
       propertyPath: gameOverSuccessScreen
