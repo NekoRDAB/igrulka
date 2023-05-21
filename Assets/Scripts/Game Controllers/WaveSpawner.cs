@@ -8,6 +8,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
     [SerializeField] private GameObject enemy3; 
+    [SerializeField] private GameObject enemy4; 
     [SerializeField] private GameObject miniBoss;
     public enum SpawnState { Spawning, Waiting, Counting };
     private WaveProcessing waveProcessing;
@@ -22,7 +23,8 @@ public class WaveSpawner : MonoBehaviour
                 new(
                         new Dictionary<GameObject, int>
                         {
-                            { enemy1, 10 }
+                            { enemy4, 2 },
+                            { enemy1, 10 },
                         },
                         2
                     ),
@@ -30,7 +32,7 @@ public class WaveSpawner : MonoBehaviour
                         new Dictionary<GameObject, int>
                         {
                             { enemy1, 8 },
-                            { enemy2, 5 }
+                            { enemy2, 5 },
                         },
                         1
                     ),
@@ -39,13 +41,15 @@ public class WaveSpawner : MonoBehaviour
                         {
                             { enemy1, 5 },
                             { enemy2, 3 },
-                            { enemy3, 2 }
+                            { enemy4, 3 },
+                            { enemy3, 2 },
                         },
                         2
                     ),
                 new(
                         new Dictionary<GameObject, int>
                         {
+                            { enemy4, 7 },
                             { enemy1, 15 },
                             { enemy2, 7 },
                         },
@@ -54,10 +58,11 @@ public class WaveSpawner : MonoBehaviour
                 new(
                         new Dictionary<GameObject, int>
                         {
+                            { enemy4, 6 },
                             { enemy1, 5 },
                             { enemy2, 5 },
                             { enemy3, 3 },
-                            { miniBoss, 1 }
+                            { miniBoss, 1 },
                         },
                         2
                     ),

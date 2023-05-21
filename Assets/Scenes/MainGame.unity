@@ -1859,6 +1859,7 @@ MonoBehaviour:
   enemy1: {fileID: 389095176044957469, guid: 782d983eb4009be40a825515312dcd24, type: 3}
   enemy2: {fileID: 5376211024287339946, guid: 179c4ded3935e0e49946595a289797c2, type: 3}
   enemy3: {fileID: 7798128494745136029, guid: 3bb518d829ea0744e9a6ec4570b5505f, type: 3}
+  enemy4: {fileID: 8747577585063392786, guid: 2b63f5062a11f014f8f7403d7fef0cb7, type: 3}
   miniBoss: {fileID: 7798128494745136029, guid: 19b0006d5523e0e41bc71f7bf2a9e975, type: 3}
   timeBetweenWaves: 5
   waveCountDown: 0

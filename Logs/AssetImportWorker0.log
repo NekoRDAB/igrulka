@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2022.2/staging' branch; Version is '2022.2.14f1 (b2c9b1ac6cc0) revision 11717041'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'ru' Physical Memory: 15741 MB
+OS: 'Windows 10  (10.0.17763) 64bit EnterpriseS' Language: 'ru' Physical Memory: 16263 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.2.14f1\Editor\Unity.exe
+D:\UnityEditor\2022.2.14f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/79521/Desktop/Game/igrulka
+D:/igrulka/igrulka
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52189
-Successfully changed project path to: C:/Users/79521/Desktop/Game/igrulka
-C:/Users/79521/Desktop/Game/igrulka
+49534
+Successfully changed project path to: D:/igrulka/igrulka
+D:/igrulka/igrulka
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,281 +47,64 @@ C:/Users/79521/Desktop/Game/igrulka
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [11588] Host "[IP] 10.240.122.245 [Port] 0 [Flags] 2 [Guid] 958795146 [EditorId] 958795146 [Version] 1048832 [Id] WindowsEditor(7,hempigod) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [23168] Host "[IP] 172.17.188.113 [Port] 0 [Flags] 2 [Guid] 245178659 [EditorId] 245178659 [Version] 1048832 [Id] WindowsEditor(7,User-PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [11588] Host "[IP] 10.240.122.245 [Port] 0 [Flags] 2 [Guid] 958795146 [EditorId] 958795146 [Version] 1048832 [Id] WindowsEditor(7,hempigod) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [23168] Host "[IP] 172.17.188.113 [Port] 0 [Flags] 2 [Guid] 245178659 [EditorId] 245178659 [Version] 1048832 [Id] WindowsEditor(7,User-PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 11.45 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 21.62 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.2.14f1 (b2c9b1ac6cc0)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/79521/Desktop/Game/igrulka/Assets
+[Subsystems] Discovering subsystems at path D:/UnityEditor/2022.2.14f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/igrulka/igrulka/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f99)
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
     Vendor:   NVIDIA
     VRAM:     3962 MB
-    Driver:   30.0.15.1215
+    Driver:   31.0.15.1693
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56932
+Mono path[0] = 'D:/UnityEditor/2022.2.14f1/Editor/Data/Managed'
+Mono path[1] = 'D:/UnityEditor/2022.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/UnityEditor/2022.2.14f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56776
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006338 seconds.
-- Loaded All Assemblies, in  0.392 seconds
+Register platform support module: D:/UnityEditor/2022.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007872 seconds.
+- Loaded All Assemblies, in  0.969 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.297 seconds
+- Finished resetting the current domain, in  0.653 seconds
 Domain Reload Profiling:
-	ReloadAssembly (241ms)
-		BeginReloadAssembly (116ms)
+	ReloadAssembly (505ms)
+		BeginReloadAssembly (252ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
+			CreateAndSetChildDomain (2ms)
 		LoadAllAssembliesAndSetupDomain (0ms)
-			LoadAssemblies (113ms)
+			LoadAssemblies (253ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (144ms)
-				TypeCache.Initialize (143ms)
-					TypeCache.ScanAssembly (142ms)
-				ResolveRequiredComponents (0ms)
+			SetupTypeCache (450ms)
+				TypeCache.Initialize (447ms)
+					TypeCache.ScanAssembly (442ms)
+				ResolveRequiredComponents (2ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (233ms)
+			SetupLoadedEditorAssemblies (480ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
-				SetLoadedEditorAssemblies (8ms)
+				InitializePlatformSupportModulesInManaged (21ms)
+				SetLoadedEditorAssemblies (23ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (156ms)
-				ProcessInitializeOnLoadMethodAttributes (58ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (329ms)
+				ProcessInitializeOnLoadMethodAttributes (105ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 ========================================================================
 Worker process is ready to serve import requests
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\79521\Desktop\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\79521\Desktop\Game\igrulka\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.782 seconds
-Refreshing native plugins compatible for Editor in 3.83 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.619 seconds
-Domain Reload Profiling:
-	ReloadAssembly (228ms)
-		BeginReloadAssembly (138ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (23ms)
-		LoadAllAssembliesAndSetupDomain (552ms)
-			LoadAssemblies (296ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (318ms)
-				TypeCache.Initialize (290ms)
-					TypeCache.ScanAssembly (285ms)
-				ResolveRequiredComponents (6ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (438ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (3ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (75ms)
-				ProcessInitializeOnLoadAttributes (311ms)
-				ProcessInitializeOnLoadMethodAttributes (35ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 4.97 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4058 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 62 unused Assets / (43.1 KB). Loaded Objects now: 4528.
-Memory consumption went from 136.8 MB to 136.8 MB.
-Total: 3.794300 ms (FindLiveObjects: 0.379900 ms CreateObjectMapping: 0.145900 ms MarkObjects: 3.127900 ms  DeleteObjects: 0.138600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 59208.940144 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-06.png
-  artifactKey: Guid(02c81e1adca97a648affd2080bd7dac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-06.png using Guid(02c81e1adca97a648affd2080bd7dac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b094b4fa5f7153d40883fc1eadcb707') in 0.095467 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 6.725258 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-05.png
-  artifactKey: Guid(09ececc7d9941c941870e8d9cdf9a44c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-05.png using Guid(09ececc7d9941c941870e8d9cdf9a44c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2759ed3ebc914fe3e5016a0ec7f6c024') in 0.012529 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 9.127805 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/Старт.png
-  artifactKey: Guid(09ececc7d9941c941870e8d9cdf9a44c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/Старт.png using Guid(09ececc7d9941c941870e8d9cdf9a44c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7f8eed451b34a85b28f83536d395929') in 0.011137 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 4.397428 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/Обучение.png
-  artifactKey: Guid(02c81e1adca97a648affd2080bd7dac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/Обучение.png using Guid(02c81e1adca97a648affd2080bd7dac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b5a41d8101243df096d11b53618af68') in 0.010626 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.221866 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-08 (2).png
-  artifactKey: Guid(54c8873c54de1e8498e553519cdf64f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-08 (2).png using Guid(54c8873c54de1e8498e553519cdf64f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6248f87841da1466e1019d21db48a251') in 0.010687 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 2.923925 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-06 (2).png
-  artifactKey: Guid(bc8c963435d1469449ff3531243d9675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-06 (2).png using Guid(bc8c963435d1469449ff3531243d9675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba237bbbd65effcf4737342025e098eb') in 0.012040 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 5.052526 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/Настройки.png
-  artifactKey: Guid(bc8c963435d1469449ff3531243d9675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/Настройки.png using Guid(bc8c963435d1469449ff3531243d9675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ca28f5d9064ddc87f4c0fef9e4f92dd') in 0.008734 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.983005 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-06 (3).png
-  artifactKey: Guid(1f41068926095c843bc339c10dbb06f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-06 (3).png using Guid(1f41068926095c843bc339c10dbb06f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c433326aa334c21826cbec1f107a51') in 0.009889 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 2.492897 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/Выход.png
-  artifactKey: Guid(1f41068926095c843bc339c10dbb06f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/Выход.png using Guid(1f41068926095c843bc339c10dbb06f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95480c87f89de7d9757fdbfdb50e8066') in 0.008196 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.201210 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-06 (4).png
-  artifactKey: Guid(3ca12f4732ef9494fad159aec3603534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-06 (4).png using Guid(3ca12f4732ef9494fad159aec3603534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '749f08f99d53f1311df4b05715144d37') in 0.010711 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 4.254610 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/Вернуться1.png
-  artifactKey: Guid(3ca12f4732ef9494fad159aec3603534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/Вернуться1.png using Guid(3ca12f4732ef9494fad159aec3603534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47aed9eb63052b5f85411d962b716a89') in 0.011507 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.969527 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-07.png
-  artifactKey: Guid(15fdd0bf3e503a049a09d1b407df2dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-07.png using Guid(15fdd0bf3e503a049a09d1b407df2dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e02285f5a2fa8ebdadc03fd1e94556b9') in 0.011420 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 3.920141 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/Вернуться2.png
-  artifactKey: Guid(15fdd0bf3e503a049a09d1b407df2dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/Вернуться2.png using Guid(15fdd0bf3e503a049a09d1b407df2dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ee514b3e88d347ae9b89c8f141c78bd') in 0.010665 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.252728 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-07 (2).png
-  artifactKey: Guid(fb87fa5af0156d344a469124ed0f6042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-07 (2).png using Guid(fb87fa5af0156d344a469124ed0f6042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f6dd962d5c344320a28fa0268d16c18') in 0.011319 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 2.884251 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/Вернуться3.png
-  artifactKey: Guid(fb87fa5af0156d344a469124ed0f6042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/Вернуться3.png using Guid(fb87fa5af0156d344a469124ed0f6042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f78dcfcef5b8c2bed36ad7773d91f9e0') in 0.008338 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.229946 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-08.png
-  artifactKey: Guid(7030a8fb15f2a3b4ba991a4fb06954c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/photo_2023-05-21_15-42-08.png using Guid(7030a8fb15f2a3b4ba991a4fb06954c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '778ad70c34a2ee6edd6de08b0738e7ff') in 0.009959 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 3.471133 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/Продолжить.png
-  artifactKey: Guid(7030a8fb15f2a3b4ba991a4fb06954c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/Продолжить.png using Guid(7030a8fb15f2a3b4ba991a4fb06954c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1a381594e0cafb622afb4517e89763b') in 0.011156 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 4.023788 seconds.
-  path: Assets/Images/Спрайты на русском/НовыеКнопки/Вернуться4.png
-  artifactKey: Guid(54c8873c54de1e8498e553519cdf64f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Images/Спрайты на русском/НовыеКнопки/Вернуться4.png using Guid(54c8873c54de1e8498e553519cdf64f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23ea1539e294392da248a298ddfa1ba3') in 0.012441 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 70.665750 seconds.
-  path: Assets/Scenes/Menu.unity
-  artifactKey: Guid(c87d585dea530f946b0b63c3619ef0e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Menu.unity using Guid(c87d585dea530f946b0b63c3619ef0e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '009095aaff2ce10cb230e26f1411676e') in 0.000890 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.852191 seconds.
-  path: Assets/Scenes/MainGame.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainGame.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd64d14b2e0521760929a142b81eae4bf') in 0.001368 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
