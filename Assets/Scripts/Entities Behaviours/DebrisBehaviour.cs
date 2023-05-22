@@ -5,6 +5,7 @@ public class DebrisBehaviour : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject damageNumbers;
     [SerializeField] private GameObject repairKit;
+    [SerializeField] private GameObject experience;
     [SerializeField] private GameObject freeze;
     [SerializeField] private GameObject magnet;
     [SerializeField] private GameObject destruction;
@@ -39,17 +40,20 @@ public class DebrisBehaviour : MonoBehaviour, IEnemy
         
         switch (randomNumber)
         {
-            case < 0.17:
+            case < 0.1:
                 Instantiate(freeze, transform.position, Quaternion.identity);
                 break;
-            case < 0.34:
+            case < 0.2:
                 Instantiate(magnet, transform.position, Quaternion.identity);
                 break;
-            case < 0.51:
+            case < 0.3:
                 Instantiate(destruction, transform.position, Quaternion.identity);
                 break;
-            default:
+            case < 0.6:
                 Instantiate(repairKit, transform.position, Quaternion.identity);
+                break;
+            default:
+                Instantiate(experience, transform.position, Quaternion.identity);
                 break;
         }
         
