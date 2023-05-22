@@ -32,7 +32,7 @@ public class AnihilateBehaviour : MonoBehaviour
             {
                 var iEnemy = enemy.GetComponent<IEnemy>();
                 if (iEnemy.damage != 0)
-                    iEnemy.TakeDamage(9999);
+                    iEnemy.TakeDamage(500);
             }
             controller.PlaySound(2);
             Destroy(gameObject);

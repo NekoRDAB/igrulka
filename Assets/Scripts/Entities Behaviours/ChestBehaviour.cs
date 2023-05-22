@@ -1,41 +1,41 @@
 using UnityEngine;
 
-public class ExpBehaviour : MonoBehaviour
+public class ChestBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject ownShip;    
     [SerializeField] public float pickUpRange;
     public bool IsMagnetized;
     private GameStateController gameStateController;
-    private float expSpeed = 1;
-    private Rigidbody2D exp;
+    private float chestSpeed = 1;
+    private Rigidbody2D chest;
     
     void Start()
     {
-        exp = GetComponent<Rigidbody2D>();
+        chest = GetComponent<Rigidbody2D>();
         ownShip = GameObject.Find("OwnShip");
         gameStateController = GameObject.Find("GameStateController").GetComponent<GameStateController>();
     }
     
     void Update()
     {
-        var distance = Vector2.Distance(ownShip.transform.position, exp.transform.position);
+        var distance = Vector2.Distance(ownShip.transform.position, chest.transform.position);
         if (IsMagnetized)
         {
-            var movement = (Vector2)(ownShip.transform.position - exp.transform.position);
+            var movement = (Vector2)(ownShip.transform.position - chest.transform.position);
             movement = Vector2.ClampMagnitude(movement, 5);
-            exp.MovePosition(exp.position + movement);
+            chest.MovePosition(chest.position + movement);
         }
 
         else if (pickUpRange > distance)
         {
-            var movement = (Vector2)(ownShip.transform.position - exp.transform.position);
-            movement = Vector2.ClampMagnitude(movement, expSpeed);
-            exp.MovePosition(exp.position + movement);
+            var movement = (Vector2)(ownShip.transform.position - chest.transform.position);
+            movement = Vector2.ClampMagnitude(movement, chestSpeed);
+            chest.MovePosition(chest.position + movement);
         }
 
         if (distance < 5)
         {
-            gameStateController.AddExp();
+            gameStateController.LevelUp();
             Destroy(gameObject);
         }
     }

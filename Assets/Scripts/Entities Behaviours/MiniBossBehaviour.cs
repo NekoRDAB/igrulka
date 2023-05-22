@@ -6,7 +6,7 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
     [SerializeField] private GameObject player;
     [SerializeField] private float speed;    
     [SerializeField] private GameObject explosion;
-    [SerializeField] private GameObject exp;
+    [SerializeField] private GameObject chest;
     [SerializeField] private GameObject damageNumbers;
     [SerializeField] private GameObject projectile;
     private float timeToShoot;
@@ -84,7 +84,7 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
     {
         Instantiate(explosion, ship.position, Quaternion.identity);
         for (var i =0; i < 5; i++)
-            Instantiate(exp, ship.position, Quaternion.identity);
+            Instantiate(chest, ship.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
