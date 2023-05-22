@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 30029207}
   - component: {fileID: 30029206}
   - component: {fileID: 30029205}
-  - component: {fileID: 30029209}
+  - component: {fileID: 30029211}
   - component: {fileID: 30029210}
   m_Layer: 5
   m_Name: EndTutorialScreen
@@ -228,18 +228,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &30029209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30029203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b581137c415738a49a8fac99fa253404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &30029210
 AudioSource:
   m_ObjectHideFlags: 0
@@ -336,6 +324,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &30029211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30029203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9fdbafdbdb9264b85cd1ab619afece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prevCanvas: {fileID: 538182508}
+  currentCanvas: {fileID: 30029203}
+  nextCanvas: {fileID: 0}
+  nextButtonKey: 275
+  prevButtonKey: 276
 --- !u!1 &81548894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,8 +1134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fdbafdbdb9264b85cd1ab619afece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCanvas: {fileID: 538182508}
+  prevCanvas: {fileID: 1502194661}
+  currentCanvas: {fileID: 538182508}
   nextCanvas: {fileID: 30029203}
+  nextButtonKey: 275
+  prevButtonKey: 276
 --- !u!82 &538182514
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1344,8 +1352,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fdbafdbdb9264b85cd1ab619afece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCanvas: {fileID: 557603683}
+  prevCanvas: {fileID: 1657012554}
+  currentCanvas: {fileID: 557603683}
   nextCanvas: {fileID: 1342552821}
+  nextButtonKey: 275
+  prevButtonKey: 276
 --- !u!82 &557603689
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2004,8 +2015,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fdbafdbdb9264b85cd1ab619afece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCanvas: {fileID: 1342552821}
+  prevCanvas: {fileID: 557603683}
+  currentCanvas: {fileID: 1342552821}
   nextCanvas: {fileID: 1594595820}
+  nextButtonKey: 275
+  prevButtonKey: 276
 --- !u!114 &1342552823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2249,7 +2263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 30029209}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EndTutorial, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
@@ -2448,8 +2462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fdbafdbdb9264b85cd1ab619afece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCanvas: {fileID: 1502194661}
+  prevCanvas: {fileID: 2024176461}
+  currentCanvas: {fileID: 1502194661}
   nextCanvas: {fileID: 538182508}
+  nextButtonKey: 275
+  prevButtonKey: 276
 --- !u!114 &1502194664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2567,8 +2584,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fdbafdbdb9264b85cd1ab619afece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCanvas: {fileID: 1594595820}
+  prevCanvas: {fileID: 1342552821}
+  currentCanvas: {fileID: 1594595820}
   nextCanvas: {fileID: 1880275596}
+  nextButtonKey: 275
+  prevButtonKey: 276
 --- !u!114 &1594595822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2943,8 +2963,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fdbafdbdb9264b85cd1ab619afece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCanvas: {fileID: 1657012554}
+  prevCanvas: {fileID: 0}
+  currentCanvas: {fileID: 1657012554}
   nextCanvas: {fileID: 557603683}
+  nextButtonKey: 275
+  prevButtonKey: 276
 --- !u!82 &1657012560
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3295,8 +3318,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fdbafdbdb9264b85cd1ab619afece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCanvas: {fileID: 1880275596}
+  prevCanvas: {fileID: 1594595820}
+  currentCanvas: {fileID: 1880275596}
   nextCanvas: {fileID: 2024176461}
+  nextButtonKey: 275
+  prevButtonKey: 276
 --- !u!114 &1880275598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3670,8 +3696,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9fdbafdbdb9264b85cd1ab619afece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCanvas: {fileID: 2024176461}
+  prevCanvas: {fileID: 1880275596}
+  currentCanvas: {fileID: 2024176461}
   nextCanvas: {fileID: 1502194661}
+  nextButtonKey: 275
+  prevButtonKey: 276
 --- !u!82 &2024176467
 AudioSource:
   m_ObjectHideFlags: 0

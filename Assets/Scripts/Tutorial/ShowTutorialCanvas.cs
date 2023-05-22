@@ -1,30 +1,38 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialController : MonoBehaviour 
 {
-    public GameObject startCanvas; // ссылка на канвас туториала
-    public GameObject nextCanvas;
-
+    [SerializeField] private GameObject prevCanvas; 
+    [SerializeField] private GameObject currentCanvas; 
+    [SerializeField] private GameObject nextCanvas;
+    [SerializeField] private KeyCode nextButtonKey = KeyCode.RightArrow;
+    [SerializeField] private KeyCode prevButtonKey = KeyCode.RightArrow;
+    
     private void Start() 
     {
-        startCanvas.SetActive(true); // открываем канвас после перехода на сцену
+        currentCanvas.SetActive(true); // открываем канвас после перехода на сцену
     }
 
     private void Update() 
     {
-        if (Input.anyKeyDown) 
+        if (Input.GetKeyDown(prevButtonKey))
         {
-            // переключаем на следующий канвас при нажатии любой клавиши
-            nextCanvas.SetActive(true);
-            startCanvas.SetActive(false); // скрываем текущий канвас
+            if (prevCanvas != null)
+            {
+                prevCanvas.SetActive(true);
+                currentCanvas.SetActive(false);
+            }
         }
-    }
-
-    public void HideTutorialCanvas()
-    {
-        if (startCanvas == null) 
-            return;
-        nextCanvas.SetActive(true);
-        startCanvas.SetActive(false); // скрываем канвас при необходимости
+        if (Input.GetKeyDown(nextButtonKey)) 
+        {
+            if (nextCanvas != null)
+            {
+                nextCanvas.SetActive(true);
+                currentCanvas.SetActive(false);
+            }
+            else
+                SceneManager.LoadScene("Menu");
+        }
     }
 }
