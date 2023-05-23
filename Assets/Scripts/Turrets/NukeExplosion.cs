@@ -21,7 +21,9 @@ public class NukeExplosion : MonoBehaviour
         else
         {
             timeAlive += Time.deltaTime;
-            transform.localScale *= 1.03f;
+            transform.localScale *= 1 + 2.5f * Time.deltaTime;
+            if (transform.localScale.magnitude >= 5 * MiniNukeTurret.ownShip.transform.localScale.magnitude)
+                Destroy(gameObject);
         }
     }
 

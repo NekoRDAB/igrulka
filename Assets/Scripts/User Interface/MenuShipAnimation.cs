@@ -34,8 +34,6 @@ public class MenuShipAnimation : MonoBehaviour
             isStopped = true;
         }
         else if (!isStopped)
-        {
-            rb.MovePosition(rb.position + (Vector2)transform.up * 2000 * Time.deltaTime);
-        }
+            rb.MovePosition(rb.position + (Vector2)transform.up * transform.localScale * 80 * Time.deltaTime);
     }
 }
