@@ -14,11 +14,11 @@ public class MenuShipAnimation : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * 200;
         audioSource = GetComponent<AudioSource>();
         if(!PlayerPrefs.HasKey("soundVolume"))
             PlayerPrefs.SetFloat("soundVolume", 1);
         audioSource.volume = PlayerPrefs.GetFloat("soundVolume") * 0.7f;
+        isStopped = false;
     }
 
     // Update is called once per frame
@@ -32,6 +32,10 @@ public class MenuShipAnimation : MonoBehaviour
             var prevScale = flare.transform.localScale;
             flare.transform.localScale = new Vector3(prevScale.x * 3, prevScale.y, prevScale.z);
             isStopped = true;
+        }
+        else if (!isStopped)
+        {
+            rb.MovePosition(rb.position + (Vector2)transform.up * 2000 * Time.deltaTime);
         }
     }
 }
