@@ -44,7 +44,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
         Amount = 2;
-        CoolDown = 4f;
+        CoolDown = 2f;
         Damage = 80;
         Speed = 30f;
     }

@@ -29,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8715190390389554528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.164, y: 16.71925, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalPosition: {x: -2.8072, y: 17.5756, z: 0}
+  m_LocalScale: {x: 23.9205, y: 21.5865, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3389397010673137237
 SpriteRenderer:
@@ -100,9 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6093fcba78c163649b5e832bfc297d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: -2797879914580779399}
-  ownShip: {fileID: 0}
   hitEffect: {fileID: 100002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
+  rb: {fileID: -2797879914580779399}
 --- !u!50 &-2797879914580779399
 Rigidbody2D:
   serializedVersion: 4
@@ -162,7 +161,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0000000037252903, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -173,7 +172,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.26}
+  m_Size: {x: 0.11838216, y: 0.26}
   m_EdgeRadius: 0
 --- !u!82 &6709982861102813207
 AudioSource:
@@ -195,7 +194,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.8764069
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
