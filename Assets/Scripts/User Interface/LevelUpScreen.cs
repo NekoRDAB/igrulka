@@ -65,6 +65,7 @@ public class LevelUpScreen : MonoBehaviour
         firstUpgrade = GetRandomTurret(rnd, availableTurrets);
         secondUpgrade = GetRandomTurret(rnd, availableTurrets);
         thirdUpgrade = GetRandomTurret(rnd, availableTurrets);
+        isInitialization = false;
 
         firstCardButtonImage.sprite = firstUpgrade.GetSprite();
         secondCardButtonImage.sprite = secondUpgrade.GetSprite();
