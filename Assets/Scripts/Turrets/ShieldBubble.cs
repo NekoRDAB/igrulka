@@ -8,6 +8,7 @@ public class ShieldBubble : MonoBehaviour
     private Stopwatch timer;
     private SpriteRenderer spriteRenderer;
     private CircleCollider2D collider;
+    private AudioSource audioSource;
     public enum ShieldStates
     {
         Offline,
@@ -22,15 +23,24 @@ public class ShieldBubble : MonoBehaviour
         timer = new Stopwatch();
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<CircleCollider2D>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume");
     }
     
     void Update()
     {
+        var prevColor = spriteRenderer.color;
+        spriteRenderer.color = new Color(
+            prevColor.r,
+            prevColor.g, 
+            prevColor.b,
+            (float)(shieldHealth / ShieldGenerator.ShieldHealth));
         if (shieldHealth <= 0 && state == ShieldStates.Online)
         {
             spriteRenderer.forceRenderingOff = true;
             collider.enabled = false;
             state = ShieldStates.Offline;
+            audioSource.Play();
         }
 
         if (state == ShieldStates.Offline)
