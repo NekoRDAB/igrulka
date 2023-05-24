@@ -10,13 +10,13 @@ public class LevelUpScreen : MonoBehaviour
 {    
     [SerializeField] private PlayerShipBehaviour ownShip;
     [SerializeField] private GameStateController controller;
-    [SerializeField] private ProtonTorpedoesTurret firstTurret;
-    [SerializeField] private FlakTurret secondTurret;
-    [SerializeField] private RailGunTurret thirdTurret;
-    [SerializeField] private MiniNukeTurret fourthTurret;
-    [SerializeField] private RefrigeratorTurret fifthTurret;
-    [SerializeField] private ShieldGenerator sixthTurret;
-    [SerializeField] private LaserTurretBehaviour seventhTurret;
+    [SerializeField] private ProtonTorpedoesTurret protonTorpedoesTurret;
+    [SerializeField] private FlakTurret flakTurret;
+    [SerializeField] private RailGunTurret railGunTurret;
+    [SerializeField] private MiniNukeTurret miniNukeTurret;
+    [SerializeField] private RefrigeratorTurret refrigeratorTurret;
+    [SerializeField] private ShieldGenerator shieldGenerator;
+    [SerializeField] private LaserTurretBehaviour laserTurret;
     public Image firstCardButtonImage;
     public TextMeshProUGUI firstCardText;
     public Image secondCardButtonImage;
@@ -27,6 +27,7 @@ public class LevelUpScreen : MonoBehaviour
     private ITurret firstUpgrade;
     private ITurret secondUpgrade;
     private ITurret thirdUpgrade;
+    private bool isInitialization = true;
     
     public void SetUp()
     {
@@ -35,13 +36,13 @@ public class LevelUpScreen : MonoBehaviour
         {
             turrets = new List<ITurret>
             {
-                firstTurret,
-                secondTurret,
-                thirdTurret,
-                fourthTurret,
-                fifthTurret,
-                sixthTurret,
-                seventhTurret
+                protonTorpedoesTurret,
+                flakTurret,
+                railGunTurret,
+                miniNukeTurret,
+                refrigeratorTurret,
+                shieldGenerator,
+                laserTurret
             };
         }
         DrawChoices();
@@ -76,6 +77,21 @@ public class LevelUpScreen : MonoBehaviour
 
     private ITurret GetRandomTurret(Random rnd, List<ITurret> availableTurrets)
     {
+        if (isInitialization)
+        {
+            var initializeTurret = InitializeFirstTurret(rnd, availableTurrets);
+            return initializeTurret;
+        }
+        var index = rnd.Next(0, availableTurrets.Count);
+        var turret = availableTurrets[index];
+        availableTurrets.RemoveAt(index);
+        return turret;
+    }
+    
+    private ITurret InitializeFirstTurret(Random rnd, List<ITurret> availableTurrets)
+    {
+        availableTurrets.Remove(refrigeratorTurret);
+        availableTurrets.Remove(shieldGenerator);
         var index = rnd.Next(0, availableTurrets.Count);
         var turret = availableTurrets[index];
         availableTurrets.RemoveAt(index);
