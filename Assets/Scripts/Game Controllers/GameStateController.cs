@@ -58,7 +58,7 @@ public class GameStateController : MonoBehaviour
         PlaySound(1);
 
         experience++;
-        if (experience >= 3 * level * level)
+        if (experience >= level * level)
         {
             level++;
             experience = 0;
@@ -70,7 +70,6 @@ public class GameStateController : MonoBehaviour
     public void LevelUp()
     {
         levelUpScreen.SetUp();
-        print($"Level up. New level = {level}");
         Time.timeScale = 0;
     }
 
