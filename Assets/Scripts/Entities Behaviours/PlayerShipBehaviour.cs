@@ -10,24 +10,22 @@ namespace Assets.Scripts
         Rigidbody2D ownShip;
         public int turretsCount { get; set; }
         public double health { get; set; }
-        public int maxHealth { get; private set; }
         private float timeDamaged;
         private SpriteRenderer spriteRenderer;
         private AudioSource audio;
         private GameObject shield;
         public readonly List<Vector2> positionsList = new()
             {
-                new Vector2(-3, 0), 
-                new Vector2(3, 0),
-                new Vector2(-2.5f, -5.5f),
-                new Vector2(-2.5f, -5.5f),
-                new Vector2(0, 4)
+                new Vector2(0.375f, -1.5f), 
+                new Vector2(-0.375f, -1.5f),
+                new Vector2(0.375f, -0.5f),
+                new Vector2(-0.375f, -0.5f),
+                new Vector2(0, 0.6f)
             };
         
         void Start()
         {
-            maxHealth = 100;
-            health = maxHealth;
+            health = 100;
             ownShip = GetComponent<Rigidbody2D>();
             audio = GetComponent<AudioSource>();
             audio.volume = PlayerPrefs.GetFloat("soundVolume");
@@ -54,7 +52,7 @@ namespace Assets.Scripts
                 audio.Play();
             }
             else
-                exhaust.localScale = new Vector3(20, 10, 1);
+                exhaust.localScale = new Vector3(10, 3, 1);
             movement = Vector2.ClampMagnitude(movement, movementSpeed);
             if(movement != Vector2.zero)
             {
