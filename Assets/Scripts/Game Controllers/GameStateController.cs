@@ -62,7 +62,7 @@ public class GameStateController : MonoBehaviour
         {
             level++;
             experience = 0;
-            if (level <= levelUpScreen.turrets.Count * 4)
+            if (level <= 20)
                 LevelUp();
         }
     }
