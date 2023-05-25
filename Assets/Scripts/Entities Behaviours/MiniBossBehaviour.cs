@@ -31,6 +31,7 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
         health = 1500;
         shootingCoolDown = 3f;
         timeToShoot = shootingCoolDown;
+        transform.DetachChildren();
     }
 
     void Update()

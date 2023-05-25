@@ -23,7 +23,7 @@ public class RailGunProjectile : MonoBehaviour
         if (distance > 150)
             Destroy(gameObject);
         var scale = rb.transform.localScale;
-        rb.transform.localScale = new Vector3(scale.x, scale.y * 1.004f, scale.z);
+        rb.transform.localScale = new Vector3(scale.x, scale.y * (1 + Time.deltaTime), scale.z);
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
