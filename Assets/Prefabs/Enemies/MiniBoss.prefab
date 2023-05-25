@@ -191,6 +191,7 @@ MonoBehaviour:
   chest: {fileID: 5336000287990818286, guid: 3e463dae054104c47a1b4cc742ce80e5, type: 3}
   damageNumbers: {fileID: 1567834111071343437, guid: 2d886ea40f64c494aa1d6b446760d49c, type: 3}
   projectile: {fileID: 6745839715786924904, guid: 6cf5d41fbf2d4da42a50c24080ea1848, type: 3}
+  healthBar: {fileID: 8869919119640355061}
 --- !u!50 &-3642988159037383614
 Rigidbody2D:
   serializedVersion: 4

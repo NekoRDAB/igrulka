@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageNumbers: {fileID: 1567834111071343437, guid: 2d886ea40f64c494aa1d6b446760d49c, type: 3}
   repairKit: {fileID: 8260558672461827906, guid: 6422ed3dbb7df6a4fa289505a16030c8, type: 3}
+  experience: {fileID: 5336000287990818286, guid: a13e4dd5e5de8c046a7f5307cbdc26f7, type: 3}
   freeze: {fileID: 7309434112775195398, guid: e2f313ac974f98343acc46f81f834c45, type: 3}
   magnet: {fileID: 6492509978882247978, guid: 8e2862c905b26a249a37e214238f033e, type: 3}
   destruction: {fileID: 6800952824497523464, guid: 68c1759bd33d442479b5deb2f0d38e44, type: 3}

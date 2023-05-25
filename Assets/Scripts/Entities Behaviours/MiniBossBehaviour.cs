@@ -9,6 +9,7 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
     [SerializeField] private GameObject chest;
     [SerializeField] private GameObject damageNumbers;
     [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject healthBar;
     private float timeToShoot;
     private float shootingCoolDown;
     public int damage { get; set; }
@@ -83,6 +84,7 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
 
     void Die()
     {
+        Destroy(healthBar);
         Instantiate(explosion, ship.position, Quaternion.identity);
         for (var i =0; i < 5; i++)
             Instantiate(chest, ship.position, Quaternion.identity);

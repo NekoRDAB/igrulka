@@ -6,7 +6,7 @@ public class ExpBehaviour : MonoBehaviour
     [SerializeField] public float pickUpRange;
     public bool IsMagnetized;
     private GameStateController gameStateController;
-    private float expSpeed = 1;
+    private float expSpeed = 1.5f;
     private Rigidbody2D exp;
     
     void Start()

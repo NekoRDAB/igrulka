@@ -17,16 +17,9 @@ public class EnemyHealthBar : MonoBehaviour
 
     void Update()
     {
-        try
-        {
-            var shipPosition = ownShip.transform.position;
-            transform.position = new Vector3(shipPosition.x, shipPosition.y - 22, 0);
-            var health = ownShip.GetComponent<MiniBossBehaviour>().health;
-            healthBar.localScale = new Vector3((float)(health / 1500.0), 1, 1);
-        }
-        catch (MissingReferenceException e)
-        {
-            Destroy(gameObject);
-        }
+        var shipPosition = ownShip.transform.position;
+        transform.position = new Vector3(shipPosition.x, shipPosition.y - 22, 0);
+        var health = ownShip.GetComponent<MiniBossBehaviour>().health;
+        healthBar.localScale = new Vector3((float)(health / 1500.0), 1, 1);
     }
 }
