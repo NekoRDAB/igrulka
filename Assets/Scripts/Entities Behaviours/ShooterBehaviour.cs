@@ -38,7 +38,8 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
     {
         if (timeToShoot <= 0)
         {
-            Instantiate(projectile, transform.position, transform.rotation);
+            if(timeFrozen <= 0)
+                Instantiate(projectile, transform.position, transform.rotation);
             timeToShoot = shootingCoolDown;
         }
         else
