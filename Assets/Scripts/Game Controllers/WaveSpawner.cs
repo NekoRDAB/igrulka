@@ -89,7 +89,7 @@ public class WaveSpawner : MonoBehaviour
         foreach (var enemy in wave.GetEnemy())
         {
             SpawnEnemy(enemy);
-            yield return new WaitForSeconds(wave.delay / (float)waveProcessing.cycle);
+            yield return new WaitForSeconds(1.5f * wave.delay / (float)waveProcessing.cycle);
         }
 
         state = SpawnState.Waiting;
