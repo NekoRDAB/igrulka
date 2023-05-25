@@ -1,6 +1,8 @@
+using System;
 using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyHealthBar : MonoBehaviour
@@ -15,9 +17,16 @@ public class EnemyHealthBar : MonoBehaviour
 
     void Update()
     {
-        var shipPosition = ownShip.transform.position;
-        transform.position = new Vector3(shipPosition.x, shipPosition.y - 22, 0);
-        var health = ownShip.GetComponent<MiniBossBehaviour>().health;
-        healthBar.localScale = new Vector3((float)(health / 1500.0), 1, 1);
+        try
+        {
+            var shipPosition = ownShip.transform.position;
+            transform.position = new Vector3(shipPosition.x, shipPosition.y - 22, 0);
+            var health = ownShip.GetComponent<MiniBossBehaviour>().health;
+            healthBar.localScale = new Vector3((float)(health / 1500.0), 1, 1);
+        }
+        catch (MissingReferenceException e)
+        {
+            Destroy(gameObject);
+        }
     }
 }

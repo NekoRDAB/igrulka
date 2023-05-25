@@ -493,7 +493,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &324770986
 GameObject:
@@ -4165,7 +4165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8224733460803377669, guid: 0f7e1b4a73f2e1a4da216e2f8e705291, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8224733460803377669, guid: 0f7e1b4a73f2e1a4da216e2f8e705291, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4340,7 +4340,7 @@ PrefabInstance:
       objectReference: {fileID: 579097425}
     - target: {fileID: 8467184505703266273, guid: efdc197d451cb934a9267a11ff4906bf, type: 3}
       propertyPath: survivalTimeLimit
-      value: 240
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 8467184505703266273, guid: efdc197d451cb934a9267a11ff4906bf, type: 3}
       propertyPath: gameOverSuccessScreen

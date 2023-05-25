@@ -32,7 +32,7 @@ public class enemyProjectileBehaviour : MonoBehaviour, IEnemy
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), gameObject.GetComponent<CircleCollider2D>());
+        Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), gameObject.GetComponent<BoxCollider2D>());
         var player = collision.gameObject.GetComponent<PlayerShipBehaviour>();
         if (player != null)
         {
