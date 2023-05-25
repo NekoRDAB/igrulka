@@ -70,7 +70,7 @@ public class ProtonTorpedoesTurret : MonoBehaviour, ITurret
 
     public string GetDescription()
     {
-        return $"Уровень {level}\n{DescriptionDict[level]}";
+        return $"Протонная пушка. Уровень {level}\n{DescriptionDict[level]}";
     }
 
     public int GetLevel()

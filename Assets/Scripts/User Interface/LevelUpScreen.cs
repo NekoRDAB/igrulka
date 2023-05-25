@@ -107,7 +107,6 @@ public class LevelUpScreen : MonoBehaviour
 
     public void ChoseFirst()
     {
-        print("1");
         if (firstUpgrade.GetLevel() == 0)
             firstUpgrade.Init();
         
@@ -119,7 +118,6 @@ public class LevelUpScreen : MonoBehaviour
 
     public void ChoseSecond()
     {
-        print("2");
         if (secondUpgrade.GetLevel() == 0)
             secondUpgrade.Init();
         
@@ -131,7 +129,6 @@ public class LevelUpScreen : MonoBehaviour
 
     public void ChoseThird()
     {
-        print("3");
         if (thirdUpgrade.GetLevel() == 0)
             thirdUpgrade.Init();
         

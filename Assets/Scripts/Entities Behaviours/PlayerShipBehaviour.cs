@@ -25,7 +25,7 @@ namespace Assets.Scripts
         
         void Start()
         {
-            health = 100;
+            health = 300;
             ownShip = GetComponent<Rigidbody2D>();
             audio = GetComponent<AudioSource>();
             audio.volume = PlayerPrefs.GetFloat("soundVolume");

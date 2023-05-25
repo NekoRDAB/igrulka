@@ -41,7 +41,7 @@ public class FlakTurret : MonoBehaviour, ITurret
 
     public string GetDescription()
     {
-        return $"Уровень {level}\n{DescriptionDict[level]}";
+        return $"Зенитная пушка. Уровень {level}\n{DescriptionDict[level]}";
     }
 
     public int GetLevel()

@@ -48,7 +48,7 @@ public class LaserTurretBehaviour : MonoBehaviour, ITurret
 
     public string GetDescription()
     {
-        return $"Уровень {level}\n{DescriptionDict[level]}";
+        return $"Лазер. Уровень {level}\n{DescriptionDict[level]}";
     }
 
     public int GetLevel()

@@ -65,7 +65,7 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
 
     public string GetDescription()
     {
-        return $"Уровень {level}\n{DescriptionDict[level]}";
+        return $"Замораживающая пушка. Уровень {level}\n{DescriptionDict[level]}";
     }
 
     public int GetLevel()

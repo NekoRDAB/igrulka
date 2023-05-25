@@ -31,7 +31,7 @@ public class RepairKitBehaviour : MonoBehaviour
         if (distance < 5)
         {
             var player = ownShip.GetComponent<PlayerShipBehaviour>();
-            player.health = Math.Min(100, player.health + 25);
+            player.health = Math.Min(300, player.health + 50);
             var damageNumber = Instantiate(damageNumbers, ownShip.transform.position, Quaternion.identity);
             damageNumber.GetComponent<NumbersBehaviour>().SetNumber(25, regen:true);
             controller.PlaySound(1.5f);

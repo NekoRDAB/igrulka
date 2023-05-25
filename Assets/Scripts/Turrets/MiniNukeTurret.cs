@@ -69,7 +69,7 @@ public class MiniNukeTurret : MonoBehaviour, ITurret
 
     public string GetDescription()
     {
-        return $"Уровень {level}\n{DescriptionDict[level]}";
+        return $"Ядерная пушка. Уровень {level}\n{DescriptionDict[level]}";
     }
 
     public int GetLevel()
