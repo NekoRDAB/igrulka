@@ -35,7 +35,7 @@ public class RailGunTurret : MonoBehaviour, ITurret
     {
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
-        CoolDown = 5f;
+        CoolDown = 3f;
         Damage = 100;
         Speed = 80f;
     }
