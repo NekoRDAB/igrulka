@@ -18,6 +18,7 @@ public class LevelUpScreen : MonoBehaviour
     [SerializeField] private RefrigeratorTurret refrigeratorTurret;
     [SerializeField] private ShieldGenerator shieldGenerator;
     [SerializeField] private LaserTurretBehaviour laserTurret;
+    [SerializeField] private Sprite plug;
     public Image firstCardButtonImage;
     public TextMeshProUGUI firstCardText;
     public Image secondCardButtonImage;
@@ -76,7 +77,7 @@ public class LevelUpScreen : MonoBehaviour
         else
         {
             firstCardText.text = "нет доступных улучшений";
-            firstCardButtonImage.sprite = null;
+            firstCardButtonImage.sprite = plug;
         }
             
 
@@ -88,7 +89,7 @@ public class LevelUpScreen : MonoBehaviour
         else
         {
             secondCardText.text = "нет доступных улучшений";
-            secondCardButtonImage.sprite = null;
+            secondCardButtonImage.sprite = plug;
         }
             
 
@@ -100,7 +101,7 @@ public class LevelUpScreen : MonoBehaviour
         else
         {
             thirdCardText.text = "нет доступных улучшений";
-            thirdCardButtonImage.sprite = null;
+            thirdCardButtonImage.sprite = plug;
         }
     } 
 

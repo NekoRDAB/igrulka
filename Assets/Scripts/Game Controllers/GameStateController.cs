@@ -8,7 +8,7 @@ public class GameStateController : MonoBehaviour
     [SerializeField] private GameOverScreen gameOverScreen;
     [SerializeField] private GameOverSuccessScreen gameOverSuccessScreen;
     [SerializeField] private PauseScreen pauseScreen;
-    public int level { get; private set; }
+    public int level { get; set; }
     public int experience { get; private set; }
     private GameObject ownShip;
     private double health;

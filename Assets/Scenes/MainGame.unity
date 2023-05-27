@@ -1371,6 +1371,7 @@ MonoBehaviour:
   refrigeratorTurret: {fileID: -4261860414855495707, guid: baeec996c7aa95a45940982a8e3ba7d7, type: 3}
   shieldGenerator: {fileID: -7361688756770138214, guid: adb45e22b46870f449e0f9520200da81, type: 3}
   laserTurret: {fileID: -8362727341198751354, guid: 5e13e5803d4453a41b0be43bf99206b6, type: 3}
+  plug: {fileID: 21300000, guid: f381b397ec201a449b9082a50dacd568, type: 3}
   firstCardButtonImage: {fileID: 1183001101}
   firstCardText: {fileID: 468256906}
   secondCardButtonImage: {fileID: 491744817}
