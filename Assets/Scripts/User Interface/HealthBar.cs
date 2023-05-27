@@ -16,6 +16,6 @@ public class HealthBar : MonoBehaviour
         var shipPosition = ownShip.transform.position;
         transform.position = new Vector3(shipPosition.x, shipPosition.y - 24, 0);
         var health = ownShip.GetComponent<PlayerShipBehaviour>().health;
-        healthBar.localScale = new Vector3((float)(health / 100.0), 1, 1);
+        healthBar.localScale = new Vector3((float)(health / 300.0), 1, 1);
     }
 }
