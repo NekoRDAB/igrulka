@@ -60,7 +60,6 @@ public class GameStateController : MonoBehaviour
         experience++;
         if (experience >= level * level)
         {
-            level++;
             experience = 0;
             if (level <= 25)
                 LevelUp();
@@ -69,6 +68,7 @@ public class GameStateController : MonoBehaviour
     
     public void LevelUp()
     {
+        level++;
         levelUpScreen.SetUp();
         Time.timeScale = 0;
     }
