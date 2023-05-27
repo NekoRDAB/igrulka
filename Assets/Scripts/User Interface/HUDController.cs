@@ -25,7 +25,7 @@ public class HUDController : MonoBehaviour
     
     void Update()
     {
-        slider.maxValue = gameStateController.level * gameStateController.level * 3;
+        slider.maxValue = gameStateController.level * gameStateController.level;
         slider.value = gameStateController.experience;
         level.text = $"Уровень: {gameStateController.level}";
         killCountText.text = $"Убийств: {killCount}";
