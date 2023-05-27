@@ -62,7 +62,7 @@ public class GameStateController : MonoBehaviour
         {
             level++;
             experience = 0;
-            if (level <= 20)
+            if (level <= 25)
                 LevelUp();
         }
     }
