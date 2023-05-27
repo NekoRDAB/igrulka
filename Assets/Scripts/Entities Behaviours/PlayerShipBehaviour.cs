@@ -41,25 +41,19 @@ namespace Assets.Scripts
             var horizontalInput = Input.GetAxis("Horizontal");
             var verticalInput = Input.GetAxis("Vertical");
             var movement = new Vector2(horizontalInput, verticalInput);
-            if (movement.magnitude > 0.1f) // проверяем, что есть движение
-            {
-                ownShip.MovePosition(ownShip.position + movement * movementSpeed * Time.deltaTime);
-                transform.rotation = Quaternion.LookRotation(Vector3.forward, movement);
-            }
-            if (movement == Vector2.zero)
-            {
-                exhaust.localScale = new Vector3(1, 1, 1);
-                audio.Play();
-            }
-            else
-                exhaust.localScale = new Vector3(22, 10, 1);
             movement = Vector2.ClampMagnitude(movement, movementSpeed);
-            if(movement != Vector2.zero)
+            if(movement != Vector2.zero && Time.timeScale != 0)
             {
                 ownShip.MovePosition(ownShip.position + movement);
                 var direction = new Vector3(horizontalInput, verticalInput, 0);
                 if (direction.magnitude > 0.1f) // проверяем, что есть движение
                     transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+                exhaust.localScale = new Vector3(22, 10, 1);
+            }
+            else
+            {
+                exhaust.localScale = new Vector3(1, 1, 1);
+                audio.Play();
             }
         }
 
