@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
@@ -24,9 +25,9 @@ public class LevelUpScreen : MonoBehaviour
     public Image thirdCardButtonImage;
     public TextMeshProUGUI thirdCardText;
     public List<ITurret> turrets;
-    private ITurret firstUpgrade;
-    private ITurret secondUpgrade;
-    private ITurret thirdUpgrade;
+    [CanBeNull] private ITurret firstUpgrade;
+    [CanBeNull] private ITurret secondUpgrade;
+    [CanBeNull] private ITurret thirdUpgrade;
     private bool isInitialization = true;
     
     public void SetUp()
@@ -67,13 +68,40 @@ public class LevelUpScreen : MonoBehaviour
         thirdUpgrade = GetRandomTurret(rnd, availableTurrets);
         isInitialization = false;
 
-        firstCardButtonImage.sprite = firstUpgrade.GetSprite();
-        secondCardButtonImage.sprite = secondUpgrade.GetSprite();
-        thirdCardButtonImage.sprite = thirdUpgrade.GetSprite();
+        if (firstUpgrade != null)
+        {
+            firstCardButtonImage.sprite = firstUpgrade.GetSprite();
+            firstCardText.text = firstUpgrade.GetDescription();
+        }
+        else
+        {
+            firstCardText.text = "нет доступных улучшений";
+            firstCardButtonImage.sprite = null;
+        }
+            
 
-        firstCardText.text = firstUpgrade.GetDescription();
-        secondCardText.text = secondUpgrade.GetDescription();
-        thirdCardText.text = thirdUpgrade.GetDescription();
+        if (secondUpgrade != null)
+        {
+            secondCardButtonImage.sprite = secondUpgrade.GetSprite();
+            secondCardText.text = secondUpgrade.GetDescription();
+        }
+        else
+        {
+            secondCardText.text = "нет доступных улучшений";
+            secondCardButtonImage.sprite = null;
+        }
+            
+
+        if (thirdUpgrade != null)
+        {
+            thirdCardButtonImage.sprite = thirdUpgrade.GetSprite();
+            thirdCardText.text = thirdUpgrade.GetDescription();
+        }
+        else
+        {
+            thirdCardText.text = "нет доступных улучшений";
+            thirdCardButtonImage.sprite = null;
+        }
     } 
 
     private ITurret GetRandomTurret(Random rnd, List<ITurret> availableTurrets)
@@ -83,7 +111,10 @@ public class LevelUpScreen : MonoBehaviour
             var initializeTurret = InitializeFirstTurret(rnd, availableTurrets);
             return initializeTurret;
         }
+        if (availableTurrets.Count == 0)
+            return null;
         var index = rnd.Next(0, availableTurrets.Count);
+        
         var turret = availableTurrets[index];
         availableTurrets.RemoveAt(index);
         return turret;
@@ -107,34 +138,41 @@ public class LevelUpScreen : MonoBehaviour
 
     public void ChoseFirst()
     {
-        if (firstUpgrade.GetLevel() == 0)
-            firstUpgrade.Init();
-        
-        else
-            firstUpgrade.LevelUp();
-        
+        if (firstUpgrade != null)
+        {
+            if (firstUpgrade.GetLevel() == 0)
+                firstUpgrade.Init();
+
+            else
+                firstUpgrade.LevelUp();
+        }
         BackToGame();
     }
 
     public void ChoseSecond()
     {
-        if (secondUpgrade.GetLevel() == 0)
-            secondUpgrade.Init();
-        
-        else
-            secondUpgrade.LevelUp();
-        
+        if (secondUpgrade != null)
+        {
+            if (secondUpgrade.GetLevel() == 0)
+                secondUpgrade.Init();
+
+            else
+                secondUpgrade.LevelUp();
+        }
+
         BackToGame();
     }
 
     public void ChoseThird()
     {
-        if (thirdUpgrade.GetLevel() == 0)
-            thirdUpgrade.Init();
-        
-        else
-            thirdUpgrade.LevelUp();
-        
+        if (thirdUpgrade != null)
+        {
+            if (thirdUpgrade.GetLevel() == 0)
+                thirdUpgrade.Init();
+
+            else
+                thirdUpgrade.LevelUp();
+        }
         BackToGame();
     }
 }

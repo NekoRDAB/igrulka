@@ -35,7 +35,8 @@ public class ChestBehaviour : MonoBehaviour
 
         if (distance < 5)
         {
-            gameStateController.LevelUp();
+            if (gameStateController.level <= 25)
+                gameStateController.LevelUp();
             Destroy(gameObject);
         }
     }
