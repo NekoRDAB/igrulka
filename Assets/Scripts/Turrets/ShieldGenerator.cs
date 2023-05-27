@@ -24,9 +24,9 @@ public class ShieldGenerator : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, Action> LevelUpDict = new()
     {
-        { 1, () => ShieldHealth += 30 },
+        { 1, () => ShieldHealth += 50 },
         { 2, () => CoolDown *= 0.7f },
-        { 3, () => ShieldHealth += 30},
+        { 3, () => ShieldHealth += 50},
         { 4, () => CoolDown *= 0.7f },
     };
 
@@ -36,7 +36,7 @@ public class ShieldGenerator : MonoBehaviour, ITurret
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
         CoolDown = 10f;
         Damage = 45;
-        ShieldHealth = 100;
+        ShieldHealth = 50;
     }
 
     public Sprite GetSprite()

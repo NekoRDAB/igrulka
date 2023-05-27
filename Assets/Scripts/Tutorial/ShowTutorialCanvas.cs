@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,8 +7,9 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private GameObject prevCanvas; 
     [SerializeField] private GameObject currentCanvas; 
     [SerializeField] private GameObject nextCanvas;
-    [SerializeField] private KeyCode nextButtonKey = KeyCode.RightArrow;
-    [SerializeField] private KeyCode prevButtonKey = KeyCode.RightArrow;
+    [SerializeField] private KeyCode nextCanvasKey = KeyCode.RightArrow;
+    [SerializeField] private MouseButton secondaryNextCanvasKey = MouseButton.Left;
+    [SerializeField] private KeyCode prevCanvasKey = KeyCode.LeftArrow;
     
     private void Start() 
     {
@@ -16,7 +18,7 @@ public class TutorialController : MonoBehaviour
 
     private void Update() 
     {
-        if (Input.GetKeyDown(prevButtonKey))
+        if (Input.GetKeyDown(prevCanvasKey))
         {
             if (prevCanvas != null)
             {
@@ -24,7 +26,7 @@ public class TutorialController : MonoBehaviour
                 currentCanvas.SetActive(false);
             }
         }
-        if (Input.GetKeyDown(nextButtonKey)) 
+        if (Input.GetKeyDown(nextCanvasKey) || Input.GetMouseButtonDown((int)secondaryNextCanvasKey)) 
         {
             if (nextCanvas != null)
             {
