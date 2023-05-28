@@ -54,7 +54,7 @@ public class LevelUpScreen : MonoBehaviour
     {
         var rnd = new Random();
         var availableTurrets = turrets
-            .Where(t => t.GetLevel() < 5)
+            .Where(t => t.GetLevel() < 7)
             .ToList();
         if (ownShip.turretsCount == 5)
         {
