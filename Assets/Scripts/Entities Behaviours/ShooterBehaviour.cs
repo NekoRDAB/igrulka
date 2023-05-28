@@ -39,6 +39,7 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
     {
         if (timeAlive > 200)
             Destroy(gameObject);
+        timeAlive += Time.deltaTime;
 
         if (timeToShoot <= 0)
         {

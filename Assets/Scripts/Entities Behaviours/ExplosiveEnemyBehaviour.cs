@@ -36,6 +36,7 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
     {
         if (timeAlive > 200)
             Destroy(gameObject);
+        timeAlive += Time.deltaTime;
 
         if (timeFrozen <= 0)
         {
