@@ -13,6 +13,7 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
     private Stopwatch timeDamaged;
     private AudioSource audio;
     private float timeFrozen;
+    private float timeAlive;
     public int damage { get; set; }
     public int health { get; set; }
     
@@ -29,6 +30,9 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
 
     void Update()
     {
+        if (timeAlive > 200)
+            Destroy(gameObject);
+
         if (timeFrozen <= 0)
         {
             if (spriteRenderer.color ==  Color.blue) 

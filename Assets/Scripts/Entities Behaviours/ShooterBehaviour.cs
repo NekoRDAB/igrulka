@@ -19,6 +19,7 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
     private Stopwatch timeDamaged;
     private AudioSource audio;
     private float timeFrozen;
+    private float timeAlive;
     public int damage { get; set; }
 
     void Start()
@@ -36,6 +37,9 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
 
     void Update()
     {
+        if (timeAlive > 200)
+            Destroy(gameObject);
+
         if (timeToShoot <= 0)
         {
             if(timeFrozen <= 0)

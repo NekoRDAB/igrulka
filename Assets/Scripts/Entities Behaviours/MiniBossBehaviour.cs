@@ -19,7 +19,8 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
     private Stopwatch timeDamaged;
     private AudioSource audio;
     private float timeFrozen;
-    
+    private float timeAlive;
+
     void Start()
     {
         ship = GetComponent<Rigidbody2D>();
@@ -37,6 +38,9 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
 
     void Update()
     {
+        if (timeAlive > 200)
+            Destroy(gameObject);
+
         if (timeToShoot <= 0)
         {
             Instantiate(projectile, transform.position, transform.rotation);

@@ -18,6 +18,7 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
     private Stopwatch timeDamaged;
     private AudioSource audio;
     private float timeFrozen;
+    private float timeAlive;
 
     void Start()
     {
@@ -33,6 +34,9 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
     
     void Update()
     {
+        if (timeAlive > 200)
+            Destroy(gameObject);
+
         if (timeFrozen <= 0)
         {
             var movement = (Vector2)player.transform.position - ship.position;
