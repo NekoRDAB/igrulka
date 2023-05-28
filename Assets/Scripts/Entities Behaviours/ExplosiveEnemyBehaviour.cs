@@ -40,13 +40,18 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
 
         if (timeFrozen <= 0)
         {
+            if (spriteRenderer.color == Color.blue)
+                spriteRenderer.color = Color.white;
             var movement = (Vector2)player.transform.position - ship.position;
             movement = Vector2.ClampMagnitude(movement, speed);
             ship.MovePosition(ship.position + movement);
             transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI);
         }
         else
+        {
+            spriteRenderer.color = Color.blue;
             timeFrozen -= Time.deltaTime;
+        }
         if (spriteRenderer.color == Color.red && timeDamaged.ElapsedMilliseconds > 400)
         {
             spriteRenderer.color = Color.white;
