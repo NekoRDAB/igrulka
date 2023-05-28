@@ -17,19 +17,23 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new()
     {
-        {0, "Выпускает снаряд, замораживающий случайного врага."},
-        {1, "Туррель выпускает на 1 снаряд больше."},
-        {2, "Время перезарядки снарядов уменьшается на 30%."},
-        {3, "Туррель выпускает на 2 снаряда больше."},
-        {4, "Время перезарядки снарядов уменьшается на 50%."},
+        {0, "Выпускает снаряд, замораживающий случайного врага"},
+        {1, "Туррель выпускает на 1 снаряд больше"},
+        {2, "Время перезарядки снарядов уменьшается на 30%"},
+        {3, "Туррель выпускает на 1 снаряд больше"},
+        {4, "Скорость снарядов увеличивается на 30%"},
+        {5, "Время перезарядки снарядов уменьшается на 40%"},
+        {6, "Турель выпускает на 2 снаряда больше"}
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new()
     {
         { 1, () => Amount++ },
         { 2, () => CoolDown *= 0.7f},
-        { 3, () => Amount += 2 },
-        { 4, () => CoolDown *= 0.5f },
+        { 3, () => Amount++ },
+        { 4, () => Speed *= 1.3f},
+        { 5, () => CoolDown *= 0.6f},
+        { 6, () => Amount += 2}
     };
     
     void Start()
@@ -37,7 +41,7 @@ public class RefrigeratorTurret : MonoBehaviour, ITurret
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
         Amount = 1;
-        CoolDown = 4f;
+        CoolDown = 3f;
         Speed = 40f;
     }
     

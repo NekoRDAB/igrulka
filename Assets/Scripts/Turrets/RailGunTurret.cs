@@ -16,19 +16,23 @@ public class RailGunTurret : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new()
     {
-        {0, "Выстреливает пробивным снарядом в ближайшего врага."},
-        {1, "Скорострельность турели увеличивается на 30%."},
-        {2, "Скорострельность турели увеличивается на 30%."},
-        {3, "Урон от снаряда увеличивается на 50."},
-        {4, "Скорость снаряда увеличивается на 40%."},
+        {0, "Выстреливает пробивным снарядом в ближайшего врага"},
+        {1, "Урон от снаряда увеличивается на 20"},
+        {2, "Скорострельность турели увеличивается на 30%"},
+        {3, "Урон от снаряда увеличивается на 30"},
+        {4, "Скорость снаряда увеличивается на 40%"},
+        {5, "Скорострельность турели увеличивается на 40%"},
+        {6, "Урон от снаряда увеличивается на 35"}
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new()
     {
-        { 1, () => CoolDown *= 0.7f },
+        { 1, () => Damage += 20 },
         { 2, () => CoolDown *= 0.7f },
-        { 3, () => Damage += 50},
+        { 3, () => Damage += 30},
         { 4, () => Speed *= 1.4f },
+        { 5, () => CoolDown *= 0.6f},
+        { 6, () => Damage += 35}
     };
 
     void Start()
@@ -36,7 +40,7 @@ public class RailGunTurret : MonoBehaviour, ITurret
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
         CoolDown = 3f;
-        Damage = 100;
+        Damage = 50;
         Speed = 80f;
     }
     

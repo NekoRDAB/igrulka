@@ -22,7 +22,7 @@ public class GameStateController : MonoBehaviour
         if (!PlayerPrefs.HasKey("soundVolume"))
             PlayerPrefs.SetFloat("soundVolume", 1);
         Time.timeScale = 1;
-        level = 1;
+        level = 0;
         ownShip = GameObject.Find("OwnShip");
         audio = GetComponent<AudioSource>();
         LevelUp();
@@ -61,7 +61,7 @@ public class GameStateController : MonoBehaviour
         if (experience >= level * level)
         {
             experience = 0;
-            if (level <= 25)
+            if (level <= 35)
                 LevelUp();
         }
     }

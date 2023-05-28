@@ -76,7 +76,7 @@ public class LevelUpScreen : MonoBehaviour
         }
         else
         {
-            firstCardText.text = "нет доступных улучшений";
+            firstCardText.text = "Нет доступных улучшений";
             firstCardButtonImage.sprite = plug;
         }
             
@@ -88,7 +88,7 @@ public class LevelUpScreen : MonoBehaviour
         }
         else
         {
-            secondCardText.text = "нет доступных улучшений";
+            secondCardText.text = "Нет доступных улучшений";
             secondCardButtonImage.sprite = plug;
         }
             
@@ -100,7 +100,7 @@ public class LevelUpScreen : MonoBehaviour
         }
         else
         {
-            thirdCardText.text = "нет доступных улучшений";
+            thirdCardText.text = "Нет доступных улучшений";
             thirdCardButtonImage.sprite = plug;
         }
     } 

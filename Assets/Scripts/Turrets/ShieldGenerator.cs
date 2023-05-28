@@ -6,7 +6,6 @@ using UnityEngine;
 public class ShieldGenerator : MonoBehaviour, ITurret
 {
     [SerializeField] private GameObject ShieldBubble;
-    public static int Damage { get; private set; }
     public static int ShieldHealth { get; private set; }
     public static float CoolDown { get; private set; }
     private int level;
@@ -15,19 +14,23 @@ public class ShieldGenerator : MonoBehaviour, ITurret
 
     private readonly Dictionary<int, string> DescriptionDict = new()
     {
-        {0, "Создаёт щит вокруг корабля."},
-        {1, "Прочность щита увеличивается на 30."},
-        {2, "Время перезарядки щита уменьшается на 30%."},
-        {3, "Прочность щита увеличивается на 30."},
-        {4, "Время перезарядки щита уменьшается на 30%."},
+        {0, "Создаёт щит вокруг корабля"},
+        {1, "Прочность щита увеличивается на 10"},
+        {2, "Время перезарядки щита уменьшается на 15%"},
+        {3, "Прочность щита увеличивается на 15"},
+        {4, "Время перезарядки щита уменьшается на 20%"},
+        {5, "Прочность щита увеличивается на 25"},
+        {6, "Время перезарядки щита уменьшается на 30%"}
     };
 
     private readonly Dictionary<int, Action> LevelUpDict = new()
     {
-        { 1, () => ShieldHealth += 50 },
-        { 2, () => CoolDown *= 0.7f },
-        { 3, () => ShieldHealth += 50},
-        { 4, () => CoolDown *= 0.7f },
+        { 1, () => ShieldHealth += 10 },
+        { 2, () => CoolDown *= 0.85f },
+        { 3, () => ShieldHealth += 15},
+        { 4, () => CoolDown *= 0.8f },
+        { 5, () => ShieldHealth += 25},
+        { 6, () => CoolDown *= 0.7f}
     };
 
     void Start()
@@ -35,7 +38,6 @@ public class ShieldGenerator : MonoBehaviour, ITurret
         ownShip = GameObject.Find("OwnShip");
         shipBehaviour = ownShip.GetComponent<PlayerShipBehaviour>();
         CoolDown = 10f;
-        Damage = 45;
         ShieldHealth = 50;
     }
 
