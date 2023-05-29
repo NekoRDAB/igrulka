@@ -1946,6 +1946,7 @@ MonoBehaviour:
   enemy3: {fileID: 7798128494745136029, guid: 3bb518d829ea0744e9a6ec4570b5505f, type: 3}
   enemy4: {fileID: 8747577585063392786, guid: 2b63f5062a11f014f8f7403d7fef0cb7, type: 3}
   miniBoss: {fileID: 7798128494745136029, guid: 19b0006d5523e0e41bc71f7bf2a9e975, type: 3}
+  maxEnemies: 250
   timeBetweenWaves: 5
   waveCountDown: 0
   state: 2
@@ -1978,7 +1979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ship: {fileID: 1992808652}
   debri: {fileID: 1541000859918953371, guid: 7c587f81c5c61684ebd728b2034bccc1, type: 3}
-  timeBetweenSpawning: 15
+  timeBetweenSpawning: 12
 --- !u!1 &1539514371
 GameObject:
   m_ObjectHideFlags: 0

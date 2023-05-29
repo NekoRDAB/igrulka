@@ -19,7 +19,6 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
     private Stopwatch timeDamaged;
     private AudioSource audio;
     private float timeFrozen;
-    private float timeAlive;
     public int damage { get; set; }
 
     void Start()
@@ -37,9 +36,8 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
 
     void Update()
     {
-        if (timeAlive > 200)
-            Destroy(gameObject);
-        timeAlive += Time.deltaTime;
+        if (Vector3.Distance(player.transform.position, transform.position) > 250)
+            transform.position = GetTeleportPosition();
 
         if (timeToShoot <= 0)
         {
@@ -103,5 +101,11 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
     public void Freeze(float time)
     {
         timeFrozen = time;
+    }
+
+    private Vector3 GetTeleportPosition()
+    {
+        var offset = Quaternion.AngleAxis(UnityEngine.Random.Range(-180f, 180f), Vector3.back) * (new Vector3(150, 120, 0));
+        return player.transform.position + offset;
     }
 }

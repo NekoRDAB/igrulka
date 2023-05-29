@@ -11,8 +11,9 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private GameObject enemy3; 
     [SerializeField] private GameObject enemy4; 
     [SerializeField] private GameObject miniBoss;
+    [SerializeField] private int maxEnemies;
     public enum SpawnState { Spawning, Waiting, Counting };
-    private WaveProcessing waveProcessing;
+    private WaveProcessor waveProcessor;
     public float timeBetweenWaves = 1f;
     public float waveCountDown;
     public SpawnState state = SpawnState.Counting;
@@ -67,15 +68,16 @@ public class WaveSpawner : MonoBehaviour
                         1
                     ),
             };
-        waveProcessing = new WaveProcessing(waves);
+        waveProcessor = new WaveProcessor(waves);
     }
 
     private void Update()
     {
         if (waveCountDown <= 0)
         {
-            if (state != SpawnState.Spawning)
-                StartCoroutine(SpawnWave(waveProcessing.GetNextWave()));
+            var enemyCount = GameObject.FindGameObjectsWithTag("enemy").Length;
+            if (state != SpawnState.Spawning && enemyCount < maxEnemies)
+                StartCoroutine(SpawnWave(waveProcessor.GetNextWave()));
         }
         
         else
@@ -89,7 +91,7 @@ public class WaveSpawner : MonoBehaviour
         foreach (var enemy in wave.GetEnemy())
         {
             SpawnEnemy(enemy);
-            yield return new WaitForSeconds(1.5f * wave.delay / (float)waveProcessing.cycle);
+            yield return new WaitForSeconds(1.7f * wave.delay / (float)waveProcessor.cycle);
         }
 
         state = SpawnState.Waiting;
@@ -105,7 +107,7 @@ public class WaveSpawner : MonoBehaviour
     }
     private Vector3 GetSpawnPosition()
     {
-        var offset = Quaternion.AngleAxis(UnityEngine.Random.Range(-180f, 180f), Vector3.back) * (new Vector3(80, 50, 0));
+        var offset = Quaternion.AngleAxis(UnityEngine.Random.Range(-180f, 180f), Vector3.back) * (new Vector3(150, 120, 0));
         return ship.position + offset;
     }
 }
@@ -129,13 +131,13 @@ public class Wave
     }
 }
 
-class WaveProcessing
+class WaveProcessor
 {
     private List<Wave> waves = new();
     private int waveNumber;
     public int cycle;
 
-    public WaveProcessing(Wave[] waves)
+    public WaveProcessor(Wave[] waves)
     {
         waveNumber = -1;
         foreach (var wave in waves)

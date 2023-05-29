@@ -4,7 +4,6 @@ public class DebriSpawner : MonoBehaviour
 {
     [SerializeField] private Transform ship;
     [SerializeField] private GameObject debri;
-    private WaveProcessing waveProcessing;
     public float timeBetweenSpawning = 15f;
     public float debriCountDown { get; set; }
     private void Start()

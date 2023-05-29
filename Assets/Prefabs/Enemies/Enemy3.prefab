@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &-2626813387942981073
 SpriteRenderer:
@@ -101,11 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  health: 450
-  speed: 0.07
   explosion: {fileID: 4046219916806648488, guid: a2d69909cd8b9814cb85be367fc7a533, type: 3}
   exp: {fileID: 5336000287990818286, guid: a13e4dd5e5de8c046a7f5307cbdc26f7, type: 3}
   damageNumbers: {fileID: 1567834111071343437, guid: 2d886ea40f64c494aa1d6b446760d49c, type: 3}
+  speed: 0.07
+  health: 450
 --- !u!50 &-3642988159037383614
 Rigidbody2D:
   serializedVersion: 4
@@ -199,7 +199,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 131.96396
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

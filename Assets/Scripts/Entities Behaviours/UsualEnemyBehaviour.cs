@@ -8,14 +8,15 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
     [SerializeField] private GameObject explosion;
     [SerializeField] private GameObject exp;
     [SerializeField] private GameObject damageNumbers;
+    [SerializeField] public double health;
     private Rigidbody2D ship;
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
     private AudioSource audio;
     private float timeFrozen;
-    private float timeAlive;
+
     public int damage { get; set; }
-    public int health { get; set; }
+    
     
     void Start()
     {
@@ -30,9 +31,9 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
 
     void Update()
     {
-        if (timeAlive > 200)
-            Destroy(gameObject);
-        timeAlive += Time.deltaTime;
+        if (Vector3.Distance(player.transform.position, transform.position) > 250)
+            transform.position = GetTeleportPosition();
+        
 
         if (timeFrozen <= 0)
         {
@@ -88,5 +89,11 @@ public class UsualEnemyBehaviour : MonoBehaviour, IEnemy
     public void Freeze(float time)
     {
         timeFrozen = time;
+    }
+
+    private Vector3 GetTeleportPosition()
+    {
+        var offset = Quaternion.AngleAxis(UnityEngine.Random.Range(-180f, 180f), Vector3.back) * (new Vector3(150, 120, 0));
+        return player.transform.position + offset;
     }
 }

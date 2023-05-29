@@ -105,6 +105,7 @@ MonoBehaviour:
   explosion: {fileID: 8899618006193897075, guid: dbe0e9f5c40d7bd4db5a266e18e5340a, type: 3}
   exp: {fileID: 5336000287990818286, guid: a13e4dd5e5de8c046a7f5307cbdc26f7, type: 3}
   damageNumbers: {fileID: 1567834111071343437, guid: 2d886ea40f64c494aa1d6b446760d49c, type: 3}
+  health: 50
 --- !u!50 &5091079292511206050
 Rigidbody2D:
   serializedVersion: 4
@@ -117,7 +118,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -198,7 +199,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 123.427986
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

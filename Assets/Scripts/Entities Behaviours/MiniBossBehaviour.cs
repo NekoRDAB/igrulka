@@ -19,7 +19,6 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
     private Stopwatch timeDamaged;
     private AudioSource audio;
     private float timeFrozen;
-    private float timeAlive;
 
     void Start()
     {
@@ -38,9 +37,8 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
 
     void Update()
     {
-        if (timeAlive > 200)
-            Destroy(gameObject);
-        timeAlive += Time.deltaTime;
+        if (Vector3.Distance(player.transform.position, transform.position) > 250)
+            transform.position = GetTeleportPosition();
 
         if (timeToShoot <= 0)
         {
@@ -97,5 +95,11 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
     public void Freeze(float time)
     {
         timeFrozen = time;
+    }
+
+    private Vector3 GetTeleportPosition()
+    {
+        var offset = Quaternion.AngleAxis(UnityEngine.Random.Range(-180f, 180f), Vector3.back) * (new Vector3(200, 180, 0));
+        return player.transform.position + offset;
     }
 }
