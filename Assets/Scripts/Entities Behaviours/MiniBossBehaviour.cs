@@ -52,7 +52,7 @@ public class MiniBossBehaviour : MonoBehaviour, IEnemy
         if (timeFrozen <= 0)
         {
             var movement = (Vector2)player.transform.position - ship.position;
-            movement = Vector2.ClampMagnitude(movement, speed);
+            movement = Vector2.ClampMagnitude(movement, speed * Time.deltaTime);
             ship.MovePosition(ship.position + movement);
             transform.rotation = Quaternion.Euler(0, 0, -Mathf.Atan2(movement.x, movement.y) * 180 / Mathf.PI);
         }

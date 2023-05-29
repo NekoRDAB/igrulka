@@ -41,7 +41,7 @@ namespace Assets.Scripts
             var horizontalInput = Input.GetAxis("Horizontal");
             var verticalInput = Input.GetAxis("Vertical");
             var movement = new Vector2(horizontalInput, verticalInput);
-            movement = Vector2.ClampMagnitude(movement, movementSpeed);
+            movement = Vector2.ClampMagnitude(movement, movementSpeed * Time.deltaTime);
             if(movement != Vector2.zero && Time.timeScale != 0)
             {
                 ownShip.MovePosition(ownShip.position + movement);

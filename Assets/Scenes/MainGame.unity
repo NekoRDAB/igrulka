@@ -3311,7 +3311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eae1ca38d195a24c878485c3dbce4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  movementSpeed: 100
   exhaust: {fileID: 1004181821}
 --- !u!82 &1992808655
 AudioSource:
@@ -4267,6 +4267,10 @@ PrefabInstance:
     - target: {fileID: 5187421591837077012, guid: 66ab126214c310347bceb10e2347dc4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086238415712658858, guid: 66ab126214c310347bceb10e2347dc4c, type: 3}
+      propertyPath: movementSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8147058140998548320, guid: 66ab126214c310347bceb10e2347dc4c, type: 3}
       propertyPath: m_Size.x
