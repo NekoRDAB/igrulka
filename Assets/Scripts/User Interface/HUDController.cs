@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI tutorialText;
     private Slider slider;
     private TextMeshProUGUI level;
     private Canvas HUD;
@@ -21,6 +22,10 @@ public class HUDController : MonoBehaviour
         killCountText = GameObject.Find("KillCount").GetComponent<TextMeshProUGUI>();
         gameStateController = GameObject.Find("GameStateController").GetComponent<GameStateController>();
         slider.minValue = 0;
+        tutorialText.text = "Методы управления:\n" +
+                            "1) W,A,S,D - перемещения корабля\n" +
+                            "2) Мышь - вращение корабля, W, S - движение\n" +
+                            "переключение режимов: Е";
     }
     
     void Update()
@@ -32,6 +37,8 @@ public class HUDController : MonoBehaviour
         var timer = gameStateController.survivalTimer;
         var maxTime = gameStateController.survivalTimeLimit;
         var timeSpan = new System.TimeSpan(0, 0, (int)(maxTime - timer));
+        if (timeSpan.Seconds > 10)
+            tutorialText.text = "";
         timeSurvived.text = $"{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
     }
 

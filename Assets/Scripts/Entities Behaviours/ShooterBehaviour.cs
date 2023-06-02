@@ -17,6 +17,7 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
     private Rigidbody2D ship;
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
+    private Color defaultColor;
     private AudioSource audio;
     private float timeFrozen;
     public int damage { get; set; }
@@ -32,6 +33,7 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
         damage = 20;
         shootingCoolDown = 5;
         timeToShoot = shootingCoolDown;
+        defaultColor = spriteRenderer.color;
     }
 
     void Update()
@@ -50,7 +52,7 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
         if (timeFrozen <= 0)
         {
             if (spriteRenderer.color == Color.blue)
-                spriteRenderer.color = Color.white;
+                spriteRenderer.color = defaultColor;
             var movement = (Vector2)player.transform.position - ship.position;
             movement = Vector2.ClampMagnitude(movement, speed);
             ship.MovePosition(ship.position + movement);
@@ -64,7 +66,7 @@ public class ShooterBehaviour : MonoBehaviour, IEnemy
 
         if (spriteRenderer.color == Color.red && timeDamaged.ElapsedMilliseconds > 400)
         {
-            spriteRenderer.color = Color.white;
+            spriteRenderer.color = defaultColor;
             timeDamaged.Stop();
             timeDamaged.Reset();
         }

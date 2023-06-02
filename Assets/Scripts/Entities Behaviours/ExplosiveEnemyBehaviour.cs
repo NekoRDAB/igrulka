@@ -17,6 +17,7 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
     private SpriteRenderer spriteRenderer;
     private Stopwatch timeDamaged;
     private AudioSource audio;
+    private Color defaultColor;
     private float timeFrozen;
 
     void Start()
@@ -29,6 +30,7 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
         audio.volume = PlayerPrefs.GetFloat("soundVolume");
         damage = 30;
         health = 500;
+        defaultColor = spriteRenderer.color;
     }
     
     void Update()
@@ -39,7 +41,7 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
         if (timeFrozen <= 0)
         {
             if (spriteRenderer.color == Color.blue)
-                spriteRenderer.color = Color.white;
+                spriteRenderer.color = defaultColor;
             var movement = (Vector2)player.transform.position - ship.position;
             movement = Vector2.ClampMagnitude(movement, speed);
             ship.MovePosition(ship.position + movement);
@@ -52,7 +54,7 @@ public class ExplosiveEnemyBehaviour : MonoBehaviour, IEnemy
         }
         if (spriteRenderer.color == Color.red && timeDamaged.ElapsedMilliseconds > 400)
         {
-            spriteRenderer.color = Color.white;
+            spriteRenderer.color = defaultColor;
             timeDamaged.Stop();
             timeDamaged.Reset();
         }
