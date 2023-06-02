@@ -14,6 +14,7 @@ namespace Assets.Scripts
         private SpriteRenderer spriteRenderer;
         private AudioSource audio;
         private GameObject shield;
+        private bool mouseMovementActivated;
         public readonly List<Vector2> positionsList = new()
             {
                 new Vector2(3, 0), 
@@ -34,20 +35,33 @@ namespace Assets.Scripts
         
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.E))
+                mouseMovementActivated = !mouseMovementActivated;
             if (timeDamaged <= 0) 
                 spriteRenderer.color = Color.white;
             else
                 timeDamaged -= Time.deltaTime;
-            var horizontalInput = Input.GetAxis("Horizontal");
-            var verticalInput = Input.GetAxis("Vertical");
-            var movement = new Vector2(horizontalInput, verticalInput);
-            movement = Vector2.ClampMagnitude(movement, movementSpeed);
+            var movement = Vector2.zero;
+            if (mouseMovementActivated)
+            {
+                var directionToCursor = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToCursor.normalized);
+                movement = directionToCursor * Input.GetAxis("Vertical");
+                movement = Vector2.ClampMagnitude(movement, movementSpeed);
+                
+            }
+            else
+            {
+                var horizontalInput = Input.GetAxis("Horizontal");
+                var verticalInput = Input.GetAxis("Vertical");
+                movement = new Vector2(horizontalInput, verticalInput);
+                movement = Vector2.ClampMagnitude(movement, movementSpeed);
+                if (movement.magnitude > 0.1f) // проверяем, что есть движение
+                    transform.rotation = Quaternion.LookRotation(Vector3.forward, movement.normalized);
+            }
             if(movement != Vector2.zero && Time.timeScale != 0)
             {
                 ownShip.MovePosition(ownShip.position + movement);
-                var direction = new Vector3(horizontalInput, verticalInput, 0);
-                if (direction.magnitude > 0.1f) // проверяем, что есть движение
-                    transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
                 exhaust.localScale = new Vector3(22, 10, 1);
             }
             else

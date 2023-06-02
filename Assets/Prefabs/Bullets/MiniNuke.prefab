@@ -29,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213065083150470891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -111.21, y: -52.58, z: 0}
-  m_LocalScale: {x: 15.9375, y: 17, z: 1}
+  m_LocalPosition: {x: -110.3542, y: -54.001, z: 0}
+  m_LocalScale: {x: 26.63475, y: 27.5264, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5186828483029553063
 SpriteRenderer:
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5861dbc387a5d40a8212c903a71f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   NukeExplosion: {fileID: 4046219916806648488, guid: a2d69909cd8b9814cb85be367fc7a533, type: 3}
+  rb: {fileID: 0}
 --- !u!50 &5327435232141304877
 Rigidbody2D:
   serializedVersion: 4
